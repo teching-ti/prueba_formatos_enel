@@ -1285,7 +1285,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
     const nombreDocumento = `lista_inspeccion_${dia}.pdf` 
     doc.save(nombreDocumento)
     //endodear el resultado del pdf
-    var file_data = btoa(doc.output())
+    /*var file_data = btoa(doc.output())
     var form_data = new FormData()
 
     form_data.append("file", file_data)
@@ -1302,7 +1302,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
         success: function(php_script_response){
             alert("Archivo generado correctamente")
         }
-    })
+    })*/
   } else {
     alert("Complete los campos solicitados para generar el documento");
   }

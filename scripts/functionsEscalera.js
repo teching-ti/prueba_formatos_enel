@@ -225,7 +225,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
         const nombreDocumento = `INSPECCION_DE_ESCALERA_${fechaActual}.pdf`
         doc.save(nombreDocumento)
         //endodear el resultado del pdf
-        var file_data = btoa(doc.output())
+        /*var file_data = btoa(doc.output())
         var form_data = new FormData()
 
         form_data.append("file", file_data)
@@ -242,6 +242,6 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
             success: function(php_script_response){
                 alert("Archivo generado correctamente")
             }
-        })
+        })*/
     }
 })
