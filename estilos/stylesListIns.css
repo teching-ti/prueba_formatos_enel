@@ -1,0 +1,371 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+
+.logo-title img{
+    max-width: 100%;
+    user-select: none;
+    pointer-events: none;
+}
+
+.logo-title div{
+    display: grid;
+    place-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.form-container{
+    background: #e7e7e7;
+}
+
+#datos-generales-documento div{
+    /* display: flex;
+    gap: .8rem; */
+    padding: .5rem;
+}
+
+#datos-generales-documento input{
+    outline: none;
+    border-style: none;
+    height: 35px;
+}
+
+#trabajo, #lugar{
+    width: 60%;
+}
+
+.contenedor-comentarios{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#comentarios{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: .2rem;
+    resize: none;
+}
+
+.cargo-nombre{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin: 1rem 0;
+    justify-content: space-around;
+}
+
+.contenedor-trabajador{
+    margin: 2rem 0 0 1.5rem;
+}
+
+.contenedor-trabajador h3{
+    color: red;
+    margin: 0 1rem;
+}
+
+.trabajador-firma, .trabajador-dni{
+    display: none;
+}
+
+.contenedor-responsable, .contenedor-supervisor{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+#responsable-nombre, #supervisor-nombre{
+    height: 25px;
+    border: none;
+    border-bottom: 1px solid rgb(177, 176, 176);
+    outline: none;
+}
+
+#firma-responsable, #firma-supervisor{
+    display: none;
+}
+
+.leyenda{
+    border: solid 1px black;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    font-size: .8rem;
+    margin: 0 auto;
+}
+
+th, td{
+    border-collapse: collapse;
+    border: solid 1px;
+    padding: .2rem;
+}
+
+.lista{
+    list-style: none;
+}
+
+.elemento-lista{
+    margin: 1.5rem 0;
+}
+
+/*Contenedor de la cantidad y opciones*/
+.elemento-cuerpo {
+    width: 100%;
+    display: flex;
+    margin-left: 1rem;
+    gap: .5rem;
+}
+
+/*Contenedor del input*/
+.contenedor-codigo-fv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: .5rem;
+    width: 100%;
+    gap: .5rem;
+}
+
+.contenedor-codigo-fv label{
+    display: flex;
+
+    gap: .5rem;
+}
+
+.cod{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(182, 178, 178);
+    height: 25px;
+    padding: .5rem;
+}
+
+.elemento-titulo-general{
+    margin: .5rem 0rem 1.5rem .5rem;
+}
+
+#botones{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.agregar-personal{
+    display: flex;
+    flex-wrap: wrap;
+    gap: .2rem;
+    background: white;
+    cursor: pointer;
+    border: solid 1px black;
+    border-radius: .2rem;
+    padding: .5rem;
+    transition: all ease-in-out .2s;
+}
+
+.contenedor-comentarios{
+    display: flex;
+    flex-direction: column;
+}
+
+.comentario-epp, .comentario-herramienta, .comentario-equipo, .comentario-senial, .comentario-documentacion, .comentario-accesorio{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: .5rem 0;
+    padding-left: .4rem;
+}
+
+.comentario-epp textarea,
+.comentario-herramienta textarea,
+.comentario-equipo textarea,
+.comentario-senial textarea,
+.comentario-documentacion textarea,
+.comentario-accesorio textarea{
+    width: 30%;
+    outline: none;
+    resize: none;
+    height: 45px;
+    padding: .4rem;
+}
+
+
+.agregar-personal:hover{
+    background: black;
+    color: white;
+    transform: translateY(4px);
+    transition: all ease-in-out .4s;
+}
+
+#btnGenerar{
+    cursor: pointer;
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    color: red;
+    padding: .5rem;
+    width: min-content;
+    border-radius: 60%;
+    border: solid 1px red;
+    transition: all ease-in-out .2s;
+}
+
+#btnGenerar:hover{
+    transform: scale(1.4);
+}
+
+#btnListaPersonal{
+    cursor: pointer;
+    position: fixed;
+    top: 125px;
+    right: 10px;
+    color: rgb(53, 159, 0);
+    padding: .5rem;
+    width: min-content;
+    border-radius: 60%;
+    border: solid 1px rgb(53, 159, 0);
+    transition: all ease-in-out .2s;
+}
+
+#btnListaPersonal:hover{
+    transform: scale(1.4);
+}
+
+#btnComentarios{
+    cursor: pointer;
+    position: fixed;
+    top: 200px;
+    right: 10px;
+    color: rgb(47, 1, 185);
+    padding: .5rem;
+    width: min-content;
+    border-radius: 60%;
+    border: solid 1px rgb(47, 1, 185);
+    transition: all ease-in-out .2s;
+}
+
+#btnComentarios:hover{
+    transform: scale(1.4);
+}
+
+.contenedor-accesorios{
+    border-bottom: dotted 2px red;
+}
+
+@media (max-width: 720px){
+    .main{
+        width: 100%;
+    }
+
+    .logo-title{
+        flex-direction: column;
+        justify-content: center;
+        place-items: center;
+    }
+
+    .logo-title div{
+        font-size: 1rem;
+    }
+
+    #datos-generales-documento{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: .8rem;
+        padding: .5rem .2rem;
+    }
+
+    .contenedor-trabajador{
+        margin: 2rem 0 0 0;
+    }
+
+    .leyenda{
+        font-size: .6rem;
+    }
+
+    .lista{
+        margin: 1rem 0;
+    }
+
+    .elemento-lista{
+        margin: .8rem 0;
+        font-size: .8rem;
+        display: grid;
+        grid-template-areas: 
+                            "elemento-titulo elemento-titulo"
+                            "elemento-cantidad elemento-opciones"
+                            "contenedor-codigo-fv contenedor-codigo-fv"
+        ;
+    }
+
+    .elemento-lista select{
+        width: 35%;
+    }
+
+    .elemento-titulo{
+        grid-area: elemento-titulo;
+        padding-left: 1rem;
+    }
+
+    .elemento-cantidad{
+        grid-area: elemento-cantidad;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .elemento-opciones{
+        grid-area: elemento-opciones;
+        display: flex;
+        gap: .6rem;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .elemento-opciones label{
+        display: flex;
+        gap: .2rem;
+        align-items: center;
+    }
+
+    .contenedor-codigo-fv{
+        grid-area: contenedor-codigo-fv;
+        display: flex;
+        align-items: center;
+    }
+
+    .comentario-epp textarea,
+    .comentario-herramienta textarea,
+    .comentario-equipo textarea,
+    .comentario-senial textarea,
+    .comentario-documentacion textarea,
+    .comentario-accesorio textarea{
+        margin: 0 auto;
+        width: 90%;
+        height: 35px;
+    }
+}

@@ -1,0 +1,12 @@
+
+- Para el formato de inspección vehicular se inserta la firma del supervisor desde javascript
+
+(esto debe editarse, ya se deben mostar opciones para marcar según requerimientos)
+- Para el formato Permiso de alto riesgo se insertan firmas desde javascript
+
+
+(para el petar debe editarse según requerimientos)
+- Para el formato Permiso de alto riesgo, firmas en el html, hasta fecha de hoy toca modificar enlace, arreglar la firma del responsable y prevencionsita
+
+- Para el formato 'Lista de Inspección', el nombre y la firma del supervisor están siendo colocando directamente en su archivo js respectivo
+- Para el formato "Orden de Trabajo", la firma de y nombre de Jouse Hidalgo, se encuentra cargada en el html y se obtiene e inserta desde javascript

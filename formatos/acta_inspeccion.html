@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="robots" content="noindex, nofollow">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Acta de Inspeccion</title>
+      <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon"/>
+
+      <!-- fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
+
+      <!-- JSPDF -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+      <!-- Estilos -->
+      <link rel="stylesheet" href="../estilos/stylesActa.css" />
+
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+      <!-- Jquery -->
+      <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <main class="main">
+         <figure class="logo-title">
+            <a href="../">
+               <img src="../recursos/logo_teching.png" alt="teching_logo" />
+            </a>
+            <div>
+               <span>Acta de Inspección</span>
+            </div>
+         </figure>
+
+         <section class="form-container">
+            <form class="principal-form" id="principal-form">
+               <h3 class="title-datos-principales">Datos Generales</h3>
+
+               <!--Inicia parte superior del Formulario-->
+               <div class="form-sup">
+                  <div class="form-sup1">
+                     <div class="form-sup-e">
+                        <label>Subestación: <input type="text" id="subestacion"/></label>
+                     </div>
+                     <div class="form-sup-e">
+                        <label>Tipo de SED: <input type="text" id="tipo-sed"/></label>
+                     </div>
+                     <div class="form-sup-e">
+                        <label>Nivel de tensión: <input type="text" id="nivel-tension"/></label>
+                     </div>
+                  </div>
+               
+                  <div class="form-sup2">
+                     <div class="form-sup-e">
+                        <label>Cliente: <input type="text" id="cliente"/></label>
+                     </div>
+                     <div class="form-sup-e">
+                        <label>Ubicacion: <input type="text" id="ubicacion"/></label>
+                     </div>
+                     <div class="form-sup-e" id="fecha-h-inicio-final">
+                        <label>Fecha: <input type="text" id="fecha" readonly/></label>
+                        <label>Hora Inicio: <input type="time" id="h-inicio"/></label>
+                        <label>Hora Fin: <input type="time" id="h-fin"/></label>
+                     </div>
+                  </div>
+               </div>
+               <!--Fin parte superior del Formulario-->
+
+               <!-- Inicia Cuerpo del Formulario-->
+               <div class="form-body">
+                  <h3>Situación Encontrada</h3>
+                  <!-- Inician divs para la situación encontrada -->
+                  <section class="section-situacion">
+                     <div class="contenedor-dato-situacion">
+                        <h5>Condiciones de trabajo</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="radio" class="situacion-encontrada-1" name="situacion-encontrada-1" checked value="1">Condición Segura</label>
+                           <label><input type="radio" class="situacion-encontrada-1" name="situacion-encontrada-1" value="2">Condición Insegura (Resguardo Policial)</label>           
+                        </div>
+                     </div>
+
+                     <div class="contenedor-dato-situacion">
+                        <h5>Condiciones Insitu - SED</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="radio" class="situacion-encontrada-2" name="situacion-encontrada-2" checked value="1">Normales</label>
+                           <label><input type="radio" class="situacion-encontrada-2" name="situacion-encontrada-2" value="2">Obstácuos de desmonte</label>              
+                        </div>
+                     </div>
+                  </section>
+
+                  <h3> Datos de la inspección  </h3>
+
+                  <!-- Section datos Inspección -->
+                  <section class="section-inspeccion">
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Estado Totalizador</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d1" value="1">Si tiene</label>
+                           <label><input type="checkbox" class="d1" value="2">Apagado</label>
+                           <label><input type="checkbox" class="d1" value="3">No tiene tapa</label>
+                           <label><input type="checkbox" class="d1" value="4">No tiene</label>
+                           <label><input type="checkbox" class="d1" value="5">Buen estado</label>
+                           <label><input type="checkbox" class="d1" value="6">Mal estado</label> 
+                        </div>   
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Reductores de Corriente de Totalizador</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d2" value="1">Si tiene</label>
+                           <label><input type="checkbox" class="d2" value="2">No tiene</label>
+                           <label><input type="checkbox" class="d2" value="3">¿Registra toda la terna? <input type="text" id="txtcondicion2" class="detalle"></label>
+                        </div>   
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Tablero BT</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d3" value="1">Si tiene</label>
+                           <label><input type="checkbox" class="d3" value="2">No tiene</label>
+                           <label><input type="checkbox" class="d3" value="3">¿Tipo de Llave? <input type="text" id="txtcondicion3" class="detalle"></label>
+                        </div>   
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Sistema AP</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d4" value="1">Si tiene</label>
+                           <label><input type="checkbox" class="d4" value="2">No tiene</label>
+                           <label><input type="checkbox" class="d4" value="3">¿Dónde está instalado? <input type="text" id="txtcondicion4" class="detalle"></label>
+                        </div>   
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>N° Llaves</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d5" value="1">Si tiene ¿Cuántas? <input type="number" id="txtcondicion51" class="detalle"></label>
+                           <label><input type="checkbox" class="d5" value="2">No tiene</label>   
+                           <label><input type="checkbox" class="d5" value="3">N° llaves AP: <input type="number" id="txtcondicion52" class="detalle"></label>
+                           <label><input type="checkbox" class="d5" value="4">N° llaves SP: <input type="number" id="txtcondicion53" class="detalle"></label>
+                        </div>   
+                     </div>
+                     
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Estado medidor AP</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d6" value="1">Si tiene</label>
+                           <label><input type="checkbox" class="d6" value="2">Si tiene tapa</label>   
+                           <label><input type="checkbox" class="d6" value="3">No tiene tapa</label>   
+                           <label><input type="checkbox" class="d6" value="4">No tiene</label>   
+                           <label><input type="checkbox" class="d6" value="5">Conexión directa</label>   
+                           <label><input type="checkbox" class="d6" value="6">1φ</label>   
+                           <label><input type="checkbox" class="d6" value="7">3φ</label>   
+                           <label><input type="checkbox" class="d6" value="8">Buen estado</label>
+                           <label><input type="checkbox" class="d6" value="9">Mal estado</label>   
+                        </div>   
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Reductores de Corriente del Medidor AP</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d7" value="1">Si tiene</label>
+                           <label><input type="checkbox" class="d7" value="2">No tiene</label>   
+                           <label><input type="checkbox" class="d7" value="3">¿Dónde están instalados?<input type="text" id="txtcondicion7" class="detalle"></label>
+                        </div>   
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Estado Fotocelda</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d8" value="1">Si tiene</label>
+                           <label><input type="checkbox" class="d8" value="2">Si tiene tapa</label>   
+                           <label><input type="checkbox" class="d8" value="3">No tiene tapa</label>
+                           <label><input type="checkbox" class="d8" value="4">No tiene</label>
+                           <label><input type="checkbox" class="d8" value="5">Buen estado</label>   
+                           <label><input type="checkbox" class="d8" value="6">Mal estado</label>
+                        </div>
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>DMS Redes Eléctricas MT</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d9" value="1">Cumple</label>
+                           <label><input type="checkbox" class="d9" value="2">No conforme</label>   
+                           <label><input type="checkbox" class="d9" value="3">¿Están muy cerca a Tot?<input type="text" id="txtcondicion9" class="detalle"></label>
+                        </div>
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Telemedida/ Fasorial</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d10" value="1">Si tiene</label>
+                           <label><input type="checkbox" class="d10" value="2">No aplica</label>   
+                           <label><input type="checkbox" class="d10" value="3">No tiene</label>
+                        </div>
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Requiere grúa y/o escalera</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d11" value="1">Si requiere grúa</label>
+                           <label><input type="checkbox" class="d11" value="2">No requiere grúa</label>   
+                           <label><input type="checkbox" class="d11" value="3">Escalera 10 pasos</label>
+                           <label><input type="checkbox" class="d11" value="4">Escalera 14 pasos</label>
+                        </div>
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Estado de conexiones BT crítica</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d12" value="1">Conforme</label>
+                           <label><input type="checkbox" class="d12" value="2">No conforme</label>   
+                           <label><input type="checkbox" class="d12" value="3">Riesgo eléctrico</label>
+                        </div>
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Estado Poste</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d13" value="1">Poste inclinado</label>
+                           <label><input type="checkbox" class="d13" value="2">Poste Corrido</label>   
+                           <label><input type="checkbox" class="d13" value="3">c/base reforzada</label>
+                           <label><input type="checkbox" class="d13" value="4">Rajaduras</label>
+                           <label><input type="checkbox" class="d13" value="5">Concreto/ buen estado</label>
+                        </div>
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Giro del cliente</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="checkbox" class="d14" value="1">Residencial</label>
+                           <label><input type="checkbox" class="d14" value="2">Comercial</label>   
+                           <label><input type="checkbox" class="d14" value="3">Industrial</label>
+                           <label><input type="checkbox" class="d14" value="4">Mixto: <input type="text" id="txtcondicion14" class="detalle"></label>
+                        </div>
+                     </div>
+
+                     <div class="contenedor-dato-inspeccion">
+                        <h5>Procede Balance</h5>
+                        <div class="contenedor-condiciones">
+                           <label><input type="radio" class="d15" name="d15" value="1" checked>Si procede</label>
+                           <label><input type="radio" class="d15" name="d15" value="2">No procede: Normalizar punto de medición</label>   
+                        </div>
+                     </div>
+                  </section>
+
+                  <div class="contenedor-observaciones">
+                     <label>Observaciones<textarea name="t-observaciones" id="t-observaciones" cols="30" rows="10"></textarea></label>
+                  </div>
+
+                  <div class="contenedor-recomendaciones">
+                     <label>Recomendaciones<textarea name="t-recomendaciones" id="t-recomendaciones" cols="30" rows="10"></textarea></label>
+                  </div>
+
+                  <div class="contenedor-jefe-cuadrilla">
+                     <label>Jefe de Cuadrilla: <select name="jefe cuadrilla" id="jefe-cuadrilla">
+                        <option value="--seleccionar--">-- seleccionar --</option>
+                     </select></label>
+                     <div>
+                        <input type="text" id="nombres">
+                        <input type="text" id="apellidos">
+                        <input type="text" id="firma">
+                        <input type="text" id="dni">
+                     </div>
+                  </div>
+
+               </div>
+
+               <div id="btnGenerar"><i class="fa-solid fa-file-pdf fa-lg"></i></div>
+            </form>
+         </section>
+         
+      </main>
+      <script src="../scripts/functionsActaInspeccions.js"></script>
+  </body>
+</html>

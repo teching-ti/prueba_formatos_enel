@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    background: url("../recursos/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; 
+}
+
+main{
+    width: 50%;
+    padding: 2rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.85));
+    background-size: cover;
+}
+
+.contenedor-imagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.imagen-logo{
+    width: 25%;
+}
+
+h1{
+    text-align: center;
+}
+
+.formatos{
+    border: 1px solid black ;
+    margin: 1rem 0;
+    transition: .2s all ease-in-out
+}
+
+.formatos:hover{
+    transition: .2s all ease-in-out;
+    transform: scale(110%);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}   
+
+.links{
+    text-decoration: none;
+    padding: .5rem;
+    color: rgb(31, 31, 106);
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*clase para formatos en desarrollo*/
+.en-proceso{
+    font-size: 1.5rem;
+    margin-right: .5rem;
+    animation-name: proceso;
+    animation-duration: 2s;
+    animation-delay: .5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes proceso{
+    10%{
+        color: rgb(31, 31, 106);
+    }
+    20%{
+        color: red;
+        transform: rotate(45deg);
+    }
+    40%{
+        color: rgb(31, 31, 106);
+        transform: rotate(0deg);
+    }
+    60%{
+        color: red;
+        transform: rotate(45deg);
+    }
+    80%{
+        color: rgb(31, 31, 106);
+        transform: rotate(0deg);
+
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
+
+@media (max-width: 720px){
+
+    body{
+        max-height: 100vh;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+    
+    main{
+        width: 100%;
+        padding: auto;
+    }
+    .imagen-logo{
+        width: 35%;
+    }
+
+    .links{
+        text-align: center;
+    }
+}

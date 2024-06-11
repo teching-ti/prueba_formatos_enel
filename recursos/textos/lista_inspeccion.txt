@@ -1,0 +1,14 @@
+18_01
+modificado el documento para que las firmas y dni de los evaluados aparezcan debajo de sus respectivas columnas
+
+03_01_2024
+-completado, esperando revisión
+
+28_12
+- validar el tema de los usuarios, su eliminacion y el error de las imagenes por si hay campos sin selecconar
+- revisar el tema de los cargos, si es necesario el autocompletado
+
+22_12
+Se termina con el lista_inspección
+*ojo con la firma del supervisor*
+

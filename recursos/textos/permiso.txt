@@ -1,0 +1,15 @@
+03_01_2024
+- Completado, esperando revisión
+
+29_12
+
+ - casi todo validado, falta seccion de firmas..ok
+ - Necesario implementar las firmas lo antes posible...ok
+ - Validando desde arriba hasta involucrados en la tarea  ...probarconFirmasVerdaderas...ok
+ - Validando datos generales ...ok
+ - Escrutura ...ok
+
+ - (Nota)Para la sección de autorización y supervisión se ha considerado lo siguiente:
+  . Supervisor de la Empresa Ejecutora o Responsable de cuadrilla operativa -> técnicos
+  . Responsable de la cuadrilla operativa -> Roberto 'Estos datos están siendo colocados directamente en el html'
+  . Prevencionista -> Prevencionista 'Estos datos están siendo colocados directamente en el html'

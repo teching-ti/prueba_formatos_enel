@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formato Verificación Previa al Trabajo en Altura</title>
+    <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+
+    <!-- JSPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../estilos/stylesVerificacion.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous" ></script>
+  </head>
+
+  <body>
+    <main class="main">
+      <figure class="logo-title">
+        <a href="../">
+          <img src="../recursos/logo_teching.png" alt="teching_logo" />
+        </a>
+        <div>
+          <span>Verificación Previa al Trabajo en Altura</span>
+        </div>
+      </figure>
+      <section class="form-container">
+        <form class="principal-form" id="principal-form">
+          <h3 class="title-datos-principales">Datos Principales</h3>
+          <div class="form-sup">
+            <div class="form-sup1">
+              <div class="form-sup-e">
+                <label>Proyecto: <input type="text" id="proyecto" value="ENEL DISTRIBUCIÓN BALANCE Y CORRECIÓN CADENA" readonly/></label>
+              </div>
+              <div class="form-sup-e">
+                <label>Empresa Ejecutora: <input type="text" id="empresa" value="TECH INDUSTRIAS GLOBALES"/></label>
+              </div>
+              <div class="form-sup-e">
+                <label>Lugar: <input type="text" id="lugar" /></label>
+              </div>
+            </div>
+            <div class="form-sup2">
+              <div class="form-sup-e">
+                <label>Fecha: <input type="text" id="fecha" readonly/></label>
+              </div>
+              <div class="form-sup-e">
+                <label>Hora: <input type="time" id="hora" /></label>
+              </div>
+              <div class="form-sup-e">
+                <label class="seleccionar_verificador">Verificación realizada por: <select type="text" id="verificador">
+                    <option value="-seleccionar-">- Seleccionar -</option>
+                </select></label>
+              </div>
+              <div class="form-sup-e div-firma-verificador">
+                <!-- Preguntar por el verificador -->
+                <label>Firma: <input type="text" id="verificador_firma" readonly/></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-body">
+
+            <!-- Verificación preliminar -->
+            <h3 class="title-body">Verificación preliminar</h3>
+            <section class="contenedor-elementos verificacion_preliminar">
+                <div class="elementos">
+                    <span>1. Se analizó el riesgo de caida para personal u objetos</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd1" value="1"></label>
+                        <label>No<input type="radio" name="rd1" value="2"></label>
+                        <label>N/A<input type="radio" name="rd1"  value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>2. La actividad ha sido autorizada</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd2"  value="1"></label>
+                        <label>No<input type="radio" name="rd2"  value="2"></label>
+                        <label>N/A<input type="radio" name="rd2" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>3. La gestión de la interferencia ha sido coordinado y está documentado</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd3" value="1"></label>
+                        <label>No<input type="radio" name="rd3" value="2"></label>
+                        <label>N/A<input type="radio" name="rd3" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>4. Se evaluaron posibles interferencias con terceros partes y se implementaron controles de los riesgos relacionados</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd4" value="1"></label>
+                        <label>No<input type="radio" name="rd4" value="2"></label>
+                        <label>N/A<input type="radio" name="rd4" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>5. Se ha definido la zona de trabajo</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd5" value="1"></label>
+                        <label>No<input type="radio" name="rd5" value="2"></label>
+                        <label>N/A<input type="radio" name="rd5" value="3"checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>6. Se ha definido el número de personas que realizan la actividad y todos están autorizados</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd6" value="1"></label>
+                        <label>No<input type="radio" name="rd6" value="2"></label>
+                        <label>N/A<input type="radio" name="rd6" value="3"checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>7. El jefe de cuadrilla está identificado</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd7" value="1"></label>
+                        <label>No<input type="radio" name="rd7" value="2"></label>
+                        <label>N/A<input type="radio" name="rd7" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>8. Los riesgos de actividad han sido descrito a los trabajadores</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd8" value="1"></label>
+                        <label>No<input type="radio" name="rd8" value="2"></label>
+                        <label>N/A<input type="radio" name="rd8" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>9. El área de trabajo está señalizado y delimitado listo para iniciar la actividad</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd9" value="1"></label>
+                        <label>No<input type="radio" name="rd9" value="2"></label>
+                        <label>N/A<input type="radio" name="rd9" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>10. Las condiciones climáticas son las esperadas</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd10" value="1"></label>
+                        <label>No<input type="radio" name="rd10" value="2"></label>
+                        <label>N/A<input type="radio" name="rd10" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>11. Los procedimientos / metodos de trabajo están disponibles</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd11" value="1"></label>
+                        <label>No<input type="radio" name="rd11" value="2"></label>
+                        <label>N/A<input type="radio" name="rd11" value="3" checked></label>
+                    </div>
+                </div>
+            </section>
+
+            
+            <!-- Consideración General -->
+            <h3 class="title-body">Consideración General</h3>
+            <section class="contenedor-elementos consideracion-general">
+                <div class="elementos">
+                    <span>1. Todos los dispositivos personales y colectivas están disponibles, y verificados</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd12" value="1"></label>
+                        <label>No<input type="radio" name="rd12" value="2"></label>
+                        <label>N/A<input type="radio" name="rd12" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>2. La zona en la que hay riesgo de caida de objeto está delimitada y bien definida</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd13" value="1"></label>
+                        <label>No<input type="radio" name="rd13" value="2"></label>
+                        <label>N/A<input type="radio" name="rd13" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>3. Las Herramientas / maquinaria han sido revisadas, están en buenas condiciones y no presentan un riesgo de rotura</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd14" value="1"></label>
+                        <label>No<input type="radio" name="rd14" value="2"></label>
+                        <label>N/A<input type="radio" name="rd14" value="3" checked></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Actividades en más de un nivel de altura -->
+            <h3 class="title-body">Actividades en más de un nivel de altura</h3>
+            <section class="contenedor-elementos actividades">
+                <div class="elementos">
+                    <span>1. Se ha dispuesto el uso de cuerdas de servicios para actividades de distintos niveles</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd15" value="1"></label>
+                        <label>No<input type="radio" name="rd15" value="2"></label>
+                        <label>N/A<input type="radio" name="rd15" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>2. Para el trabajo en varios niveles, se ha proporcionados bolsas o sacos para instrumentos, hay rodapies sobre andamios y 
+                        plataformas elevadoras de trabajo</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd16" value="1"></label>
+                        <label>No<input type="radio" name="rd16" value="2"></label>
+                        <label>N/A<input type="radio" name="rd16" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>3. Se ha revisado la escalera que no tenga daños en peldaños y fibra de vidrio</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd17" value="1"></label>
+                        <label>No<input type="radio" name="rd17" value="2"></label>
+                        <label>N/A<input type="radio" name="rd17" value="3" checked></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Manipulación de cargas -->
+            <h3 class="title-body">Manipulación de cargas</h3>
+            <section class="contenedor-elementos manipulacion-cargas">
+                <div class="elementos">
+                    <span>1. La maniobra de izaje de cargas con máquinas ha sido planificado correctamente</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd18" value="1"></label>
+                        <label>No<input type="radio" name="rd18" value="2"></label>
+                        <label>N/A<input type="radio" name="rd18" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>2. Las eslingas y seguros de los ganchos o pestillos están en buenas condiciones y son adecuados para la carga</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd19" value="1"></label>
+                        <label>No<input type="radio" name="rd19" value="2"></label>
+                        <label>N/A<input type="radio" name="rd19" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>3. Se utilizan cuerdas, grapas o elementos apropiado para guiar las cargas suspendidas</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd20" value="1"></label>
+                        <label>No<input type="radio" name="rd20" value="2"></label>
+                        <label>N/A<input type="radio" name="rd20" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>4. Las máquinas de izaje de carga son adecuadas y se colocan en áreas sólidas con el uso de estabilizadores</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd21" value="1"></label>
+                        <label>No<input type="radio" name="rd21" value="2"></label>
+                        <label>N/A<input type="radio" name="rd21" value="3" checked></label>
+                    </div>
+                </div>
+                <div class="elementos">
+                    <span>5. Los sistemas visuales/acústicos se utilizan para señalar el movimiento de acuerdo con la planificación de la actividad</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd22" value="1"></label>
+                        <label>No<input type="radio" name="rd22" value="2"></label>
+                        <label>N/A<input type="radio" name="rd22" value="3" checked></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Otras consideraciones -->
+            <h3 class="title-body">Otras consideraciones</h3>
+            <section class="contenedor-elementos consideraciones">
+                <div class="elementos">
+                    <span>1. El riesgo es monitoreado y evaluado</span>
+                    <div class="contenedor-opciones">
+                        <label>Si<input type="radio" name="rd23" value="1"></label>
+                        <label>No<input type="radio" name="rd23" value="2"></label>
+                        <label>N/A<input type="radio" name="rd23" value="3" checked></label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section participantes -->
+            <section class="nombres">
+                <div id="contenedor-inputs">
+                    <div class="participantes-header">
+                        <h3>Involucrados en la tarea</h3>
+                        <div id="btn-aniadir">Añadir <i class="fa-solid fa-user-plus"></i></div>
+                    </div>
+                </div>
+                <div class="participante-datos">
+                    <select name="participante-nombre" class="participante-nombre">
+                        <option value="Seleccionar">--Seleccionar Nombre--</option>
+                    </select>
+                    <input type="text" class="participante-cargo" placeholder="Cargo." readonly/>
+                    <input type="text" class="participante-firma" placeholder="Firma." readonly/>
+                    <div class="btn-remover-participante">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                    <hr>
+                </div>
+            </section>
+
+            <!-- Section de observaciones -->
+            <section class="contenedor-observaciones">
+                <span>Observaciones</span>
+                <input type="text" class="observaciones">
+            </section>
+            
+            <section class="contenedor-firma-jefe-cuadrilla">
+                <label class="seleccionar-jefe-cuadrilla">Firma de Jefe de Cuadrilla:
+                    <select type="text" id="select-jefe-cuadrilla">
+                        <option value="- seleccionar -">- Seleccionar -</option>
+                    </select>
+                </label>
+            </section>
+
+            <input type="text" class="firma-jefe-cuadrilla">
+          <div id="btnGenerar"><i class="fa-solid fa-file-pdf fa-lg"></i></div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="../scripts/functionsVerificacionAltura.js"></script>
+  </body>
+</html>

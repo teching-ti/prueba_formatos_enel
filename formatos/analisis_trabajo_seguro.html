@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analisis de Trabajo Seguro - ATS</title>
+    <link
+      rel="icon"
+      href="../recursos/favicon-teching.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../estilos/stylesAts.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main class="main">
+      <figure class="logo-title">
+        <a href="../">
+          <img src="../recursos/logo_teching.png" alt="teching_logo" />
+        </a>
+        <div>
+          <span>Análisis de Trabajo Seguro - ATS</span>
+        </div>
+      </figure>
+
+      <section class="form-container">
+        <form class="principal-form" id="principal-form">
+          <!--Inicia parte superior del Formulario-->
+          <div class="form-sup">
+            <div class="form-sup-e">
+              <label for="empresa">Seleccionar Empresa</label>
+              <select name="empresa" id="empresa">
+                <option selected>- Seleccionar -</option>
+                <option value="TECHING">TECHING</option>
+                <option value="CONTRATISTA1">CONTRATISTA1</option>
+                <option value="CONTRATISTA2">CONTRATISTA2</option>
+              </select>
+            </div>
+            <div class="form-sup-e">
+              <label for="fecha">Fecha: </label
+              ><input type="text" value="00-00-00" id="fecha" readonly />
+            </div>
+          </div>
+          <!--Fin parte superior del Formulario-->
+
+          <!--Inicia Cuerpo del Formulario-->
+          <div class="form-body">
+            <div class="section-body">
+              <label for="trabajo">1. Trabajo a Realizar: </label
+              ><select type="text" id="trabajo">
+                <option value="Balance y Corrección Cadena">1. Balance y Corrección Cadena</option>
+                <option value="Inspección AP y SP ">2. Inspección AP y SP </option>
+                <option value="Balance y Corrección Cadena / Inspección AP">3. Balance y Corrección Cadena / Inspección A</option>
+              </select>
+            </div>
+            <div class="section-body">
+              <label for="lugar">2. Lugar: </label
+              ><input type="text" id="lugar" />
+            </div>
+            <div class="section-body">
+              <label for="responsable-nombre"
+                >3. Responsable del Proyecto: </label
+              >
+              <input type="text" id="responsable-nombre" value="Bernabe Oscco León" readonly>
+            </div>
+            <br />
+            <!-- Seccion de actividades -->
+              <section class="section-actividades">
+                <div id="contenedor-actividades">
+                  <div class="sup-actividades">
+                    <h3>Listado de Actividades</h3>
+                    <button id="btn-aniadir-actividad">
+                      Añadir Actividad
+                      <i class="fa-solid fa-file-circle-plus"></i>
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+            <!-- Seccion de checkbox -->
+
+            <section class="lista-procedimientos">
+              <h3 class="lista-procedimientos-titulo">
+                Procedimientos especiales y permisos requeridos
+              </h3>
+              <div class="contenedor-procedimientos">
+                <div class="procedimiento">
+                  <label for="proc1"
+                    >Manejo de productos químicos peligrosos</label
+                  ><input type="checkbox" id="proc1" value="procedimiento1" />
+                </div>
+                <div class="procedimiento">
+                  <label for="proc2">Bloqueo y etiquetado</label
+                  ><input type="checkbox" id="proc2" />
+                </div>
+                <div class="procedimiento">
+                  <label for="proc3">Ingreso a espacios confinados</label
+                  ><input type="checkbox" id="proc3" />
+                </div>
+                <div class="procedimiento">
+                  <label for="proc4">Trabajos en caliente</label
+                  ><input type="checkbox" id="proc4" />
+                </div>
+                <div class="procedimiento">
+                  <label for="proc5">Izaje de cargas y/o equipos</label
+                  ><input type="checkbox" id="proc5" />
+                </div>
+                <div class="procedimiento">
+                  <label for="proc6">Trabajos en Altura a más 1.8 m</label
+                  ><input type="checkbox" id="proc6" />
+                </div>
+                <div class="procedimiento">
+                  <label for="proc7">Excavación de zanja > 1.5 m.</label
+                  ><input type="checkbox" id="proc7" />
+                </div>
+                <div class="procedimiento">
+                  <label for="proc8">Otro.</label
+                  ><input type="checkbox" id="proc8" />
+                </div>
+              </div>
+            </section>
+
+            <section class="casos-accidentes">
+              <h3>En caso de accidentes:</h3>
+              <div class="clinica">
+                <div class="clinica-datos">
+                  <label for="clinica-nombre">Clínica</label
+                  ><input
+                    type="text"
+                    id="clinica-nombre"
+                    value=""
+                  />
+                </div>
+                <div class="clinica-datos">
+                  <label for="clinica-direccion">Dirección</label
+                  ><input
+                    type="text"
+                    id="clinica-direccion"
+                    value=""
+                  />
+                </div>
+              </div>
+            </section>
+
+            <section class="nombres">
+              <div id="contenedor-inputs">
+                <div class="participantes-header">
+                  <h3>Personal</h3>
+                  <button id="btn-aniadir">
+                    Añadir <i class="fa-solid fa-user-plus"></i>
+                  </button>
+                </div>
+                
+                <div class="participante-datos">
+                  <select name="participante-nombre" class="participante-nombre">
+                    <option value="Seleccionar">--Seleccionar Nombre--</option>
+                  </select>
+                  <input
+                    type="text"
+                    class="participante-dni"
+                    placeholder="DNI."
+                    readonly
+                  />
+
+                  <div class="btn-remover-participante">
+                    <i class="fa-solid fa-trash"></i>
+                  </div>
+
+                  <input
+                    type="text"
+                    class="participante-firma"
+                    placeholder="Firma."
+                    readonly
+                  />
+
+                  <div class="contenedor-ingreso">
+                    <span>Hora de Ingreso</span>
+                    <input type="time" class="h-ingreso" />
+                  </div>
+                  <div class="contenedor-salida">
+                    <span>Hora de Salida</span>
+                    <input type="time" class="h-salida" />
+                  </div>
+                </div>
+              </div>
+            </section>
+            
+            <section id="contenedor-observaciones">
+              <h3>Observaciones</h3>
+              <textarea
+                name="input-observaciones"
+                cols="50"
+                rows="10"
+                id="input-observaciones"
+              ></textarea>
+            </section>
+            <hr />
+
+            <div id="resp" class="responsable-datos">
+              <label for="responsable-trabajo">Responsable del Trabajo</label>
+              <select type="text" id="responsable-trabajo">
+                <option value="seleccionar">-Seleccionar-</option>
+              </select>
+              <input type="text" id="responsable-firma" />
+            </div>
+          </div>
+
+          <!--Fin Cuerpo del Formulario-->
+          <button id="btn-generar">Generar PDF</button>
+        </form>
+      </section>
+    </main>
+    <script src="../scripts/functionsAts.js"></script>
+  </body>
+</html>

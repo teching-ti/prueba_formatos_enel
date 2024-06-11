@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Permiso de Alto Riesgo</title>
+    <link
+      rel="icon"
+      href="../recursos/favicon-teching.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../estilos/stylesPermiso.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main class="main">
+      <figure class="logo-title">
+        <a href="../">
+          <img src="../recursos/logo_teching.png" alt="teching_logo" />
+        </a>
+        <div>
+          <span>Permiso Escrito para Trabajo de Alto Riesgo</span>
+        </div>
+      </figure>
+
+      <section class="form-container">
+        <!--Inicia Cuerpo del Formulario-->
+        <div class="form-body">
+          <section
+            class="datos-generales-documento"
+            id="datos-generales-documento"
+          >
+            <h4>Datos Generales</h4>
+            <div class="dg-contenedor">
+              <div class="dg">
+                <label for="fecha"
+                  >Fecha: <input type="text" id="fecha" readonly /></label
+                ><label for="area">Área: <input type="text" id="area" /></label
+                ><label for="lugar"
+                  >Lugar: <input type="text" id="lugar"
+                /></label>
+              </div>
+              <div class="dg">
+                <label for="empresa"
+                  >Empresa: <input type="text" id="empresa"
+                /></label>
+                <div class="horas">
+                  <label for="h-inicio"
+                    >Hora Inicio<input type="time" id="h-inicio" /></label
+                  ><label for="h-final"
+                    >Hora Final<input type="time" id="h-final"
+                  /></label>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- MANTENIMIENTO ELÉCTRICO -->
+          <section class="contenedor-mantenimiento-electrico">
+            <h3>Mantenimiento Eléctrico</h3>
+            <h5 style="color: red;">* En caso de responder N/A a alguno de los requerimientos, deberá sustentarse en los campos de observaciones</h5>
+            <div class="elemento-mantenimiento-electrico">
+              <div class="elm-sup">
+                <span>Desenergizar el área de trabajo</span>
+                <label>SI<input type="radio" name="me1" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="me1" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsme1"
+                id="obsme1"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-mantenimiento-electrico">
+              <div class="elm-sup">
+                <span>Verificar la ausencia de Energia</span>
+                <label>SI<input type="radio" name="me2" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="me2" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsme2"
+                id="obsme2"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-mantenimiento-electrico">
+              <div class="elm-sup">
+                <span>Trabajos con herramientas aisladas</span>
+                <label>SI<input type="radio" name="me3" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="me3" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsme3"
+                id="obsme3"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-mantenimiento-electrico">
+              <div class="elm-sup">
+                <span>Uso de sistema LOTO/ tarjeta de bloqueo en tableros</span>
+                <label>SI<input type="radio" name="me4" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="me4" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsme4"
+                id="obsme4"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-mantenimiento-electrico">
+              <div class="elm-sup">
+                <span>Personal Capacitado en Riesgos Eléctricos</span>
+                <label>SI<input type="radio" name="me5" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="me5" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsme5"
+                id="obsme5"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-mantenimiento-electrico">
+              <div class="elm-sup">
+                <span>Cuenta con los Epps adecuados para el trabajo</span>
+                <label>SI<input type="radio" name="me6" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="me6" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsme6"
+                id="obsme6"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-mantenimiento-electrico">
+              <div class="elm-sup">
+                <span
+                  >Cuenta con certificado de pruebas de ensayo de guantes
+                  dieléctricos</span
+                >
+                <label>SI<input type="radio" name="me7" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="me7" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsme7"
+                id="obsme7"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+          </section>
+
+          <!-- TRABAJOS EN ALTURA -->
+          <section class="contenedor-trabajo-altura">
+            <h3>Trabajos en Altura</h3>
+            <div class="elemento-trabajo-altura">
+              <div class="eta-sup">
+                <span
+                  >Señalizar con cinta, tranqueras o conos en la zona de
+                  trabajo</span
+                >
+                <label>SI<input type="radio" name="ta1" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ta1" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsta1"
+                id="obsta1"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-trabajo-altura">
+              <div class="eta-sup">
+                <span>Arnés y linea inspeccionado antes de su uso</span>
+                <label>SI<input type="radio" name="ta2" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ta2" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsta2"
+                id="obsta2"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-trabajo-altura">
+              <div class="eta-sup">
+                <span>La escalera cuenta con dispositivos de seguridad</span>
+                <label>SI<input type="radio" name="ta3" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ta3" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsta3"
+                id="obsta3"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-trabajo-altura">
+              <div class="eta-sup">
+                <span>Cuentan con un punto de anclaje de acuerdo a norma</span>
+                <label>SI<input type="radio" name="ta4" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ta4" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsta4"
+                id="obsta4"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-trabajo-altura">
+              <div class="eta-sup">
+                <span>Personal se colocó correctamente el arnés</span>
+                <label>SI<input type="radio" name="ta5" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ta5" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsta5"
+                id="obsta5"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-trabajo-altura">
+              <div class="eta-sup">
+                <span>Personal capacitado para trabajos en altura</span>
+                <label>SI<input type="radio" name="ta6" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ta6" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsta6"
+                id="obsta6"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-trabajo-altura">
+              <div class="eta-sup">
+                <span
+                  >Inspección visual del equipo ( escalera, silla,
+                  gondola)</span
+                >
+                <label>SI<input type="radio" name="ta7" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ta7" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsta7"
+                id="obsta7"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+          </section>
+          <!--Espacios confinados-->
+          <section class="contenedor-espacios-confinados">
+            <h3>Espacios Confinados</h3>
+            <div class="elemento-espacios-confinados">
+              <div class="eec-sup">
+                <span>Disponible comunicación con supervisor</span>
+                <label>SI<input type="radio" name="ec1" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ec1" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsec1"
+                id="obsec1"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-espacios-confinados">
+              <div class="eec-sup">
+                <span>Vigia disponible y con equipo de comunicación</span>
+                <label>SI<input type="radio" name="ec2" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ec2" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsec2"
+                id="obsec2"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-espacios-confinados">
+              <div class="eec-sup">
+                <span
+                  >Se realizó la evaluación y/o medición de atmosfera del
+                  recinto</span
+                >
+                <label>SI<input type="radio" name="ec3" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ec3" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsec3"
+                id="obsec3"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-espacios-confinados">
+              <div class="eec-sup">
+                <span
+                  >Personal capacitado para trabajos en espacios
+                  confinados</span
+                >
+                <label>SI<input type="radio" name="ec4" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ec4" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsec4"
+                id="obsec4"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+            <div class="elemento-espacios-confinados">
+              <div class="eec-sup">
+                <span
+                  >Existe suficiente iluminación para desarrollar los
+                  trabajos</span
+                >
+                <label>SI<input type="radio" name="ec5" value="SI" /></label>
+                <label
+                  >N/A<input type="radio" name="ec5" value="NA" checked
+                /></label>
+              </div>
+              <textarea
+                name="obsec5"
+                id="obsec5"
+                cols="30"
+                rows="10"
+                placeholder="Observaciones."
+              ></textarea>
+            </div>
+          </section>
+
+          <section class="contenedor-descripcion-tarea">
+            <h3>Descripción de la tarea</h3>
+            <textarea
+              name="descripcion-tarea"
+              id="descripcion-tarea"
+              cols="30"
+              rows="10"
+              placeholder="Descripción Tarea"
+            ></textarea>
+          </section>
+
+          <section class="section-todo-personal">
+            <h3>Personal Involucrado en la Tarea</h3>
+            <div class="agregar-personal">
+              Adicionar<i class="fa-solid fa-user-plus"></i>
+            </div>
+
+            <div class="contenedor-personal">
+              <select class="nombre-participante">
+                <option value="Seleccionar">-Responsable-</option>
+              </select>
+              <input
+                type="text"
+                class="ocupacion"
+                placeholder="Ocupacion."
+                readonly
+              />
+              <input type="text" class="firma-personal firma-inicio" />
+              <input type="text" class="firma-personal firma-salida" />
+            </div>
+
+            <!--Empieza el personal que será añadido con javaScript-->
+          </section>
+
+          <section class="contenedor-epp-requerido-general">
+            <h3>EPP Requerido</h3>
+            <div class="contenedor-epp-requerido">
+              <div id="eppc1">
+                <label> EPP Básico<input type="checkbox" class="c1" /></label>
+                <label>
+                  Lentes contra impacto<input type="checkbox" class="c1"
+                /></label>
+                <label> Careta<input type="checkbox" class="c1" /></label>
+                <label>
+                  Traje (Impermeable/ Tyvek)<input type="checkbox" class="c1"
+                /></label>
+                <label>
+                  Traje antiflama<input type="checkbox" class="c1"
+                /></label>
+                <label>
+                  Botas de jebe<input type="checkbox" class="c1"
+                /></label>
+                <label>
+                  Zapatos dieléctricos<input type="checkbox" class="c1"
+                /></label>
+              </div>
+              <div id="eppc2">
+                <label>
+                  Chaleco Salvavidas<input type="checkbox" class="c2"
+                /></label>
+                <label>
+                  Guantes de cuero/ badana<input type="checkbox" class="c2"
+                /></label>
+                <label>
+                  Guantes dieléctricos<input type="checkbox" class="c2" /><input
+                    type="text"
+                    id="guantes-clase"
+                    placeholder="Clase."
+                    maxlength="3"
+                /></label>
+                <label>
+                  Guante de aluminio<input type="checkbox" class="c2"
+                /></label>
+                <label>
+                  Guante anticorte<input type="checkbox" class="c2"
+                /></label>
+                <label> Orejeras<input type="checkbox" class="c2" /></label>
+                <label>
+                  Tapón auditivo<input type="checkbox" class="c2"
+                /></label>
+              </div>
+              <div id="eppc3">
+                <label> Full face<input type="checkbox" class="c3" /></label>
+                <label>
+                  Respirador media cara<input type="checkbox" class="c3"
+                /></label>
+                <label>
+                  Arnés de seguridad<input type="checkbox" class="c3"
+                /></label>
+                <label>
+                  Línea de anclaje<input type="checkbox" class="c3"
+                /></label>
+                <label>
+                  Chaleco salvavidas<input type="checkbox" class="c3"
+                /></label>
+                <label>
+                  Freno de soga<input type="checkbox" class="c3"
+                /></label>
+                <label>
+                  Eslinga de posicionamiento<input type="checkbox" class="c3"
+                /></label>
+                <label for="otros">Otros</label>
+                <textarea
+                  name="otros"
+                  id="otros"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="contenedor-h-e-m">
+            <h3>Herramientas, equipos y materiales</h3>
+            <textarea name="hem" id="hem" cols="30" rows="10"></textarea>
+          </section>
+
+          <section class="contenedor-procedimiento">
+            <h3>Procedimiento</h3>
+            <textarea
+              name="procedimiento"
+              id="procedimiento"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </section>
+
+          <section class="contenedor-autorizacion">
+            <h3>Autorización y Supervisión</h3>
+
+            <div class="contenedor-sup-res">
+              <label
+                >Supervisor de la Empresa Ejecutora o Responsable de cuadrilla
+                operativa<select name="supervisor-responsable" id="supervisor-responsable">
+                  <option value=""></option>
+                </select></label>
+              <input type="text" class="a-s-firma" id="supervisor-firma"/>
+            </div>
+
+            <div class="contenedor-resp">
+              <label
+                >Responsable de la cuadrilla operativa
+                <select
+                  name="responsable"
+                  id="responsable"
+                >
+                  <option value=""></option></select
+              ></label>
+              <input type="text" class="a-s-firma"  />
+            </div>
+
+            <div class="contenedor-prev-res">
+              <label
+                >Prevencionista de Riesgos o Responsable de la cuadrilla
+                operativa
+                <select name="prevencionista"
+              id="prevencionista">
+              <option value=""></option></select></label>
+              <input type="text" class="a-s-firma" id="prevencionista-firma" />
+            </div>
+          </section>
+        </div>
+      </section>
+      <div id="btnGenerar"><i class="fa-solid fa-file-pdf fa-lg"></i></div>
+    </main>
+    <script src="../scripts/functionsPetar.js"></script>
+  </body>
+</html>
