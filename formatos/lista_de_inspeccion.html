@@ -5,28 +5,14 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Inspección Diaria</title>
-    <link
-      rel="icon"
-      href="../recursos/favicon-teching.png"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="../estilos/stylesListIns.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <script
-      src="https://code.jquery.com/jquery-3.7.1.js"
-      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous" ></script>
   </head>
   <body>
     <main class="main">
@@ -42,10 +28,7 @@
       <section class="form-container">
         <!--Inicia Cuerpo del Formulario-->
         <div class="form-body">
-          <section
-            class="datos-generales-documento"
-            id="datos-generales-documento"
-          >
+          <section class="datos-generales-documento" id="datos-generales-documento">
             <div class="contenedor-empresa">
               <label for="empresa">Seleccionar Empresa</label>
               <select name="empresa" id="empresa" class="clase-empresa">
@@ -56,19 +39,20 @@
               </select>
             </div>
             <div class="contenedor-fecha">
-              <label for="fecha">Fecha: </label
-              ><input type="text" value="00-00-00" id="fecha" readonly />
+              <label for="fecha">Fecha: </label>
+              <input type="text" value="00-00-00" id="fecha" readonly />
             </div>
             <div class="contenedor-hora">
               <label for="hora">Hora: </label>
               <input type="time" id="hora" />
             </div>
             <div class="contenedor-trabajo">
-              <label for="trabajo">Trabajo a Realizar: </label
-              ><input type="text" id="trabajo" />
+              <label for="trabajo">Trabajo a Realizar: </label>
+              <input type="text" id="trabajo" />
             </div>
             <div class="contendor-lugar">
-              <label for="lugar">Lugar: </label><input type="text" id="lugar" />
+              <label for="lugar">Lugar: </label>
+              <input type="text" id="lugar" />
             </div>
             <div class="contenedor-responsable">
               <label for="responsable-nombre">Responsable: </label>
@@ -88,12 +72,7 @@
 
             <div class="contenedor-comentarios">
               <label for="comentarios">Comentarios</label>
-              <textarea
-                name="comentarios"
-                id="comentarios"
-                cols="30"
-                rows="10"
-              ></textarea>
+              <textarea name="comentarios" id="comentarios" cols="30" rows="10" ></textarea>
             </div>
           </section>
 
@@ -150,21 +129,20 @@
               </table>
 
               <div class="elementos-evaluar">
-                <!-- EPP -->
-                <div class="contenedor-EPP">
+                <!-- EPP ESPECIAL -->
+                <div class="contenedor-EPP-ESPECIAL">
                   <h4 class="elemento-titulo-general">
-                    * EQUIPO DE PROTECCIÓN PERSONAL
+                    <span>*</span> EQUIPO DE PROTECCIÓN PERSONAL ESPECIAL
                   </h4>
                   <ul class="lista">
-                    <!-- camisa -->
+                    <!-- Guantes dieléctricos -->
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">
-                        1. Camisa de Verano/Invierno
+                        1. Guantes dieléctricos BT-Clase 0, Tipo |
                       </h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select name="cantidad" class="camisa-cantidad">
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="guantes-dielectricos-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -172,59 +150,27 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="camisa-verano-invierno"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="camisa-verano-invierno"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="camisa-verano-invierno"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="camisa-verano-invierno"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="camisa-verano-invierno"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="guantes-dielectricos" value="B" /></label>
+                          <label>M<input type="radio" name="guantes-dielectricos" value="M" /></label>
+                          <label>NT<input type="radio" name="guantes-dielectricos" value="NT"/></label>
+                          <label>NR<input type="radio" name="guantes-dielectricos" value="NR"checked /></label>
+                          <label>FV<input type="radio" name="guantes-dielectricos" value="FV"/></label>
                         </span>
                       </div>
                       <div class="contenedor-codigo-fv">
                         <label>Código<input type="text" class="cod" /></label>
-                        <label
-                          >F. Vencimiento
+                        <label>F. Vencimiento
                           <input type="date" class="vencimiento" />
                         </label>
                       </div>
                     </li>
-                    <!-- pantalón de verano -->
+                    <!-- Manta Dieléctrica -->
                     <li class="elemento-lista">
-                      <h4 class="elemento-titulo">2. Pantalón de Verano</h4>
+                      <h4 class="elemento-titulo">2. Manta dieléctrica</h4>
                       <div class="elemento-cuerpo">
                         <label class="elemento-cantidad"
                           >Cantidad:
-                          <select name="cantidad" class="pantalon-cantidad">
+                          <select name="cantidad" class="manta-dielectrica-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -232,42 +178,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="pantalon-verano-invierno"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="pantalon-verano-invierno"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="pantalon-verano-invierno"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="pantalon-verano-invierno"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="pantalon-verano-invierno"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="manta-dielectrica" value="B" /></label>
+                          <label>M<input type="radio" name="manta-dielectrica" value="M" /></label>
+                          <label>NT<input type="radio" name="manta-dielectrica" value="NT" /></label>
+                          <label>NR<input type="radio" name="manta-dielectrica" value="NR" checked /></label>
+                          <label>FV<input type="radio" name="manta-dielectrica" value="FV" /></label>
                         </span>
                       </div>
                       <div class="contenedor-codigo-fv">
@@ -278,16 +193,12 @@
                         </label>
                       </div>
                     </li>
-                    <!-- camisa antiflama -->
+                    <!-- Alfombra dieléctrica -->
                     <li class="elemento-lista">
-                      <h4 class="elemento-titulo">3. Camisa antiflama</h4>
+                      <h4 class="elemento-titulo">3. Alfombra Dieléctrica</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="camisa-antiflama-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="alfombra-dielectrica-cantidad" >
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -295,62 +206,26 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="camisa-antiflama"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="camisa-antiflama"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="camisa-antiflama"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="camisa-antiflama"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="camisa-antiflama"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="alfombra-dielectrica" value="B" /></label>
+                          <label>M<input type="radio" name="alfombra-dielectrica" value="M" /></label>
+                          <label>NT<input type="radio" name="alfombra-dielectrica" value="NT" /></label>
+                          <label>NR<input type="radio" name="alfombra-dielectrica" value="NR" checked /></label>
+                          <label>FV<input type="radio" name="alfombra-dielectrica" value="FV" /></label>
                         </span>
                       </div>
                       <div class="contenedor-codigo-fv">
                         <label>Código<input type="text" class="cod" /></label>
-                        <label
-                          >F. Vencimiento
+                        <label>F. Vencimiento
                           <input type="date" class="vencimiento" />
                         </label>
                       </div>
                     </li>
-                    <!-- pantalon antiflama -->
+                    <!-- Pertiga -->
                     <li class="elemento-lista">
-                      <h4 class="elemento-titulo">4. Pantalón antiflama</h4>
+                      <h4 class="elemento-titulo">4. Pertiga</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="pantalon-antiflama-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="pertiga-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -358,42 +233,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="pantalon-antiflama"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="pantalon-antiflama"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="pantalon-antiflama"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="pantalon-antiflama"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="pantalon-antiflama"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="pertiga" value="B"/></label>
+                          <label>M<input type="radio" name="pertiga" value="M"/></label>
+                          <label>NT<input type="radio" name="pertiga" value="NT"/></label>
+                          <label>NR<input type="radio" name="pertiga" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="pertiga" value="FV"/></label>
                         </span>
                       </div>
                       <div class="contenedor-codigo-fv">
@@ -404,16 +248,12 @@
                         </label>
                       </div>
                     </li>
-                    <!-- zapatos dieléctricos -->
+                    <!-- Arnés de seguridad con accesorios -->
                     <li class="elemento-lista">
-                      <h4 class="elemento-titulo">5. Zapatos Dieléctricos</h4>
+                      <h4 class="elemento-titulo">5. Arnés de seguridad con accesorios</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="zapatos-dielectricos-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="arnes-seguridad-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -421,52 +261,35 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="zapatos-dielectricos"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="zapatos-dielectricos"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="zapatos-dielectricos"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="zapatos-dielectricos"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="zapatos-dielectricos"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="argnes-seguridad" value="B"/></label>
+                          <label>M<input type="radio" name="argnes-seguridad" value="M"/></label>
+                          <label>NT<input type="radio" name="argnes-seguridad" value="NT"/></label>
+                          <label>NR<input type="radio" name="argnes-seguridad" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="argnes-seguridad" value="FV"/></label>
                         </span>
                       </div>
                       <div class="contenedor-codigo-fv">
                         <label>Código<input type="text" class="cod" /></label>
-                        <label
-                          >F. Vencimiento
-                          <input type="date" class="vencimiento" />
-                        </label>
+                        <label>F. Vencimiento<input type="date" class="vencimiento" /></label>
                       </div>
                     </li>
+                  </ul>
+                </div>
+                <!-- AQUI TERMINA EL GRUPO DE EQUIPO DE PORTECION PERSONAL ESPECIAL -->
+                <div class="contenedor-EQUIPO-ESPECIALES">
+                  <h4 class="elemento-titulo-general">
+                    <span>*</span> EQUIPO ESPECIAL
+                  </h4>
+                  <ul class="lista">
+                    <li class="elemento-lista">
+                      <h4 class="elemento-titulo">
+                        1. Revelador de Tensión BT
+                      </h4>
+                    </li>
+                  </ul>
+                </div>
+                    <!-- AQUI INICIA EQUUIPOS ESPECIALES -->
+
                     <!-- Chaleco preventivo de seguridad -->
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">
@@ -1358,9 +1181,7 @@
                           <input type="date" class="vencimiento" />
                         </label>
                       </div>
-                    </li>
-                  </ul>
-                </div>
+
                 <hr />
 
                 <!-- Herramientas -->
@@ -4142,6 +3963,7 @@
               </label>
             </div>
           </div>
+
         </div>
       </section>
       <div class="terminar" id="btnGenerar">

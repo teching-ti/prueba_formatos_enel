@@ -221,6 +221,8 @@ function agregarContenedorPersona(numUser) {
   nuevoContenedor.classList.add("clon");
   nuevoContenedor.classList.add(numUser)
 
+  /* CLONAR ELEMENTOS DEL FORMATO ACTUALIZADO */
+
   // itera sobre los radio buttons que aparecerán dentro del nuevo contenedor de usuarios y cambia sus atributos "name"
   // ya que los radio buttons deben tener nombres específicos
   nuevoContenedor
@@ -1280,10 +1282,10 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
     /*var blob = doc.output("blob");
     window.open(URL.createObjectURL(blob));*/
 
-    dia = dia.replace(/\//g, "_")
+    // dia = dia.replace(/\//g, "_")
     //console.log(dia)
-    const nombreDocumento = `lista_inspeccion_${dia}.pdf` 
-    doc.save(nombreDocumento)
+    // const nombreDocumento = `lista_inspeccion_${dia}.pdf` 
+    // doc.save(nombreDocumento)
     //endodear el resultado del pdf
     /*var file_data = btoa(doc.output())
     var form_data = new FormData()
