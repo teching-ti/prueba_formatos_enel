@@ -5,23 +5,13 @@
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Permiso de Alto Riesgo</title>
-    <link
-      rel="icon"
-      href="../recursos/favicon-teching.png"
-      type="image/x-icon"
-    />
+    <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon"/>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link rel="stylesheet" href="../estilos/stylesPermiso.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <script
   src="https://code.jquery.com/jquery-3.7.1.js"
   integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -41,30 +31,19 @@
       <section class="form-container">
         <!--Inicia Cuerpo del Formulario-->
         <div class="form-body">
-          <section
-            class="datos-generales-documento"
-            id="datos-generales-documento"
-          >
+          <section class="datos-generales-documento" id="datos-generales-documento">
             <h4>Datos Generales</h4>
             <div class="dg-contenedor">
               <div class="dg">
-                <label for="fecha"
-                  >Fecha: <input type="text" id="fecha" readonly /></label
-                ><label for="area">Área: <input type="text" id="area" /></label
-                ><label for="lugar"
-                  >Lugar: <input type="text" id="lugar"
-                /></label>
+                <label for="fecha">Fecha: <input type="text" id="fecha" readonly /></label>
+                <label for="area">Área: <input type="text" id="area" /></label>
+                <label for="lugar">Lugar: <input type="text" id="lugar"/></label>
               </div>
               <div class="dg">
-                <label for="empresa"
-                  >Empresa: <input type="text" id="empresa"
-                /></label>
+                <label for="empresa">Empresa: <input type="text" id="empresa"/></label>
                 <div class="horas">
-                  <label for="h-inicio"
-                    >Hora Inicio<input type="time" id="h-inicio" /></label
-                  ><label for="h-final"
-                    >Hora Final<input type="time" id="h-final"
-                  /></label>
+                  <label for="h-inicio">Hora Inicio<input type="time" id="h-inicio"/></label>
+                  <label for="h-final">Hora Final<input type="time" id="h-final"/></label>
                 </div>
               </div>
             </div>
@@ -78,108 +57,55 @@
               <div class="elm-sup">
                 <span>Desenergizar el área de trabajo</span>
                 <label>SI<input type="radio" name="me1" value="SI" /></label>
-                <label
-                  >N/A<input type="radio" name="me1" value="NA" checked
-                /></label>
+                <label>N/A<input type="radio" name="me1" value="NA" checked/></label>
               </div>
-              <textarea
-                name="obsme1"
-                id="obsme1"
-                cols="30"
-                rows="10"
-                placeholder="Observaciones."
-              ></textarea>
+              <textarea name="obsme1" id="obsme1" cols="30" rows="10" placeholder="Observaciones."></textarea>
             </div>
             <div class="elemento-mantenimiento-electrico">
               <div class="elm-sup">
                 <span>Verificar la ausencia de Energia</span>
                 <label>SI<input type="radio" name="me2" value="SI" /></label>
-                <label
-                  >N/A<input type="radio" name="me2" value="NA" checked
-                /></label>
+                <label>N/A<input type="radio" name="me2" value="NA" checked/></label>
               </div>
-              <textarea
-                name="obsme2"
-                id="obsme2"
-                cols="30"
-                rows="10"
-                placeholder="Observaciones."
-              ></textarea>
+              <textarea name="obsme2" id="obsme2" cols="30" rows="10" placeholder="Observaciones."></textarea>
             </div>
             <div class="elemento-mantenimiento-electrico">
               <div class="elm-sup">
                 <span>Trabajos con herramientas aisladas</span>
                 <label>SI<input type="radio" name="me3" value="SI" /></label>
-                <label
-                  >N/A<input type="radio" name="me3" value="NA" checked
-                /></label>
+                <label>N/A<input type="radio" name="me3" value="NA" checked /></label>
               </div>
-              <textarea
-                name="obsme3"
-                id="obsme3"
-                cols="30"
-                rows="10"
-                placeholder="Observaciones."
-              ></textarea>
+              <textarea name="obsme3" id="obsme3" cols="30" rows="10" placeholder="Observaciones."></textarea>
             </div>
             <div class="elemento-mantenimiento-electrico">
               <div class="elm-sup">
                 <span>Uso de sistema LOTO/ tarjeta de bloqueo en tableros</span>
                 <label>SI<input type="radio" name="me4" value="SI" /></label>
-                <label
-                  >N/A<input type="radio" name="me4" value="NA" checked
-                /></label>
+                <label>N/A<input type="radio" name="me4" value="NA" checked/></label>
               </div>
-              <textarea
-                name="obsme4"
-                id="obsme4"
-                cols="30"
-                rows="10"
-                placeholder="Observaciones."
-              ></textarea>
+              <textarea name="obsme4" id="obsme4" cols="30" rows="10" placeholder="Observaciones."></textarea>
             </div>
             <div class="elemento-mantenimiento-electrico">
               <div class="elm-sup">
                 <span>Personal Capacitado en Riesgos Eléctricos</span>
                 <label>SI<input type="radio" name="me5" value="SI" /></label>
-                <label
-                  >N/A<input type="radio" name="me5" value="NA" checked
-                /></label>
+                <label>N/A<input type="radio" name="me5" value="NA" checked/></label>
               </div>
-              <textarea
-                name="obsme5"
-                id="obsme5"
-                cols="30"
-                rows="10"
-                placeholder="Observaciones."
-              ></textarea>
+              <textarea name="obsme5" id="obsme5" cols="30" rows="10" placeholder="Observaciones."></textarea>
             </div>
             <div class="elemento-mantenimiento-electrico">
               <div class="elm-sup">
                 <span>Cuenta con los Epps adecuados para el trabajo</span>
                 <label>SI<input type="radio" name="me6" value="SI" /></label>
-                <label
-                  >N/A<input type="radio" name="me6" value="NA" checked
-                /></label>
+                <label>N/A<input type="radio" name="me6" value="NA" checked/></label>
               </div>
-              <textarea
-                name="obsme6"
-                id="obsme6"
-                cols="30"
-                rows="10"
-                placeholder="Observaciones."
-              ></textarea>
+              <textarea name="obsme6" id="obsme6" cols="30" rows="10" placeholder="Observaciones."></textarea>
             </div>
             <div class="elemento-mantenimiento-electrico">
               <div class="elm-sup">
-                <span
-                  >Cuenta con certificado de pruebas de ensayo de guantes
-                  dieléctricos</span
-                >
+                <span>Cuenta con certificado de pruebas de ensayo de guantes dieléctricos</span>
                 <label>SI<input type="radio" name="me7" value="SI" /></label>
-                <label
-                  >N/A<input type="radio" name="me7" value="NA" checked
-                /></label>
+                <label>N/A<input type="radio" name="me7" value="NA" checked /></label>
               </div>
               <textarea
                 name="obsme7"
