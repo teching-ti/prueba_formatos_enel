@@ -1,41 +1,3 @@
-let auto = document.getElementById("vehiculo-auto")
-let moto = document.getElementById("vehiculo-moto")
-let sectionAuto = document.querySelector(".selectores")
-let sectionMoto = document.querySelector(".selectores-motorizado")
-
-let eppMoto1 = document.getElementsByName("e9")
-let eppMoto2 = document.getElementsByName("e10")
-let eppMoto3 = document.getElementsByName("e11")
-
-auto.addEventListener("click", function(){
-    sectionAuto.style.display = "block"
-    sectionMoto.style.display = "none"
-
-    
-    eppMoto1[3].checked = true
-    eppMoto1[0].checked = false
-
-    eppMoto2[3].checked = true
-    eppMoto2[0].checked = false
-
-    eppMoto3[3].checked = true
-    eppMoto3[0].checked = false
-})
-
-moto.addEventListener("click", function(){
-    sectionMoto.style.display = "grid"
-    sectionAuto.style.display = "none"
-
-    eppMoto1[3].checked = false
-    eppMoto1[0].checked = true
-
-    eppMoto2[3].checked = false
-    eppMoto2[0].checked = true
-
-    eppMoto3[3].checked = false
-    eppMoto3[0].checked = true
-})
-
 //alert("Los elementos marcados de color rojo con un (*), son obligatorios")
 let fecha = document.getElementById("fecha")
 let fechaActual= new Date().toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })
@@ -56,7 +18,6 @@ function validarFechas(campoFecha){
         fechaIngresada.value = ""// Limpiar el campo de entrada
         return false
     }
-
     return true
 
 }
@@ -98,7 +59,6 @@ fetch("../scripts/datos.json")
 
   //cargar nombre de los choferes
   function llenarSelect(selector){
-
     //evaluacion de tecnicos para el posible llenado
     users.tecnico.forEach(c=>{
         if(c.vehiculo!=""){
@@ -230,7 +190,7 @@ fetch("../scripts/datos.json")
                 conductorSeleccionado = conductorPrevencionista;
             }
 
-            // Si se ha obtenido un valor se realiza lo siguiente
+            // si se ha obtenido un valor se realiza lo siguiente
             if (conductorSeleccionado) {
                 // Se carga la placa en la casilla de placa
                 elementoPlaca.value = conductorSeleccionado.placa;
@@ -281,8 +241,6 @@ async function loadImage(url) {
       xhr.send();
     });
   }
-    
-    
 
   let btnGenerar = document.getElementById("btnGenerar")
 
@@ -297,7 +255,7 @@ async function loadImage(url) {
 
     let evaluar = true
     function evaluarDatosGenerales(){
-        doc.setFontSize(6)
+        doc.setFontSize(5)
         let dia = fecha
         let placa = document.getElementById("placa").value.toUpperCase()
         let tarjeta = document.getElementById("tarjeta-propiedad").value
@@ -326,10 +284,10 @@ async function loadImage(url) {
         let vencimiento = vSeparado.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })
 
             //fecha de inspeccion
-            doc.text(fecha.value, 177, 36)
+            doc.text(fecha.value, 173, 36)
 
             if(empresa!=""){
-                doc.text(empresa, 40.5, 24.5)
+                doc.text(empresa, 44, 25)// +3, 0.5
             }else{
                 alert("Complete el campo de empresa")
                 evaluar = false
@@ -337,7 +295,7 @@ async function loadImage(url) {
             }
 
             if(placa!=""){
-                doc.text(placa, 40.5, 27.5)
+                doc.text(placa, 44, 28)
             }else{
                 alert("Complete el campo de la placa del vehículo")
                 evaluar = false
@@ -345,7 +303,7 @@ async function loadImage(url) {
             }
 
             if(tarjeta!=""){
-                doc.text(tarjeta, 40.5, 30.5)
+                doc.text(tarjeta, 44, 31)
             }else{
                 alert("Complete el campo de tarjeta de propiedad")
                 evaluar = false
@@ -353,7 +311,7 @@ async function loadImage(url) {
             }
 
             if(vRevTecF!="Invalid Date"){
-                doc.text(vRevTecF, 40.5, 38)
+                doc.text(vRevTecF, 44, 38)
             }else{
                 alert("Complete el campo de vencimiento de revisión técnica")
                 evaluar = false
@@ -361,7 +319,7 @@ async function loadImage(url) {
             }
             
             if(numBrevete!=""){
-                doc.text(numBrevete, 165, 27.5)
+                doc.text(numBrevete, 162, 28)
             }else{
                 alert("Complete el campo de número de brevete")
                 evaluar = false
@@ -369,7 +327,7 @@ async function loadImage(url) {
             }
 
             if(categoria!=""){
-                doc.text(categoria, 165, 30.4)
+                doc.text(categoria, 162, 31)
             }else{
                 alert("Complete el campo de categoría")
                 evaluar = false
@@ -377,14 +335,14 @@ async function loadImage(url) {
             }
             
             if(lentes.checked){
-                doc.text("x", 178.5, 21)
+                doc.text("x", 174.5, 21.5)
             }else{
-                doc.text("x", 191.3, 21)
+                doc.text("x", 187, 21.5)
             }
 
             if(inicio!=""){
                 doc.setFontSize(4.5)
-                doc.text(inicio, 176.5, 24.5)
+                doc.text(inicio, 173.5, 24.8)
             }else{
                 alert("Complete el campo de km de inicio")
                 evaluar = false
@@ -402,8 +360,8 @@ async function loadImage(url) {
             }*/
 
             if(soat!=""){
-                doc.setFontSize(6)
-                doc.text(soat, 87, 27.5)
+                doc.setFontSize(5)
+                doc.text(soat, 92, 28)
             }else{
                 alert("Complete el campo de km final")
                 evaluar = false
@@ -411,8 +369,8 @@ async function loadImage(url) {
             }
 
             if(eSoat!=""){
-                doc.setFontSize(6)
-                doc.text(eSoat, 87, 30.5)
+                doc.setFontSize(5)
+                doc.text(eSoat, 92, 31)
             }else{
                 alert("Complete el campo de empresa SOAT")
                 evaluar = false
@@ -420,8 +378,8 @@ async function loadImage(url) {
             }
 
             if(vSoatF!="Invalid Date"){
-                doc.setFontSize(6)
-                doc.text(vSoatF, 87, 33.5)
+                doc.setFontSize(5)
+                doc.text(vSoatF, 92, 33.5)
             }else{
                 alert("Complete el campo de vencimiento de soat")
                 evaluar = false
@@ -429,17 +387,17 @@ async function loadImage(url) {
             }
 
             if(horaInspeccion!=""){
-                doc.setFontSize(6)
-                doc.text(horaInspeccion, 177, 39)
+                doc.setFontSize(5)
+                doc.text(horaInspeccion, 173, 40)
             }else{
-                alert("Complete el campo de empresa SOAT")
+                alert("Complete el campo de hora de inspeccion")
                 evaluar = false
                 return
             }
 
             if(vencimiento!="Invalid Date"){
-                doc.setFontSize(6)
-                doc.text(vencimiento, 165, 33.5)
+                doc.setFontSize(5)
+                doc.text(vencimiento, 162, 33.5)
             }else{
                 alert("Complete el campo de empresa SOAT")
                 evaluar = false
@@ -460,8 +418,8 @@ async function loadImage(url) {
         let firmaConductor = document.getElementById("firma-conductor").value
 
         if(nombreConductor!="" && firmaConductor!=""){
-            doc.text(nombreConductor, 40.5, 21.4)
-            doc.addImage(firmaConductor, "PNG", 36, 268, 35, 5.8)
+            doc.text(nombreConductor, 44, 22)
+            doc.addImage(firmaConductor, "PNG", 39, 258, 35, 6)
         }else{
             evaluar = false
         }
@@ -473,11 +431,11 @@ async function loadImage(url) {
             return false
         }
     }
-
+    
     function evaluarObservaciones(){
         let observaciones = document.getElementById("observaciones").value
-        doc.text(observaciones, 6.5, 255.4, {
-            maxWidth: 192,
+        doc.text(observaciones, 10, 247.5, {
+            maxWidth: 185,
             lineHeightFactor: 1.48, 
             align: "justify"
         })
@@ -485,9 +443,9 @@ async function loadImage(url) {
     }
 
     function evaluarTodoVehiculo(){
-        let positionY = 58
-        let contarSaltoX = 0
-        let contadorEspacio = 0
+        let positionY = 61;
+        let contarSaltoX = 0;
+        let contadorEspacio = 0;
 
         doc.setFontSize(4.6)
         //evaluando los radio button
@@ -499,34 +457,26 @@ async function loadImage(url) {
                 if(i.checked){
 
                     if(contarSaltoX<10){
-                        doc.text(i.value, 54, positionY,{ align: "center"})
+                        doc.text(i.value, 58, positionY,{ align: "center"})
                     }else if(10<=contarSaltoX && contarSaltoX<=19){
-                        doc.text(i.value, 122, positionY,{ align: "center"})
+                        doc.text(i.value, 121, positionY,{ align: "center"})
                     }else if(19<contarSaltoX){
-                        doc.text(i.value, 182, positionY,{ align: "center"})
+                        doc.text(i.value, 178, positionY,{ align: "center"})
                     }
                     
-                    if(contadorEspacio==4){
-                        positionY+=5
-                    }else if(contadorEspacio==14){
-                        positionY+=5
-                    }else if(contadorEspacio==24){
-                        positionY+=5
-                    }else{
-                        positionY+=3
-                    }
+                    positionY+=3.22
                     
                     contarSaltoX+=1
                     contadorEspacio+=1
 
                     if(contarSaltoX%10==0){
-                        positionY= 58
+                        positionY= 61
                     }
                 }
             })
         })
 
-        positionY = 58
+        positionY = 61
         contarSaltoX = 0
         contadorEspacio = 0
 
@@ -536,28 +486,21 @@ async function loadImage(url) {
             selectEvaluar.forEach((se)=>{
                 
                 if(contarSaltoX<10){
-                    doc.text(se.value, 63, positionY,{ align: "center"})
+                    doc.text(se.value, 66.5, positionY,{ align: "center"})
                 }else if(10<=contarSaltoX && contarSaltoX<=19){
-                    doc.text(se.value, 133, positionY,{ align: "center"})
+                    doc.text(se.value, 131.5, positionY,{ align: "center"})
                 }else if(19<contarSaltoX){
-                    doc.text(se.value, 197, positionY,{ align: "center"})
+                    doc.text(se.value, 193, positionY,{ align: "center"})
                 }
                 
-                if(contadorEspacio==4){
-                    positionY+=5
-                }else if(contadorEspacio==14){
-                    positionY+=5
-                }else if(contadorEspacio==24){
-                    positionY+=5
-                }else{
-                    positionY+=3
-                }
+                positionY+=3.22
+
                 
                 contarSaltoX+=1
                 contadorEspacio+=1
 
                 if(contarSaltoX%10==0){
-                    positionY = 58
+                    positionY = 61
                 }
             })
         })
@@ -566,25 +509,25 @@ async function loadImage(url) {
 
     function evaluarLLantas(){
         let cl = document.querySelector(".contenedor-llantas").querySelectorAll(".selector-elemento")
-        positionLlantasY = 93.5
+        positionLlantasY = 96.8
         cl.forEach(c=>{
             inputsEvaluar = c.querySelectorAll("input")
             inputsEvaluar.forEach((i)=>{
                 if(i.checked){
-                    doc.text(i.value, 54, positionLlantasY,{
+                    doc.text(i.value, 58, positionLlantasY,{
                         align: "center"
                     })
-                    positionLlantasY+=3
+                    positionLlantasY+=3.22
                 }
             })
         })
 
-        positionLlantasY = 93.5
+        positionLlantasY = 96.8
         cl.forEach(c=>{
             selectEvaluar = c.querySelectorAll("select")
             selectEvaluar.forEach((i)=>{
-                doc.text(i.value, 63, positionLlantasY,{ align: "center"} )
-                positionLlantasY += 3
+                doc.text(i.value, 66.5, positionLlantasY,{ align: "center"} )
+                positionLlantasY += 3.22
             })
         })
 
@@ -594,25 +537,25 @@ async function loadImage(url) {
 
     function evaluarAccesorios(){
         let cl = document.querySelector(".contenedor-accesorios").querySelectorAll(".selector-elemento")
-        positionY = 93.5
+        positionY = 96.8
         cl.forEach(c=>{
             inputsEvaluar = c.querySelectorAll("input")
             inputsEvaluar.forEach((i)=>{
                 if(i.checked){
-                    doc.text(i.value, 122, positionY,{
+                    doc.text(i.value, 121, positionY,{
                         align: "center"
                     })
-                    positionY+=3
+                    positionY+=3.22
                 }
             })
         })
 
-        positionY = 93.5
+        positionY = 96.8
         cl.forEach(c=>{
             selectEvaluar = c.querySelectorAll("select")
             selectEvaluar.forEach((i)=>{
-                doc.text(i.value, 133, positionY,{ align: "center"} )
-                positionY += 3
+                doc.text(i.value, 131.5, positionY,{ align: "center"} )
+                positionY += 3.22
             })
         })
 
@@ -621,142 +564,55 @@ async function loadImage(url) {
 
     function evaluarTapas(){
         let cl = document.querySelector(".contenedor-tapas").querySelectorAll(".selector-elemento")
-        positionY = 93.5
+        positionY = 96.8
         cl.forEach(c=>{
             inputsEvaluar = c.querySelectorAll("input")
             inputsEvaluar.forEach((i)=>{
                 if(i.checked){
-                    doc.text(i.value, 182, positionY,{
+                    doc.text(i.value, 178, positionY,{
                         align: "center"
                     })
-                    positionY+=3
+                    positionY+=3.22
                 }
             })
         })
 
-        positionY = 93.5
+        positionY = 96.8
         cl.forEach(c=>{
             selectEvaluar = c.querySelectorAll("select")
             selectEvaluar.forEach((i)=>{
-                doc.text(i.value, 197, positionY,{ align: "center"} )
-                positionY += 3
+                doc.text(i.value, 193, positionY,{ align: "center"} )
+                positionY += 3.22
             })
         })
 
-        return true
-    }
-
-    function evaluarMoto(){
-        doc.setFontSize(4.6)
-        
-        let positionY = 114.5
-        let contarSaltoX = 0
-        let contadorEspacio = 0
-
-        let motos = document.querySelectorAll(".selector-motorizado")
-        motos.forEach(mt=>{
-            inputsEvaluar = mt.querySelectorAll("input")
-            inputsEvaluar.forEach(i=>{
-                if(i.checked){
-
-                    if(contarSaltoX<4){
-                        doc.text(i.value, 54, positionY, {
-                            align: "center"
-                        })
-                    }else if(4<=contarSaltoX && contarSaltoX<=7){
-                        doc.text(i.value, 122, positionY, {
-                            align: "center"
-                        })
-                    }else{
-                        doc.text(i.value, 182, positionY, {
-                            align: "center"
-                        })
-                    }
-                    
-                    if(contadorEspacio==2){
-                        positionY+=6
-                    }else if(contadorEspacio==6){
-                        positionY+=6
-                    }else{
-                        positionY+=3
-                    }
-
-                    contarSaltoX+=1
-                    contadorEspacio+=1
-
-                    if(contarSaltoX%4==0){
-                        positionY=114.5
-                    }
-
-                }
-            })
-        })
-
-        positionY = 114.5
-        contarSaltoX = 0
-        contadorEspacio = 0
-
-        motos.forEach(mt=>{
-            inputsEvaluar = mt.querySelectorAll("select")
-            inputsEvaluar.forEach(i=>{
-       
-                if(contarSaltoX<4){
-                    doc.text(i.value, 63, positionY, {
-                        align: "center"
-                    })
-                }else if(4<=contarSaltoX && contarSaltoX<=7){
-                    doc.text(i.value, 133, positionY, {
-                        align: "center"
-                    })
-                }else{
-                    doc.text(i.value, 197, positionY, {
-                        align: "center"
-                    })
-                }
-                    
-                if(contadorEspacio==2){
-                    positionY+=6
-                }else if(contadorEspacio==6){
-                    positionY+=6
-                }else{
-                    positionY+=3
-                }
-
-                contarSaltoX+=1
-                contadorEspacio+=1
-
-                if(contarSaltoX%4==0){
-                    positionY=114.5
-                }
-            })
-        })
         return true
     }
 
     function evaluarEpp(){
         let contenedoresEpp = document.querySelectorAll(".elemento-epp")
-        positionY = 144
+        positionY = 120
         contenedoresEpp.forEach(c=>{
             elemento = c.querySelectorAll("input")
             elemento.forEach(i=>{
                 if(i.checked){
-                    doc.text(i.value, 58, positionY,{
+                    doc.text(i.value, 62, positionY,{
                         align: "center"
                     } )
-                    positionY+=2.75
+                    positionY+=3.22
                 }
             })
         })
 
-        positionY = 144
+        positionY = 120
         contenedoresEpp.forEach(c=>{
             elemento = c.querySelectorAll("select")
             elemento.forEach(i=>{
 
-                    doc.text(i.value, 76.5, positionY,{
+                    doc.text(i.value, 81, positionY,{
                         align: "center"
                     } )
-                    positionY+=2.75
+                    positionY+=3.22
             })
         })
         
@@ -765,28 +621,28 @@ async function loadImage(url) {
 
     function evaluarPma(){
         let contenedoresPma = document.querySelectorAll(".elemento-pma")
-        positionY = 177
+        positionY = 149
         contenedoresPma.forEach(c=>{
             elemento = c.querySelectorAll("input")
             elemento.forEach(i=>{
                 if(i.checked){
-                    doc.text(i.value, 58, positionY,{
+                    doc.text(i.value, 62, positionY,{
                         align: "center"
                     } )
-                    positionY+=2.8
+                    positionY+=3.22
                 }
             })
         })
 
-        positionY = 177
+        positionY = 149
         contenedoresPma.forEach(c=>{
             elemento = c.querySelectorAll("select")
             elemento.forEach(i=>{
 
-                    doc.text(i.value, 76.5, positionY,{
+                    doc.text(i.value, 81, positionY,{
                         align: "center"
                     } )
-                    positionY+=2.8
+                    positionY+=3.22
             })
         })
         
@@ -796,7 +652,7 @@ async function loadImage(url) {
     //Section del botiquin
     function evaluarBotiquin(){
         evaluar = true
-        let botY = 193
+        let botY = 166.5
         let salto = 0
         let contadorElementoBotiquin = 0
         //fechas inicia
@@ -808,20 +664,20 @@ async function loadImage(url) {
             
             if(fechaBotiquin!="" && fechaBotiquin!="Invalid Date" || contadorElementoBotiquin==7 ||
             contadorElementoBotiquin==12 || contadorElementoBotiquin==13){
-                if(salto==1 || salto==7){
+                if(salto==7){
                     if(fechaBotiquin=="Invalid Date"){
                         typeof(fechaBotiquin)
                         fechaBotiquin=""
                     }
-                    doc.text(fechaBotiquin, 72, botY, { align: 'center'})
-                    botY+=4.5
+                    doc.text(fechaBotiquin, 76, botY, { align: 'center'})
+                    botY+=3.7
                 }else{
                     if(fechaBotiquin=="Invalid Date"){
                         typeof(fechaBotiquin)
                         fechaBotiquin=""
                     }
-                    doc.text(fechaBotiquin, 72, botY, { align: 'center'})
-                    botY+=2.86
+                    doc.text(fechaBotiquin, 76, botY, { align: 'center'})
+                    botY+=3.45
                 }
                 
             }else{
@@ -832,35 +688,35 @@ async function loadImage(url) {
             salto+=1
         })
 
-        botY = 193
+        botY = 166.5
         salto = 0
         contenedoresBotiquin.forEach(c=>{
             elemento = c.querySelectorAll("input[type='radio']")
             elemento.forEach(i=>{
                 if(i.checked){
                     if(salto==1 || salto==7){
-                        doc.text(i.value, 101, botY, { align: 'center'})
-                        botY+=4.5
+                        doc.text(i.value, 103, botY, { align: 'center'})
+                        botY+=3.63
                     }else{
-                        doc.text(i.value, 101, botY, { align: 'center'})
-                        botY+=2.86
+                        doc.text(i.value, 103, botY, { align: 'center'})
+                        botY+=3.43
                     }
                 }
             })
             salto+=1
         })
 
-        botY = 193
+        botY = 166.5
         salto = 0
         contenedoresBotiquin.forEach(c=>{
             elemento = c.querySelectorAll("select")
             elemento.forEach(i=>{
                 if(salto==1 || salto==7){
-                    doc.text(i.value, 122, botY, { align: 'center'})
-                    botY+=4.5
+                    doc.text(i.value, 121, botY, { align: 'center'})
+                    botY+=3.63
                 }else{
-                    doc.text(i.value, 122, botY, { align: 'center'})
-                    botY+=2.86
+                    doc.text(i.value, 121, botY, { align: 'center'})
+                    botY+=3.43
                 }
             })
             salto+=1
@@ -879,101 +735,63 @@ async function loadImage(url) {
 
     function evaluarConductor(){
         evaluar = true
-
         let eval1 = document.getElementById("ev-conductor1")
         let eval2 = document.getElementById("ev-conductor2")
 
-        doc.setFontSize(8.5)
+        doc.setFontSize(8)
         doc.setTextColor(0, 0, 225);
 
         if(!eval1.checked){
-            doc.text("X", 195, 245.6)
+            doc.text("X", 190.4, 237.5)
         }else{
-            doc.text("X", 173.73, 245.6)
+            doc.text("X", 170.5, 237.5)
         }
         
         if(!eval2.checked){
-            doc.text("X", 195, 249)
+            doc.text("X", 190.4, 240.8)
         }else{
-            doc.text("X", 173.73, 249)
+            doc.text("X", 170.5, 240.8)
         }
-        
-
         return evaluar
     }
 
     /*datos del supervisor directamente al documento*/
     
-    doc.setFontSize(5.2)
-    doc.text("Roberto Carlos Luis Bailon", 40.5, 33.4)
-    doc.text("Roberto Carlos Luis Bailon", 172, 281, {
+    doc.setFontSize(5)
+    doc.text("Roberto Carlos Luis Bailon", 44, 33.5)
+    doc.text("Roberto Carlos Luis Bailon", 169, 272, {
         maxWidth: "32"
     })
-    doc.addImage("../recursos/firmas/RobertoLuisBailon.png", "PNG", 158, 268,  35, 6)
+    doc.addImage("../recursos/firmas/RobertoLuisBailon.png", "PNG", 158, 258,  35, 6)
 
-    
+    if(evaluarDatosGenerales() && evaluarNombre() && evaluarObservaciones() && evaluarTodoVehiculo() && evaluarLLantas() && evaluarAccesorios() && evaluarTapas() && evaluarEpp() && evaluarPma() && evaluarBotiquin() && evaluarConductor()){
+        var blob = doc.output("blob");
+        window.open(URL.createObjectURL(blob));
 
-    if(auto.checked){
+        /*fechaActual = fechaActual.replace(/\//g, "_")
+        const nombreDocumento =`INSPECCION_VEHICULAR_${fechaActual}.pdf`
+        doc.save(nombreDocumento)
+        //endodear el resultado del pdf
+        var file_data = btoa(doc.output())
+        var form_data = new FormData()
+        form_data.append("file", file_data)
+        form_data.append("nombre", "INSPECCION_VEHICULAR")
+        //alert(form_data)
 
-        if(evaluarDatosGenerales() && evaluarNombre() && evaluarObservaciones() && evaluarTodoVehiculo() && evaluarLLantas() && evaluarAccesorios() && evaluarTapas() && evaluarEpp() && evaluarPma() && evaluarBotiquin() && evaluarConductor()){
-            var blob = doc.output("blob");
-            window.open(URL.createObjectURL(blob));
-
-            /*fechaActual = fechaActual.replace(/\//g, "_")
-            const nombreDocumento =`INSPECCION_VEHICULAR_${fechaActual}.pdf`
-            doc.save(nombreDocumento)
-            //endodear el resultado del pdf
-            var file_data = btoa(doc.output())
-            var form_data = new FormData()
-            form_data.append("file", file_data)
-            form_data.append("nombre", "INSPECCION_VEHICULAR")
-            //alert(form_data)
-
-            $.ajax({
-                url: "../envios/enviar_alerta.php",
-                dataType: "text",
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: form_data,
-                type:"post",
-                success: function(php_script_response){
-                    alert("Archivo generado correctamente")
-                }
-            })*/
+        $.ajax({
+            url: "../envios/enviar_alerta.php",
+            dataType: "text",
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type:"post",
+            success: function(php_script_response){
+                alert("Archivo generado correctamente")
+            }
+        })*/
         }else{
             alert("Completar todos los campos")
         }
-    }else if(moto.checked){
 
-        if(evaluarDatosGenerales() && evaluarNombre() && evaluarObservaciones() && evaluarMoto() && evaluarEpp() && evaluarPma() && evaluarBotiquin() && evaluarConductor()){
-            var blob = doc.output("blob");
-            window.open(URL.createObjectURL(blob));
-
-            /*fechaActual = fechaActual.replace(/\//g, "_")
-            const nombreDocumento =`INSPECCION_VEHICULAR_${fechaActual}.pdf`
-            doc.save(nombreDocumento)
-            //endodear el resultado del pdf
-            var file_data = btoa(doc.output())
-            var form_data = new FormData()
-            form_data.append("file", file_data)
-            form_data.append("nombre", "INSPECCION_VEHICULAR")
-            //alert(form_data)
-
-            $.ajax({
-                url: "../envios/enviar_alerta.php",
-                dataType: "text",
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: form_data,
-                type:"post",
-                success: function(php_script_response){
-                    alert("Archivo generado correctamente")
-                }
-            })*/
-        }else{
-            alert("Completar todos los campos obligatorios")
-        }
-    }
   })

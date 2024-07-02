@@ -14,7 +14,7 @@ body{
 }
 
 .main{
-    width: 95%;
+    width: 94%;
     display: flex;
     flex-direction: column;
 }
@@ -27,7 +27,6 @@ body{
 }
 
 .logo-title img{
-    max-width: 100%;
     user-select: none;
     pointer-events: none;
 }
@@ -35,23 +34,34 @@ body{
 .logo-title div{
     display: grid;
     place-content: center;
+    text-align: center;
     font-size: 1.4rem;
     font-weight: bold;
 }
 
 .form-container{
     /*display: none;*/
-    background: #e7e7e7;
+    display: grid;
+    place-items: center;
+    margin-top: 2em;
 }
 
 .form-body{
+    display: block;
     padding: .5rem;
+    width: 100%;
+    border: solid 1px rgb(199, 189, 189);
+    border-radius: 8px;
+    background-color: whitesmoke ;
+}
+
+.title-datos-generales{
+    margin: 1rem 0 .5rem 1rem;
 }
 
 .dg-contenedor{
     display: grid;
-    gap: 1.2rem;
-
+    gap: 2rem;
 }
 
 #firma-conductor{
@@ -86,15 +96,30 @@ body{
 .dg-contenedor input{
     outline: none;
     border: none;
-    border-bottom: solid 1px rgb(202, 201, 201);
     padding: .4rem;
     max-height: 35px;
+    border-radius: 4px;
+    border: solid 1px rgb(182, 185, 190);
+    transition: all ease-in .1s;
 }
 
 #nombre-conductor{
     outline: none;
     border: none;
     height: 35px;
+    border-radius: 4px;
+    border: solid 1px rgb(182, 185, 190);
+}
+
+.dg-contenedor input:focus, #nombre-conductor:focus{
+    outline: 3px solid rgba(131, 170, 230, .8);
+}
+
+.label-sep{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: .8rem;
+    font-size: .8rem;
 }
 
 .selectores-todo-vehiculo, .contenedor-llantas, .contenedor-accesorios, .contenedor-tapas, .equipos-proteccion-personal, .proteccion-medio-ambiente, .botiquin{
@@ -102,45 +127,20 @@ body{
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     border-bottom: solid 1px rgb(157, 154, 154);
     padding: .5rem;
-    gap: 1rem;
+    gap: 1.4rem;
     margin: 1rem 0;
 }
 
-.selector-elemento div{
+.selector-elemento div, .elemento-epp div, .elemento-pma div, .elemento-botiquin div{
     display: flex;
     gap: 1.4rem;
 }
 
-.selector-elemento div label{
+.selector-elemento div label, .elemento-epp div label, .elemento-pma div label, .elemento-botiquin div label{
     display: flex;
     align-items: center;
     gap: .2rem;
     font-size: .9rem;
-}
-
-.selectores-motorizado{
-    display: none;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    border-bottom: solid 1px rgb(157, 154, 154);
-    padding: .5rem;
-    gap: 1rem;
-    margin: 1rem 0;
-}
-
-.selectores-motorizado span{
-    text-align: justify;
-}
-
-.selector-motorizado div, .elemento-epp div, .elemento-pma div, .elemento-botiquin div{
-    display: flex;
-    gap: 1.4rem;
-    font-size: .9rem;
-}
-
-.selector-motorizado label, .elemento-epp div label, .elemento-pma div label, .elemento-botiquin div label{
-    display: flex;
-    align-items: center;
-    gap: .2rem;
 }
 
 .contenedor-observaciones{
@@ -266,18 +266,18 @@ td, th{
 }
 
 @media (max-width: 720px){
-    .main{
-        width: 100%;
-    }
-
     .logo-title{
         flex-direction: column;
         justify-content: center;
         place-items: center;
     }
 
-    .logo-title div{
+    /* .logo-title div{
         font-size: 1rem;
+    } */
+
+    .label-sep{
+        justify-content: space-between;
     }
 
     .dg-contenedor{
@@ -289,7 +289,7 @@ td, th{
     }
 
     #nombre-conductor{
-        max-width: 80%;
+        max-width: 100%;
     }
 
     #tarjeta-propiedad{

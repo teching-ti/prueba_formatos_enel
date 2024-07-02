@@ -1,0 +1,5 @@
+- checklist de inspección vehicular v02
+
+moficación del archivo javascript en base a los elementos html (YA MODIFICADOS) y formato v02.      
+
+- (Parte de datos generales terminado, continuar con actualización de inputs y posicionamiento en la plantilla pdf)

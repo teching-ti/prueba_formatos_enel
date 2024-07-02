@@ -94,11 +94,11 @@
                 <div class="contenedor-cargo">
                   <select name="select-cargo" class="trabajador-cargo">
                     <option value="">-Seleccione un cargo-</option>
-                    <option value="4">Jefe de Cuadrilla</option>
-                    <option value="3">Técnico/Operario</option>
-                    <option value="2">Conductor</option>
-                    <option value="1">Ayudante</option>
-                    <option value="5">Responsable de Grupo</option>
+                    <option value="Jefe de Cuadrilla">Jefe de Cuadrilla</option>
+                    <option value="Técnico/Operario">Técnico/Operario</option>
+                    <option value="Conductor">Conductor</option>
+                    <option value="Ayudante">Ayudante</option>
+                    <option value="Responsable de Grupo">Responsable de Grupo</option>
                   </select>
                 </div>
 
@@ -131,9 +131,7 @@
               <div class="elementos-evaluar">
                 <!-- AQUI INICIA EQUIPO DE PROTECCIÓN PERSONAL ESPECIAL -->
                 <div class="contenedor-EPP-ESPECIAL">
-                  <h4 class="elemento-titulo-general">
-                    <span>*</span> EQUIPO DE PROTECCIÓN PERSONAL ESPECIAL
-                  </h4>
+                  <h4 class="elemento-titulo-general"><span style="color: red;">*</span> EQUIPO DE PROTECCIÓN PERSONAL ESPECIAL</h4>
                   <ul class="lista">
                     <!-- Guantes dieléctricos -->
                     <li class="elemento-lista">
@@ -280,7 +278,7 @@
                 <!-- AQUI INICIA EQUIPOS ESPECIALES -->
                 <div class="contenedor-EQUIPO-ESPECIALES">
                   <h4 class="elemento-titulo-general">
-                    <span>*</span> EQUIPO ESPECIAL
+                    <span style="color: red;">*</span> EQUIPO ESPECIAL
                   </h4>
                   <ul class="lista">
                     <!-- Revelador de Tensión BT -->
@@ -424,7 +422,7 @@
                 <!-- AQUI INICIA EQUIPO DE PROTECCIÓN PERSONAL-->
                 <div class="contenedor-epp">
                   <h4 class="elemento-titulo-general">
-                    <span>*</span> EQUIPO DE PROTECCIÓN PERSONAL
+                    <span style="color: red;">*</span> EQUIPO DE PROTECCIÓN PERSONAL
                   </h4>
                   <ul class="lista">
                     <!-- Camisa de verano/ invierno -->
@@ -764,7 +762,7 @@
                           <label>B<input type="radio" name="guante-cuero" value="B"/></label>
                           <label>M<input type="radio" name="guante-cuero" value="M"/></label>
                           <label>NT<input type="radio" name="guante-cuero" value="NT"/></label>
-                          <label>NR<inputtype="radio" name="guante-cuero" value="NR" checked/></label>
+                          <label>NR<input   type="radio" name="guante-cuero" value="NR" checked/></label>
                           <label>FV<input type="radio" name="guante-cuero" value="FV"/></label>
                         </span>
                       </div>
@@ -1007,7 +1005,7 @@
 
                 <!-- AQUI INICIA HERRAMIENTAS -->
                 <div class="contenedor-herramientas">
-                  <h4 class="elemento-titulo-general">* HERRAMIENTAS</h4>
+                  <h4 class="elemento-titulo-general"><span style="color: red">*</span> HERRAMIENTAS</h4>
                   <ul class="lista">
                     <!-- Alicate universal 8" de longitud 1000V -->
                     <li class="elemento-lista">
@@ -1159,16 +1157,9 @@
                     </li>
                     <!-- Destornillador hexagonal -->
                     <li class="elemento-lista">
-                      <h4 class="elemento-titulo">
-                        8. Destornillador hexagonal
-                      </h4>
+                      <h4 class="elemento-titulo">8. Destornillador hexagonal</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="destornillador-hexagonal-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:<select name="cantidad" class="destornillador-hexagonal-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -1176,42 +1167,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="destornillador-hexagonal"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="destornillador-hexagonal"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="destornillador-hexagonal"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="destornillador-hexagonal"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="destornillador-hexagonal"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="destornillador-hexagonal" value="B"/></label>
+                          <label>M<input type="radio" name="destornillador-hexagonal" value="M"/></label>
+                          <label>NT<input type="radio" name="destornillador-hexagonal" value="NT"/></label>
+                          <label>NR<input type="radio" name="destornillador-hexagonal" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="destornillador-hexagonal" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -1229,30 +1189,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input type="radio" name="llaves-allen" value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input type="radio" name="llaves-allen" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input type="radio" name="llaves-allen" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="llaves-allen"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input type="radio" name="llaves-allen" value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="llaves-allen" value="B"/></label>
+                          <label>M<input type="radio" name="llaves-allen" value="M"/></label>
+                          <label>NT<input type="radio" name="llaves-allen" value="NT"/></label>
+                          <label>NR<input type="radio" name="llaves-allen" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="llaves-allen" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -1547,7 +1488,7 @@
                           <label>B<input type="radio" name="prensa-terminal-ojal" value="B"/></label>
                           <label>M<input type="radio" name="prensa-terminal-ojal" value="M"/></label>
                           <label>NT<input type="radio" name="prensa-terminal-ojal" value="NT"/></label>
-                          <label>N<input type="radio" name="prensa-terminal-ojal" value="NR" checked/></label>
+                          <label>NR<input type="radio" name="prensa-terminal-ojal" value="NR" checked/></label>
                           <label>FV<input type="radio" name="prensa-terminal-ojal" value="FV"/></label>
                         </span>
                       </div>
@@ -1565,11 +1506,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label>B<input type="radio" name="prensa-terminal-ojal" value="B"/></label>
-                          <label>M<input type="radio" name="prensa-terminal-ojal" value="M"/></label>
-                          <label>NT<input type="radio" name="prensa-terminal-ojal" value="NT"/></label>
-                          <label>N<input type="radio" name="prensa-terminal-ojal" value="NR" checked/></label>
-                          <label>FV<input type="radio" name="prensa-terminal-ojal" value="FV"/></label>
+                          <label>B<input type="radio" name="arco-sierra" value="B"/></label>
+                          <label>M<input type="radio" name="arco-sierra" value="M"/></label>
+                          <label>NT<input type="radio" name="arco-sierra" value="NT"/></label>
+                          <label>NR<input type="radio" name="arco-sierra" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="arco-sierra" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -1589,7 +1530,7 @@
                           <label>B<input type="radio" name="crimpeador" value="B"/></label>
                           <label>M<input type="radio" name="crimpeador" value="M"/></label>
                           <label>NT<input type="radio" name="crimpeador" value="NT"/></label>
-                          <label>N<input type="radio" name="crimpeador" value="NR" checked/></label>
+                          <label>NR<input type="radio" name="crimpeador" value="NR" checked/></label>
                           <label>FV<input type="radio" name="crimpeador" value="FV"/></label>
                         </span>
                       </div>
@@ -1610,7 +1551,7 @@
                           <label>B<input type="radio" name="wincha" value="B"/></label>
                           <label>M<input type="radio" name="wincha" value="M"/></label>
                           <label>NT<input type="radio" name="wincha" value="NT"/></label>
-                          <label>N<input type="radio" name="wincha" value="NR" checked/></label>
+                          <label>NR<input type="radio" name="wincha" value="NR" checked/></label>
                           <label>FV<input type="radio" name="wincha" value="FV"/></label>
                         </span>
                       </div>
@@ -1684,7 +1625,7 @@
 
                 <!-- EQUPOS -->
                 <div class="contenedor-equipos">
-                  <h4 class="elemento-titulo-general">* EQUIPOS</h4>
+                  <h4 class="elemento-titulo-general"><span style="color: red;">*</span> EQUIPOS</h4>
                   <ul class="lista">
                     <!-- Máquina de Soldar -->
                     <li class="elemento-lista">
@@ -1709,16 +1650,10 @@
                     </li>
                     <!-- Equipo de soldar (mandil, máscara y mangas) -->
                     <li class="elemento-lista">
-                      <h4 class="elemento-titulo">
-                        2. Equipo de soldar (mandil, máscara y mangas)
-                      </h4>
+                      <h4 class="elemento-titulo">2. Equipo de soldar (mandil, máscara y mangas)</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="equipo-soldar-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="equipo-soldar-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -1726,45 +1661,19 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input type="radio" name="equipo-soldar" value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input type="radio" name="equipo-soldar" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input type="radio" name="equipo-soldar" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="equipo-soldar"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input type="radio" name="equipo-soldar" value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="equipo-soldar" value="B"/></label>
+                          <label>M<input type="radio" name="equipo-soldar" value="M"/></label>
+                          <label>NT<input type="radio" name="equipo-soldar" value="NT"/></label>
+                          <label>NR<input type="radio" name="equipo-soldar" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="equipo-soldar" value="FV"/></label>
                         </span>
                       </div>
                     </li>
                     <!-- Amoladora con disco de corte -->
                     <li class="elemento-lista">
-                      <h4 class="elemento-titulo">
-                        3. Amoladora con disco de corte
-                      </h4>
+                      <h4 class="elemento-titulo">3. Amoladora con disco de corte</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="amoladora-disco-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:<select name="cantidad" class="amoladora-disco-cantidad"||>
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -1772,57 +1681,20 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="amoladora-disco"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="amoladora-disco"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="amoladora-disco"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="amoladora-disco"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="amoladora-disco"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="amoladora-disco" value="B"/></label>
+                          <label>M<input type="radio" name="amoladora-disco" value="M"/></label>
+                          <label>NT<input type="radio" name="amoladora-disco" value="NT"/></label>
+                          <label>NR<input type="radio" name="amoladora-disco" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="amoladora-disco" value="FV"/></label>
                         </span>
                       </div>
                     </li>
                     <!-- Cámara fotográfica digital -->
                     <li class="elemento-lista">
-                      <h4 class="elemento-titulo">
-                        4. Cámara fotográfica digital
-                      </h4>
+                      <h4 class="elemento-titulo">4. Cámara fotográfica digital</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="camara-fotografica-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="camara-fotografica-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -1830,53 +1702,19 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="camara-fotografica"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="camara-fotografica"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="camara-fotografica"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="camara-fotografica"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="camara-fotografica"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="camara-fotografica" value="B"/></label>
+                          <label>M<input type="radio" name="camara-fotografica" value="M"/></label>
+                          <label>NT<input type="radio" name="camara-fotografica" value="NT"/></label>
+                          <label>NR<input type="radio" name="camara-fotografica" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="camara-fotografica" value="FV"/></label>
                         </span>
                       </div>
                     </li>
                     <!-- Escalera (tipo tijera) (telescópica) -->
                     <li class="elemento-lista">
-                      <h4 class="elemento-titulo">
-                        5. Escalera (tipo tijera) (telescópica)
-                      </h4>
+                      <h4 class="elemento-titulo">5. Escalera (tipo tijera) (telescópica)</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
+                        <label class="elemento-cantidad">Cantidad:
                           <select name="cantidad" class="escalera-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
@@ -1885,25 +1723,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B <input type="radio" name="escalera" value="B"
-                          /></label>
-                          <label
-                            >M <input type="radio" name="escalera" value="M"
-                          /></label>
-                          <label
-                            >NT <input type="radio" name="escalera" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="escalera"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV <input type="radio" name="escalera" value="FV"
+                          <label>B <input type="radio" name="escalera" value="B"/></label>
+                          <label>M <input type="radio" name="escalera" value="M"/></label>
+                          <label>NT <input type="radio" name="escalera" value="NT"/></label>
+                          <label>NR<input type="radio" name="escalera" value="NR" checked/></label>
+                          <label>FV <input type="radio" name="escalera" value="FV"
                           /></label>
                         </span>
                       </div>
@@ -1954,8 +1778,7 @@
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">8. Reflector</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
+                        <label class="elemento-cantidad">Cantidad:
                           <select name="cantidad" class="reflector-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
@@ -1964,26 +1787,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B <input type="radio" name="reflector" value="B"
-                          /></label>
-                          <label
-                            >M <input type="radio" name="reflector" value="M"
-                          /></label>
-                          <label
-                            >NT <input type="radio" name="reflector" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="reflector"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV <input type="radio" name="reflector" value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="reflector" value="B"/></label>
+                          <label>M <input type="radio" name="reflector" value="M"/></label>
+                          <label>NT <input type="radio" name="reflector" value="NT"/></label>
+                          <label>NR<input type="radio" name="reflector" value="NR" checked/></label>
+                          <label>FV <input type="radio" name="reflector" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -1991,8 +1799,7 @@
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">9. Taladro</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
+                        <label class="elemento-cantidad">Cantidad:
                           <select name="cantidad" class="taladro-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
@@ -2001,26 +1808,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B <input type="radio" name="taladro" value="B"
-                          /></label>
-                          <label
-                            >M <input type="radio" name="taladro" value="M"
-                          /></label>
-                          <label
-                            >NT <input type="radio" name="taladro" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="taladro"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV <input type="radio" name="taladro" value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="taladro" value="B"/></label>
+                          <label>M<input type="radio" name="taladro" value="M"/></label>
+                          <label>NT<input type="radio" name="taladro" value="NT"/></label>
+                          <label>NR<input type="radio" name="taladro" value="NR" checked/></label>
+                          <label>FV <input type="radio" name="taladro" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2028,8 +1820,7 @@
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">10. Rotomartillo</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
+                        <label class="elemento-cantidad">Cantidad:
                           <select name="cantidad" class="rotomartillo-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
@@ -2038,18 +1829,9 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input type="radio" name="rotomartillo" value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input type="radio" name="rotomartillo" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input type="radio" name="rotomartillo" value="NT"
-                          /></label>
+                          <label>B<input type="radio" name="rotomartillo" value="B"/></label>
+                          <label>M<input type="radio" name="rotomartillo" value="M"/></label>
+                          <label>NT<input type="radio" name="rotomartillo" value="NT"/></label>
                           <label>NR<input type="radio" name="rotomartillo" value="NR" checked/></label>
                           <label>FV<input type="radio" name="rotomartillo" value="FV"/></label>
                         </span>
@@ -2059,12 +1841,8 @@
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">11. Caja Resistiva</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="caja-resistiva-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="caja-resistiva-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -2072,42 +1850,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="caja-resistiva"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="caja-resistiva"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="caja-resistiva"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="caja-resistiva"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="caja-resistiva"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="caja-resistiva" value="B"/></label>
+                          <label>M<input type="radio" name="caja-resistiva" value="M"/></label>
+                          <label>NT<input type="radio" name="caja-resistiva" value="NT"/></label>
+                          <label>NR<input type="radio" name="caja-resistiva" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="caja-resistiva" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2115,12 +1862,8 @@
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">12. Caja de Herramientas</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="caja-herramientas-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="caja-herramientas-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -2128,42 +1871,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="caja-herramientas"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="caja-herramientas"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="caja-herramientas"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="caja-herramientas"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="caja-herramientas"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="caja-herramientas" value="B"/></label>
+                          <label>M<input type="radio" name="caja-herramientas" value="M"/></label>
+                          <label>NT<input type="radio" name="caja-herramientas" value="NT"/></label>
+                          <label>NR<input type="radio" name="caja-herramientas" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="caja-herramientas" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2173,14 +1885,13 @@
 
                 <!-- SEÑALIZACIÓN -->
                 <div class="contenedor-senializacion">
-                  <h4 class="elemento-titulo-general">* SEÑALIZACIÓN</h4>
+                  <h4 class="elemento-titulo-general"><span style="color: red;">*</span> SEÑALIZACIÓN</h4>
                   <ul class="lista">
                     <!-- Cercos -->
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">1. Cercos</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
+                        <label class="elemento-cantidad">Cantidad:
                           <select name="cantidad" class="cercos-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
@@ -2189,42 +1900,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="cercos-verano-invierno"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="cercos-verano-invierno"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="cercos-verano-invierno"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="cercos-verano-invierno"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="cercos-verano-invierno"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="cercos-verano-invierno" value="B"/></label>
+                          <label>M<input type="radio" name="cercos-verano-invierno" value="M"/></label>
+                          <label>NT<input type="radio" name="cercos-verano-invierno" value="NT"/></label>
+                          <label>NR<input type="radio" name="cercos-verano-invierno" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="cercos-verano-invierno" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2232,12 +1912,8 @@
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">2. Malla con parantes</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="malla-parantes-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="malla-parantes-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -2245,36 +1921,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input type="radio" name="malla-parantes" value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input type="radio" name="malla-parantes" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="malla-parantes"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="malla-parantes"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="malla-parantes"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="malla-parantes" value="B"/></label>
+                          <label>M<input type="radio" name="malla-parantes" value="M"/></label>
+                          <label>NT<input type="radio" name="malla-parantes" value="NT"/></label>
+                          <label>NR<input type="radio" name="malla-parantes" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="malla-parantes" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2282,12 +1933,8 @@
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">3. Conos</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="conos-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="conos-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -2295,36 +1942,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input type="radio" name="conos" value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input type="radio" name="conos" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="conos"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="conos"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="conos"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="conos" value="B"/></label>
+                          <label>M<input type="radio" name="conos" value="M"/></label>
+                          <label>NT<input type="radio" name="conos" value="NT"/></label>
+                          <label>NR<input type="radio" name="conos" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="conos" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2334,7 +1956,7 @@
 
                 <!-- DOCUMENTACIÓN -->
                 <div class="contenedor-documentacion">
-                  <h4 class="elemento-titulo-general">* DOCUMENTACIÓN</h4>
+                  <h4 class="elemento-titulo-general"><span style="color: red;">*</span> DOCUMENTACIÓN</h4>
                   <ul class="lista">
                     <!-- AST/ASG/SGI Vigentes -->
                     <li class="elemento-lista">
@@ -2350,28 +1972,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B <input type="radio" name="ast-asg-sgi" value="B"
-                          /></label>
-                          <label
-                            >M <input type="radio" name="ast-asg-sgi" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input type="radio" name="ast-asg-sgi" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="ast-asg-sgi"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input type="radio" name="ast-asg-sgi" value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="ast-asg-sgi" value="B"/></label>
+                          <label>M <input type="radio" name="ast-asg-sgi" value="M"/></label>
+                          <label>NT<input type="radio" name="ast-asg-sgi" value="NT"/></label>
+                          <label>NR<input type="radio" name="ast-asg-sgi" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="ast-asg-sgi" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2389,28 +1994,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B <input type="radio" name="charla-pre" value="B"
-                          /></label>
-                          <label
-                            >M <input type="radio" name="charla-pre" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input type="radio" name="charla-pre" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="charla-pre"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input type="radio" name="charla-pre" value="FV"
-                          /></label>
+                          <label>B <input type="radio" name="charla-pre" value="B"/></label>
+                          <label>M <input type="radio" name="charla-pre" value="M"/></label>
+                          <label>NT<input type="radio" name="charla-pre" value="NT"/></label>
+                          <label>NR<input type="radio" name="charla-pre" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="charla-pre" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2427,28 +2015,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B <input type="radio" name="ats" value="B"
-                          /></label>
-                          <label
-                            >M <input type="radio" name="ats" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input type="radio" name="ats" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="ats"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input type="radio" name="ats" value="FV"
-                          /></label>
+                          <label>B <input type="radio" name="ats" value="B"/></label>
+                          <label>M <input type="radio" name="ats" value="M"/></label>
+                          <label>NT<input type="radio" name="ats" value="NT"/></label>
+                          <label>NR<input type="radio" name="ats" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="ats" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2465,28 +2036,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B <input type="radio" name="petar" value="B"
-                          /></label>
-                          <label
-                            >M <input type="radio" name="petar" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input type="radio" name="petar" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="petar"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input type="radio" name="petar" value="FV"
-                          /></label>
+                          <label>B <input type="radio" name="petar" value="B"/></label>
+                          <label>M <input type="radio" name="petar" value="M"/></label>
+                          <label>NT<input type="radio" name="petar" value="NT"/></label>
+                          <label>NR<input type="radio" name="petar" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="petar" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2494,12 +2048,8 @@
                     <li class="elemento-lista">
                       <h4 class="elemento-titulo">5. Check list vehicular</h4>
                       <div class="elemento-cuerpo">
-                        <label class="elemento-cantidad"
-                          >Cantidad:
-                          <select
-                            name="cantidad"
-                            class="check-vehicular-cantidad"
-                          >
+                        <label class="elemento-cantidad">Cantidad:
+                          <select name="cantidad" class="check-vehicular-cantidad">
                             <option value="0">0</option>
                             <option value="1" selected>1</option>
                             <option value="2">2</option>
@@ -2507,42 +2057,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="check-vehicular"
-                              value="B"
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="check-vehicular"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="check-vehicular"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="check-vehicular"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="check-vehicular"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="check-vehicular" value="B"/></label>
+                          <label>M<input type="radio" name="check-vehicular" value="M"/></label>
+                          <label>NT<input type="radio" name="check-vehicular" value="NT"/></label>
+                          <label>NR <input type="radio" name="check-vehicular" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="check-vehicular" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2559,28 +2078,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B <input type="radio" name="solicitud-atencion" value="B"
-                          /></label>
-                          <label
-                            >M <input type="radio" name="solicitud-atencion" value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input type="radio" name="solicitud-atencion" value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="solicitud-atencion"
-                              value="NR"
-                              checked
-                          /></label>
-                          <label
-                            >FV
-                            <input type="radio" name="solicitud-atencion" value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="solicitud-atencion" value="B"/></label>
+                          <label>M<input type="radio" name="solicitud-atencion" value="M"/></label>
+                          <label>NT<input type="radio" name="solicitud-atencion" value="NT"/></label>
+                          <label>NR<input type="radio" name="solicitud-atencion" value="NR" checked/></label>
+                          <label>FV<input type="radio" name="solicitud-atencion" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2605,14 +2107,13 @@
                         </span>
                       </div>
                     </li>
-                    
                   </ul>
                 </div>
                 <hr />
 
                 <!-- ACCESORIOS -->
                 <div class="contenedor-accesorios">
-                  <h4 class="elemento-titulo-general">* ACCESORIOS</h4>
+                  <h4 class="elemento-titulo-general"><span style="color: red;">*</span> ACCESORIOS</h4>
                   <ul class="lista">
                     <!-- Medio de comunicación radio RPM -->
                     <li class="elemento-lista">
@@ -2628,42 +2129,11 @@
                           </select>
                         </label>
                         <span class="elemento-opciones">
-                          <label
-                            >B
-                            <input
-                              type="radio"
-                              name="medio-comunicacion"
-                              value="B"
-                              checked
-                          /></label>
-                          <label
-                            >M
-                            <input
-                              type="radio"
-                              name="medio-comunicacion"
-                              value="M"
-                          /></label>
-                          <label
-                            >NT
-                            <input
-                              type="radio"
-                              name="medio-comunicacion"
-                              value="NT"
-                          /></label>
-                          <label
-                            >NR
-                            <input
-                              type="radio"
-                              name="medio-comunicacion"
-                              value="NR"
-                          /></label>
-                          <label
-                            >FV
-                            <input
-                              type="radio"
-                              name="medio-comunicacion"
-                              value="FV"
-                          /></label>
+                          <label>B<input type="radio" name="medio-comunicacion" value="B" checked/></label>
+                          <label>M<input type="radio" name="medio-comunicacion" value="M"/></label>
+                          <label>NT<input type="radio" name="medio-comunicacion" value="NT"/></label>
+                          <label>NR<input type="radio" name="medio-comunicacion" value="NR"/></label>
+                          <label>FV<input type="radio" name="medio-comunicacion" value="FV"/></label>
                         </span>
                       </div>
                     </li>
@@ -2672,357 +2142,12 @@
               </div>
             </article>
           </section>
-          <!--
-          <h3 class="title-commentarios" id="title-commentarios">Comentarios</h3>
-          <div class="contenedor-comentarios">
-            <h4>Equipo de protección personal</h4>
-            <div class="comentarios-epp">
-              <div>
-                <label class="comentario-epp"
-                  >1. Camisa de verano/Invierno<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >2. Pantalón de verano<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >3. Camisa antiflama<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >4. Pantalón antiflama<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >5. Zapatos Dieléctricos<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >6. Chaleco preventivo de seguridad<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >7. Lentes con protección UV<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >8. Lentes contra impacto<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >9. Bloqueador Solar<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >10. Casco dielectrico normado con barbiquejo<textarea
-                  ></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >11. Guantes dielectricos BT-Clase 0, Tipo I<textarea
-                  ></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >12. Careta facial policarbonato<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >13. Careta facial antiarco<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >14. Guante de badana<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >15. Guante de cuero<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >16. Guante de hilo<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >17. Mascarilla contra polvo<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >18. Correa porta herramientas<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >19. Manta Dielectrica<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-epp"
-                  >20. Capucha Ignifuga<textarea></textarea>
-                </label>
-              </div>
-            </div>
-            <h4>Herramientas</h4>
-            <div class="comentarios-herramientas">
-              <div>
-                <label class="comentario-herramienta"
-                  >1. Alicate universal 8" de longitud 1000V<textarea
-                  ></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >2. Alicate de corte aislado 6"<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >3. Alicate de punta aislada 6"<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >4. Destornillador plano aislado 6"<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >5. Perillero (opcional)<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >6. Destornillador estrella aislado 6" o 8"<textarea
-                  ></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >7. Destornillador hexagonal<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >8. Juego de llave allen<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >9. Juego de llave ratchets Aislado<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >10. Revelador de tensión BT<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >11. Pinza Volt amperimétrica<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >12. Pinza MT<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >13. Linterna Grande<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >14. Llave Francesa Aislado/ Mecánica<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >15. Bolsa y recipiente para almacenar residuos<textarea
-                  ></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >16. Arnés de seguridad con accesorios<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >17. Lima<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >18. Cincel<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >19. Comba chica 4 o 5 libras<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >20. Martillo<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >21. Linterna portátil adaptable para casco<textarea
-                  ></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >22. Nivel<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >23. Cinta pasacable<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >24. Prensa terminal<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-herramienta"
-                  >25. Pertiga<textarea></textarea>
-                </label>
-              </div>
-            </div>
-            <h4>Equipos</h4>
-            <div class="comentarios-equipos">
-              <div>
-                <label class="comentario-equipo"
-                  >1. Máquina de soldar<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >2. Equipo de soldar (mandil, máscara y mangas)<textarea
-                  ></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >3. Amoladora con disco de corte<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >4. Cámara fotográfica digital<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >5. Escalera (tipo tijera) (telescópica)<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >6. Banco escalera<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >7. Extensión de cable vulcanizado industrial<textarea
-                  ></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >8. Reflector<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >9. Taladro<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >10. Rotomartillo<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-equipo"
-                  >11. Caja de herramientas<textarea></textarea>
-                </label>
-              </div>
-            </div>
-            <h4>Señalización</h4>
-            <div class="comentarios-senializacion">
-              <div>
-                <label class="comentario-senial"
-                  >1. Cercos<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-senial"
-                  >2. Mallas con parantes<textarea></textarea>
-                </label>
-              </div>
-            </div>
-            <h4>Documentación</h4>
-            <div class="comentarios-documentacion">
-              <div>
-                <label class="comentario-documentacion"
-                  >1. AST/ASG/SGI Vigentes<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-documentacion"
-                  >2. Charla pre operacional<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-documentacion"
-                  >3. Check list vehicular<textarea></textarea>
-                </label>
-              </div>
-              <div>
-                <label class="comentario-documentacion"
-                  >4. Registro de residuos generados<textarea></textarea>
-                </label>
-              </div>
-            </div>
-            <h4>Accesorios</h4>
-            <div class="comentarios-accesorios">
-              <label class="comentario-accesorio"
-                >1. Medio de comunicación radio (celular)<textarea></textarea>
-              </label>
-            </div>
-          </div> -->
-
         </div>
       </section>
       <div class="terminar" id="btnGenerar">
         <i class="fa-solid fa-file-pdf fa-lg"></i>
       </div>
       <div id="btnListaPersonal"><i class="fa-solid fa-address-book"></i></div>
-      <div id="btnComentarios"><i class="fa-solid fa-comment-dots"></i></div>
     </main>
     <script src="../scripts/functionsListaInspeccion.js"></script>
   </body>
