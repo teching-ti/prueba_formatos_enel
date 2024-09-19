@@ -125,14 +125,7 @@ fetch("../scripts/datos.json")
         }
         });
     }
-
-
-
-  
-  
-  
-  
-
+    
   let contenedorPersonas = document.querySelector(".section-todo-personal")
   let btnAgregarPersona = document.querySelector(".agregar-personal")
 

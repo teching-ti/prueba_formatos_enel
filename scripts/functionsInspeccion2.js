@@ -399,7 +399,7 @@ async function loadImage(url) {
                 doc.setFontSize(5)
                 doc.text(vencimiento, 162, 33.5)
             }else{
-                alert("Complete el campo de empresa SOAT")
+                alert("Complete el campo de vencimiento")
                 evaluar = false
                 return
             }

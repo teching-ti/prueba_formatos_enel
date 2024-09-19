@@ -25,18 +25,6 @@
             "botiquin": []
         },
         {
-            "name": "Luis David Enriquez Quispe",
-            "nombres": "Luis David",
-            "apellidos": "Enriquez Quispe",
-            "dni": "48072457",
-            "celular": "941 279 185",
-            "firma": "..\/recursos\/firmas\/LuisDavidEnriqueQuispe.png",
-            "cargo": "Jefe Cuadrilla de Balance",
-            "vehiculo": "",
-            "placa": "",
-            "botiquin": []
-        },
-        {
             "name": "Juan Jos\u00e9 Alcantara Soto",
             "nombres": "Juan Jos\u00e9",
             "apellidos": "Alcantara Soto",
@@ -49,24 +37,24 @@
             "botiquin": []
         },
         {
+            "name": "Cesar David Vite Ruiz",
+            "nombres": "Cesar David",
+            "apellidos": "Vite Ruiz",
+            "dni": "72903347",
+            "celular": "999 999 999",
+            "firma": "..\/recursos\/firmas\/CesarDavidViteRuiz.png",
+            "cargo": "Jefe Cuadrilla de Balance",
+            "vehiculo": "",
+            "placa": "",
+            "botiquin": []
+        },
+        {
             "name": "Erich Ofni Gonzalo Laguna",
             "nombres": "Erich Ofni",
             "apellidos": "Gonzalo Laguna",
             "dni": "48058039",
             "celular": "921 696 606",
             "firma": "..\/recursos\/firmas\/ErichOfniGonzaloLaguna.png",
-            "cargo": "Operario de Balance",
-            "vehiculo": "",
-            "placa": "",
-            "botiquin": []
-        },
-        {
-            "name": "Frank Brayan Morales Quispe",
-            "nombres": "Frank Brayan",
-            "apellidos": "Morales Quispe",
-            "dni": "73876867",
-            "celular": "986 969 783",
-            "firma": "..\/recursos\/firmas\/FrankBrayanMoralesQuispe.png",
             "cargo": "Operario de Balance",
             "vehiculo": "",
             "placa": "",
@@ -91,6 +79,30 @@
             "dni": "47935322",
             "celular": "988 259 588",
             "firma": "..\/recursos\/firmas\/JordyAlquettAcostaFernandez.png",
+            "cargo": "Operario de Balance",
+            "vehiculo": "",
+            "placa": "",
+            "botiquin": []
+        },
+        {
+            "name": "Danfer Elem Palomino Cordova",
+            "nombres": "Danfer Elem",
+            "apellidos": "Palomino Cordova",
+            "dni": "71262922",
+            "celular": "999 999 999",
+            "firma": "..\/recursos\/firmas\/DanferElemPalominoCordova.png",
+            "cargo": "Operario de Balance",
+            "vehiculo": "",
+            "placa": "",
+            "botiquin": []
+        },
+        {
+            "name": "Jhon Juan Llanco Illanes",
+            "nombres": "Jhon Juan",
+            "apellidos": "Llanco Illanes",
+            "dni": "78198590",
+            "celular": "999 999 999",
+            "firma": "..\/recursos\/firmas\/JhonJuanLlancoIllanes.png",
             "cargo": "Operario de Balance",
             "vehiculo": "",
             "placa": "",
