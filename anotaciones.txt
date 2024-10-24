@@ -1,5 +1,10 @@
-- checklist de inspección vehicular v02
+Anotaciones realizadas "Nuevo Formato y Actualizar Lista de Inspección".
 
-moficación del archivo javascript en base a los elementos html (YA MODIFICADOS) y formato v02.      
+1. Agregagdo a recursos el nuevo formato "formatoCharlaPostOperacional.jpg"... ok
+2. Crear la página web
+3. Agregar estilos css
+4. Agregar funcionalidades javascript.
 
-- (Parte de datos generales terminado, continuar con actualización de inputs y posicionamiento en la plantilla pdf)
+
+- Pendiente => funcitonsPostOp, agregar un select vacio a las opciones del persona. Aíun pendiente cargar el formato y rellenar el formato
+(Aún no se ha alineado con respecto al proeycto de produccion).

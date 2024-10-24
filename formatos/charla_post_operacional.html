@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Charla Post Operacional</title>
+        <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon"/>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <link rel="stylesheet" href="../estilos/stylesPostOp.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <main class="main">
+            <figure class="logo-title">
+                <a href="../"><img src="../recursos/logo_teching.png" alt="teching_logo" /></a>
+                <div><span>Charla Post Operacional</span></div>
+            </figure>
+            <section class="form-container">
+                <form class="principal-form" id="principal-form">
+
+                    <div class="form-sup">
+                        <h3>Ingresar la información solicitada</h3>
+                        <div>
+                            <label for="lugar">1. Lugar: </label><input type="text" id="lugar" />
+                        </div>
+                        <div>
+                            <label for="fecha">2. Fecha: </label><input type="text" value="00-00-00" id="fecha" readonly />
+                        </div>
+                        <div>
+                            <label for="hora">3. Hora: <input type="time"></label>
+                        </div>
+                    </div>
+
+                    <div class="general-crpa" id="general-crpa">
+                        <h3>Comportamiento de Riesgos y Punto de Atención Sugeridos Durante el Trabajo</h3>
+                        <div class="contenedor-crpa">
+                            <label for="p1-op1">1. </label>
+                            <textarea type="text" id="p1-op1" name="p1-op1"></textarea>
+                        </div>
+                        <button id="aniadir-crpa" class="aniadir-crpa"><i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+
+                    <div class="general-amp" id="general-amp">
+                        <h3>Acciones de Mejora Propuestas</h3>
+                        <div class="contenedor-amp">
+                            <label for="p2-op1">1. </label>
+                            <textarea type="text" id="p2-op1" name="p2-op1"></textarea>
+                        </div>
+                        <button id="aniadir-amp" class="aniadir-amp"><i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+
+                    <div class="general-participantes" id="general-participantes">
+                        <h3>Participantes</h3>
+                        <!-- <div class="contenedor-participante">
+                            <label for="participante1">Nombre</label>
+                            <select name="participante1" id="participante1" class="participante"></select>
+                            <label for="dni1">DNI</label>
+                            <input type="text" name="dni1" id="dni1" class="dni" readonly></input>
+                            <input type="text" id="firma1" name="firma1" class="firma" readonly>
+                        </div> -->
+                        <button id="aniadir-participante" class="aniadir-participante"><i class="fa-solid fa-user-plus"></i></button>
+                    </div>
+
+                    <button id="btn-generar">Generar PDF</button>
+                </form>
+            </section>
+        </main>
+        <script src="../scripts/functionsPostOp.js"></script>
+  </body>
+</html>
