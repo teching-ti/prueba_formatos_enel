@@ -1,3 +1,7 @@
+/* 6/11/2024 => Se ha avanzado hasta el posicionamiento de cantidades "select" de equipos de protección personal - continuar...
+
+/* 5/11/2024 - Esperando confirmación de HSQE para proceder con la actualización del formato en dos páginas
+ 
 Anotaciones realizadas "Nuevo Formato y Actualizar Lista de Inspección".
 
 1. Agregagdo a recursos el nuevo formato "formatoCharlaPostOperacional.jpg"... ok
