@@ -4,6 +4,10 @@ let cargarFecha = () => {
   dia = new Date().toLocaleDateString();
   fecha.value = dia;
 };
+
+let probando = "Prueba";
+console.log(probando);
+
 cargarFecha();
 /*colocar fecha end*/
 
@@ -953,7 +957,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
    evaluarEquiposAdicionales() && 
    evaluarHerrammientasAdicionales() &&
    evaluarObservacioProyecto() &&
-   evaluarTrabajadores()){
+   evaluarTrabajadores()){ 
     
     /*var blob = doc.output("blob");
     window.open(URL.createObjectURL(blob));*/

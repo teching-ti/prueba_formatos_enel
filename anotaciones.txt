@@ -1,3 +1,5 @@
+/*** 26/11/2024 => Se ha retirado el formato de Orden de Trabajo, ya que deberá de ser completo de forma manual por jhidalgo
+
 /* 6/11/2024 => Se ha avanzado hasta el posicionamiento de cantidades "select" de equipos de protección personal - continuar...
 
 /* 5/11/2024 - Esperando confirmación de HSQE para proceder con la actualización del formato en dos páginas
