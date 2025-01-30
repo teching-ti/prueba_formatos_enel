@@ -182,16 +182,37 @@ let cargarFecha = () => {
   let functionObtenerRadioButtons = function(){
     radioButtons.forEach(r => {
       r.addEventListener('click', function() {
-      // se obtiene el select correspondiente al raddio buttons
+        // se obtiene el select correspondiente al raddio buttons
         const selectElement = this.closest('.elemento-cuerpo').querySelector('select');
-          // si el valor del botón de radio es 'NT', se establece el valor del select a '0'
-          //selectElement.value = (this.value === 'NT') ? '0' : selectElement.value;
-          if(this.value === 'NT'){
-            selectElement.value = 0
-          }else if(this.value!= 'NT' && selectElement.value==0){
-            selectElement.value=1
+        const options = selectElement.options;
+        // si el valor del botón de radio es 'NT' o 'NR', se establece el valor del select a '0'
+        if(this.value === 'NT' || this.value === 'NR'){
+          selectElement.value = 0
+          for (let i = 0; i < options.length; i++) {
+
+            if (options[i].value !== '0') {
+              options[i].style.display = 'none';
+            } else {
+              options[i].style.display = 'block';
+            }
           }
-        });
+        // si el radio button marcado es distinto a NT y NR
+        }else{
+          // solo si el valor anterior es 0 se solocará a 1
+          if(selectElement.value==0){  
+            selectElement.value=1          
+          }
+          for (let i = 0; i < options.length; i++) {
+            
+            if (options[i].value === '0') {
+              options[i].style.display = 'none'
+            } else {
+              options[i].style.backgroundColor = 'white'
+              options[i].style.display = 'block'
+            }
+          }
+        }
+      });
     });
   }
   // se ejecuta la funcion

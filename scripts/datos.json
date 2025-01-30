@@ -55,7 +55,7 @@
             "dni": "48058039",
             "celular": "921 696 606",
             "firma": "..\/recursos\/firmas\/ErichOfniGonzaloLaguna.png",
-            "cargo": "Operario de Balance",
+            "cargo": "Jefe Cuadrilla de Balance",
             "vehiculo": "",
             "placa": "",
             "botiquin": []
@@ -231,12 +231,12 @@
             ]
         },
         {
-            "name": "Wilver Alonso Flores Gomez",
+            "name": "Wilver Alonso Gomez Flores",
             "nombres": "Wilver Alonso",
-            "apellidos": "Flores Gomez",
+            "apellidos": "Gomez Flores ",
             "dni": "48285041",
             "celular": "999 999 999",
-            "firma": "..\/recursos\/firmas\/WilverAlonsoFloresGomez.png",
+            "firma": "..\/recursos\/firmas\/WilverAlonsoGomezFlores.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
             "placa": "Z7N-063",

@@ -276,6 +276,11 @@ th, td{
     border-bottom: dotted 2px red;
 }
 
+/*--valor por defecto para los elementos options del select de cantidad al cargar la página*/
+.op-nt-nr{
+    display: none;
+}
+
 @media (max-width: 720px){
     .main{
         width: 100%;
