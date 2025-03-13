@@ -355,7 +355,7 @@ let cargarFecha = () => {
         doc.text(lugar, 38.5, 16.8);
         doc.text(fecha, 38.2, 18.8);
         doc.text(hora, 53, 18.8);
-        doc.text("Bernabe Oscco León", 152, 17.8);
+        doc.text("Jhordan Juvert Morales Arango", 152, 17.8);
   
         //tecnico responsable
         doc.text(responsableNombre, 94, 282.5 ,{align: "center"})

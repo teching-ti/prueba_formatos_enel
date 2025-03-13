@@ -55,7 +55,7 @@
             "dni": "48058039",
             "celular": "921 696 606",
             "firma": "..\/recursos\/firmas\/ErichOfniGonzaloLaguna.png",
-            "cargo": "Jefe Cuadrilla de Balance",
+            "cargo": "Operario de Balance",
             "vehiculo": "",
             "placa": "",
             "botiquin": []
@@ -128,19 +128,19 @@
                     "fecha_vencimiento": "2027-01-01"
                 },
                 {
-                    "elemento": "Gasas esterilizadas fraccionadas de 1 m x 10cm",
+                    "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
                     "fecha_vencimiento": "2028-03-09"
                 },
                 {
-                    "elemento": "Ap\u00f3sito Esterilizado 10x 10 cm",
+                    "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
                     "fecha_vencimiento": "2027-10-31"
                 },
                 {
-                    "elemento": "Esparadrapo hipoal\u00e9rgico 2.5 cm x 5 m",
-                    "fecha_vencimiento": "2027-04-12"
+                    "elemento": "Esparadrapo 2.5 cm x 5m",
+                    "fecha_vencimiento": "2025-01-31"
                 },
                 {
-                    "elemento": "Venda el\u00e1stica 4 pulg x 5 yardas",
+                    "elemento": "Venda elástica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-03-31"
                 },
                 {
@@ -164,7 +164,11 @@
                     "fecha_vencimiento": "2027-07-01"
                 },
                 {
-                    "elemento": "Agua esteril x 1\/2 litro",
+                    "elemento": "Agua estéril x 1 litro",
+                    "fecha_vencimiento": "2026-11-19"
+                },
+                {
+                    "elemento": "Agua oxigenada x 250 ml",
                     "fecha_vencimiento": "2026-11-19"
                 }
             ]
@@ -189,19 +193,19 @@
                     "fecha_vencimiento": "2027-04-30"
                 },
                 {
-                    "elemento": "Gasas esterilizadas fraccionadas de 1 m x 10cm",
+                    "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
                     "fecha_vencimiento": "2027-10-30"
                 },
                 {
-                    "elemento": "Ap\u00f3sito Esterilizado 10x 10 cm",
+                    "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
                     "fecha_vencimiento": "2027-07-21"
                 },
                 {
-                    "elemento": "Esparadrapo hipoal\u00e9rgico 2.5 cm x 5 m",
+                    "elemento": "Esparadrapo 2.5 cm x 5m",
                     "fecha_vencimiento": "2025-01-31"
                 },
                 {
-                    "elemento": "Venda el\u00e1stica 4 pulg x 5 yardas",
+                    "elemento": "Venda elástica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-08-31"
                 },
                 {
@@ -225,8 +229,12 @@
                     "fecha_vencimiento": "2027-07-01"
                 },
                 {
-                    "elemento": "Agua esteril x 1\/2 litro",
+                    "elemento": "Agua estéril x 1 litro",
                     "fecha_vencimiento": "2026-11-11"
+                },
+                {
+                    "elemento": "Agua oxigenada x 250 ml",
+                    "fecha_vencimiento": "2026-11-19"
                 }
             ]
         },
@@ -250,19 +258,19 @@
                     "fecha_vencimiento": "2024-03-09"
                 },
                 {
-                    "elemento": "Gasas esterilizadas fraccionadas de 1 m x 10cm",
+                    "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
                     "fecha_vencimiento": "2028-03-09"
                 },
                 {
-                    "elemento": "Ap\u00f3sito Esterilizado 10x 10 cm",
+                    "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
                     "fecha_vencimiento": "2027-02-28"
                 },
                 {
-                    "elemento": "Esparadrapo hipoal\u00e9rgico 2.5 cm x 5 m",
+                    "elemento": "Esparadrapo 2.5 cm x 5m",
                     "fecha_vencimiento": "2025-01-31"
                 },
                 {
-                    "elemento": "Venda el\u00e1stica 4 pulg x 5 yardas",
+                    "elemento": "Venda elástica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-08-31"
                 },
                 {
@@ -286,8 +294,12 @@
                     "fecha_vencimiento": "2027-08-31"
                 },
                 {
-                    "elemento": "Agua esteril x 1\/2 litro",
+                    "elemento": "Agua estéril x 1 litro",
                     "fecha_vencimiento": "2026-11-30"
+                },
+                {
+                    "elemento": "Agua oxigenada x 250 ml",
+                    "fecha_vencimiento": "2026-11-19"
                 }
             ]
         },
@@ -311,19 +323,19 @@
                     "fecha_vencimiento": "2024-02-29"
                 },
                 {
-                    "elemento": "Gasas esterilizadas fraccionadas de 1 m x 10cm",
+                    "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
                     "fecha_vencimiento": "2028-03-09"
                 },
                 {
-                    "elemento": "Ap\u00f3sito Esterilizado 10x 10 cm",
+                    "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
                     "fecha_vencimiento": "2027-02-28"
                 },
                 {
-                    "elemento": "Esparadrapo hipoal\u00e9rgico 2.5 cm x 5 m",
+                    "elemento": "Esparadrapo 2.5 cm x 5m",
                     "fecha_vencimiento": "2025-01-31"
                 },
                 {
-                    "elemento": "Venda el\u00e1stica 4 pulg x 5 yardas",
+                    "elemento": "Venda elástica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-08-31"
                 },
                 {
@@ -347,8 +359,12 @@
                     "fecha_vencimiento": "2025-04-01"
                 },
                 {
-                    "elemento": "Agua esteril x 1\/2 litro",
+                    "elemento": "Agua estéril x 1 litro",
                     "fecha_vencimiento": "2026-11-11"
+                },
+                {
+                    "elemento": "Agua oxigenada x 250 ml",
+                    "fecha_vencimiento": "2026-11-19"
                 }
             ]
         }
@@ -374,19 +390,19 @@
                     "fecha_vencimiento": "2027-04-30"
                 },
                 {
-                    "elemento": "Gasas esterilizadas fraccionadas de 1 m x 10cm",
-                    "fecha_vencimiento": "2025-02-20"
+                    "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
+                    "fecha_vencimiento": "2027-02-20"
                 },
                 {
-                    "elemento": "Ap\u00f3sito Esterilizado 10x 10 cm",
-                    "fecha_vencimiento": "2025-02-20"
+                    "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
+                    "fecha_vencimiento": "2027-02-20"
                 },
                 {
-                    "elemento": "Esparadrapo hipoal\u00e9rgico 2.5 cm x 5 m",
-                    "fecha_vencimiento": "2025-01-31"
+                    "elemento": "Esparadrapo 2.5 cm x 5m",
+                    "fecha_vencimiento": "2029-05-31"
                 },
                 {
-                    "elemento": "Venda el\u00e1stica 4 pulg x 5 yardas",
+                    "elemento": "Venda elástica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-08-31"
                 },
                 {
@@ -399,7 +415,7 @@
                 },
                 {
                     "elemento": "Algod\u00f3n x 50 gr",
-                    "fecha_vencimiento": "2025-02-20"
+                    "fecha_vencimiento": "2027-02-20"
                 },
                 {
                     "elemento": "Flamodil \u00f3 Hirudoid (golpes, hematomas)",
@@ -407,11 +423,15 @@
                 },
                 {
                     "elemento": "Apositos de Jelonet  10 x 10 cm",
-                    "fecha_vencimiento": "2025-02-20"
+                    "fecha_vencimiento": "2027-02-20"
                 },
                 {
-                    "elemento": "Agua esteril x 1\/2 litro",
+                    "elemento": "Agua estéril x 1 litro",
                     "fecha_vencimiento": "2026-09-16"
+                },
+                {
+                    "elemento": "Agua oxigenada x 250 ml",
+                    "fecha_vencimiento": "2026-11-19"
                 }
             ]
         }

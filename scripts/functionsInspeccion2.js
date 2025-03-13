@@ -15,7 +15,7 @@ function validarFechas(campoFecha){
     
     if (fechaEvaluar < fechaMinima || fechaEvaluar>fechaMaxima) {
         alert("Ingrese una fecha adecuada.");
-        fechaIngresada.value = ""// Limpiar el campo de entrada
+        fechaIngresada.value = ""
         return false
     }
     return true
@@ -284,10 +284,10 @@ async function loadImage(url) {
         let vencimiento = vSeparado.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })
 
             //fecha de inspeccion
-            doc.text(fecha.value, 173, 36)
+            doc.text(fecha.value, 173, 35)
 
             if(empresa!=""){
-                doc.text(empresa, 44, 25)// +3, 0.5
+                doc.text(empresa, 43, 24.6)// +3, 0.5
             }else{
                 alert("Complete el campo de empresa")
                 evaluar = false
@@ -295,7 +295,7 @@ async function loadImage(url) {
             }
 
             if(placa!=""){
-                doc.text(placa, 44, 28)
+                doc.text(placa, 43, 27.3)
             }else{
                 alert("Complete el campo de la placa del vehículo")
                 evaluar = false
@@ -303,7 +303,7 @@ async function loadImage(url) {
             }
 
             if(tarjeta!=""){
-                doc.text(tarjeta, 44, 31)
+                doc.text(tarjeta, 43, 30)
             }else{
                 alert("Complete el campo de tarjeta de propiedad")
                 evaluar = false
@@ -311,7 +311,7 @@ async function loadImage(url) {
             }
 
             if(vRevTecF!="Invalid Date"){
-                doc.text(vRevTecF, 44, 38)
+                doc.text(vRevTecF, 43, 37)
             }else{
                 alert("Complete el campo de vencimiento de revisión técnica")
                 evaluar = false
@@ -319,7 +319,7 @@ async function loadImage(url) {
             }
             
             if(numBrevete!=""){
-                doc.text(numBrevete, 162, 28)
+                doc.text(numBrevete, 162, 27.3)
             }else{
                 alert("Complete el campo de número de brevete")
                 evaluar = false
@@ -327,7 +327,7 @@ async function loadImage(url) {
             }
 
             if(categoria!=""){
-                doc.text(categoria, 162, 31)
+                doc.text(categoria, 162, 30)
             }else{
                 alert("Complete el campo de categoría")
                 evaluar = false
@@ -335,14 +335,14 @@ async function loadImage(url) {
             }
             
             if(lentes.checked){
-                doc.text("x", 174.5, 21.5)
+                doc.text("x", 175.1, 21.3)
             }else{
-                doc.text("x", 187, 21.5)
+                doc.text("x", 187.7, 21.3)
             }
 
             if(inicio!=""){
                 doc.setFontSize(4.5)
-                doc.text(inicio, 173.5, 24.8)
+                doc.text(inicio, 173.5, 24.6)
             }else{
                 alert("Complete el campo de km de inicio")
                 evaluar = false
@@ -361,7 +361,7 @@ async function loadImage(url) {
 
             if(soat!=""){
                 doc.setFontSize(5)
-                doc.text(soat, 92, 28)
+                doc.text(soat, 92, 27.3)
             }else{
                 alert("Complete el campo de km final")
                 evaluar = false
@@ -370,7 +370,7 @@ async function loadImage(url) {
 
             if(eSoat!=""){
                 doc.setFontSize(5)
-                doc.text(eSoat, 92, 31)
+                doc.text(eSoat, 92, 30)
             }else{
                 alert("Complete el campo de empresa SOAT")
                 evaluar = false
@@ -379,7 +379,7 @@ async function loadImage(url) {
 
             if(vSoatF!="Invalid Date"){
                 doc.setFontSize(5)
-                doc.text(vSoatF, 92, 33.5)
+                doc.text(vSoatF, 92, 32.7)
             }else{
                 alert("Complete el campo de vencimiento de soat")
                 evaluar = false
@@ -388,7 +388,7 @@ async function loadImage(url) {
 
             if(horaInspeccion!=""){
                 doc.setFontSize(5)
-                doc.text(horaInspeccion, 173, 40)
+                doc.text(horaInspeccion, 173, 38.4)
             }else{
                 alert("Complete el campo de hora de inspeccion")
                 evaluar = false
@@ -397,7 +397,7 @@ async function loadImage(url) {
 
             if(vencimiento!="Invalid Date"){
                 doc.setFontSize(5)
-                doc.text(vencimiento, 162, 33.5)
+                doc.text(vencimiento, 162, 32.7)
             }else{
                 alert("Complete el campo de vencimiento")
                 evaluar = false
@@ -418,8 +418,8 @@ async function loadImage(url) {
         let firmaConductor = document.getElementById("firma-conductor").value
 
         if(nombreConductor!="" && firmaConductor!=""){
-            doc.text(nombreConductor, 44, 22)
-            doc.addImage(firmaConductor, "PNG", 39, 258, 35, 6)
+            doc.text(nombreConductor, 43, 22)
+            doc.addImage(firmaConductor, "PNG", 39, 268, 35, 6)
         }else{
             evaluar = false
         }
@@ -434,7 +434,8 @@ async function loadImage(url) {
     
     function evaluarObservaciones(){
         let observaciones = document.getElementById("observaciones").value
-        doc.text(observaciones, 10, 247.5, {
+        observaciones = observaciones.replace(/(\r\n|\n|\r)/gm, "  ")
+        doc.text(observaciones, 9, 257, {
             maxWidth: 185,
             lineHeightFactor: 1.48, 
             align: "justify"
@@ -443,7 +444,7 @@ async function loadImage(url) {
     }
 
     function evaluarTodoVehiculo(){
-        let positionY = 61;
+        let positionY = 59.4;
         let contarSaltoX = 0;
         let contadorEspacio = 0;
 
@@ -459,24 +460,24 @@ async function loadImage(url) {
                     if(contarSaltoX<10){
                         doc.text(i.value, 58, positionY,{ align: "center"})
                     }else if(10<=contarSaltoX && contarSaltoX<=19){
-                        doc.text(i.value, 121, positionY,{ align: "center"})
+                        doc.text(i.value, 122, positionY,{ align: "center"})
                     }else if(19<contarSaltoX){
-                        doc.text(i.value, 178, positionY,{ align: "center"})
+                        doc.text(i.value, 179, positionY,{ align: "center"})
                     }
                     
-                    positionY+=3.22
+                    positionY+=3.18
                     
                     contarSaltoX+=1
                     contadorEspacio+=1
 
                     if(contarSaltoX%10==0){
-                        positionY= 61
+                        positionY= 59.4
                     }
                 }
             })
         })
 
-        positionY = 61
+        positionY = 59.4
         contarSaltoX = 0
         contadorEspacio = 0
 
@@ -488,19 +489,19 @@ async function loadImage(url) {
                 if(contarSaltoX<10){
                     doc.text(se.value, 66.5, positionY,{ align: "center"})
                 }else if(10<=contarSaltoX && contarSaltoX<=19){
-                    doc.text(se.value, 131.5, positionY,{ align: "center"})
+                    doc.text(se.value, 132.5, positionY,{ align: "center"})
                 }else if(19<contarSaltoX){
-                    doc.text(se.value, 193, positionY,{ align: "center"})
+                    doc.text(se.value, 193.8, positionY,{ align: "center"})
                 }
                 
-                positionY+=3.22
+                positionY+=3.18
 
                 
                 contarSaltoX+=1
                 contadorEspacio+=1
 
                 if(contarSaltoX%10==0){
-                    positionY = 61
+                    positionY = 59.4
                 }
             })
         })
@@ -509,7 +510,7 @@ async function loadImage(url) {
 
     function evaluarLLantas(){
         let cl = document.querySelector(".contenedor-llantas").querySelectorAll(".selector-elemento")
-        positionLlantasY = 96.8
+        positionLlantasY = 94.6
         cl.forEach(c=>{
             inputsEvaluar = c.querySelectorAll("input")
             inputsEvaluar.forEach((i)=>{
@@ -517,17 +518,17 @@ async function loadImage(url) {
                     doc.text(i.value, 58, positionLlantasY,{
                         align: "center"
                     })
-                    positionLlantasY+=3.22
+                    positionLlantasY+=3.18
                 }
             })
         })
 
-        positionLlantasY = 96.8
+        positionLlantasY = 94.6
         cl.forEach(c=>{
             selectEvaluar = c.querySelectorAll("select")
             selectEvaluar.forEach((i)=>{
                 doc.text(i.value, 66.5, positionLlantasY,{ align: "center"} )
-                positionLlantasY += 3.22
+                positionLlantasY += 3.18
             })
         })
 
@@ -537,25 +538,25 @@ async function loadImage(url) {
 
     function evaluarAccesorios(){
         let cl = document.querySelector(".contenedor-accesorios").querySelectorAll(".selector-elemento")
-        positionY = 96.8
+        positionY = 94.6
         cl.forEach(c=>{
             inputsEvaluar = c.querySelectorAll("input")
             inputsEvaluar.forEach((i)=>{
                 if(i.checked){
-                    doc.text(i.value, 121, positionY,{
+                    doc.text(i.value, 122, positionY,{
                         align: "center"
                     })
-                    positionY+=3.22
+                    positionY+=3.18
                 }
             })
         })
 
-        positionY = 96.8
+        positionY = 94.6
         cl.forEach(c=>{
             selectEvaluar = c.querySelectorAll("select")
             selectEvaluar.forEach((i)=>{
-                doc.text(i.value, 131.5, positionY,{ align: "center"} )
-                positionY += 3.22
+                doc.text(i.value, 132.5, positionY,{ align: "center"} )
+                positionY += 3.18
             })
         })
 
@@ -564,25 +565,25 @@ async function loadImage(url) {
 
     function evaluarTapas(){
         let cl = document.querySelector(".contenedor-tapas").querySelectorAll(".selector-elemento")
-        positionY = 96.8
+        positionY = 94.6
         cl.forEach(c=>{
             inputsEvaluar = c.querySelectorAll("input")
             inputsEvaluar.forEach((i)=>{
                 if(i.checked){
-                    doc.text(i.value, 178, positionY,{
+                    doc.text(i.value, 179, positionY,{
                         align: "center"
                     })
-                    positionY+=3.22
+                    positionY+=3.18
                 }
             })
         })
 
-        positionY = 96.8
+        positionY = 94.6
         cl.forEach(c=>{
             selectEvaluar = c.querySelectorAll("select")
             selectEvaluar.forEach((i)=>{
-                doc.text(i.value, 193, positionY,{ align: "center"} )
-                positionY += 3.22
+                doc.text(i.value, 193.8, positionY,{ align: "center"} )
+                positionY += 3.18
             })
         })
 
@@ -591,20 +592,20 @@ async function loadImage(url) {
 
     function evaluarEpp(){
         let contenedoresEpp = document.querySelectorAll(".elemento-epp")
-        positionY = 120
+        positionY = 118
         contenedoresEpp.forEach(c=>{
             elemento = c.querySelectorAll("input")
             elemento.forEach(i=>{
                 if(i.checked){
-                    doc.text(i.value, 62, positionY,{
+                    doc.text(i.value, 62.2, positionY,{
                         align: "center"
                     } )
-                    positionY+=3.22
+                    positionY+=3.18
                 }
             })
         })
 
-        positionY = 120
+        positionY = 118
         contenedoresEpp.forEach(c=>{
             elemento = c.querySelectorAll("select")
             elemento.forEach(i=>{
@@ -612,7 +613,7 @@ async function loadImage(url) {
                     doc.text(i.value, 81, positionY,{
                         align: "center"
                     } )
-                    positionY+=3.22
+                    positionY+=3.18
             })
         })
         
@@ -621,20 +622,20 @@ async function loadImage(url) {
 
     function evaluarPma(){
         let contenedoresPma = document.querySelectorAll(".elemento-pma")
-        positionY = 149
+        positionY = 146.2
         contenedoresPma.forEach(c=>{
             elemento = c.querySelectorAll("input")
             elemento.forEach(i=>{
                 if(i.checked){
-                    doc.text(i.value, 62, positionY,{
+                    doc.text(i.value, 62.2, positionY,{
                         align: "center"
                     } )
-                    positionY+=3.22
+                    positionY+=3.18
                 }
             })
         })
 
-        positionY = 149
+        positionY = 146.2
         contenedoresPma.forEach(c=>{
             elemento = c.querySelectorAll("select")
             elemento.forEach(i=>{
@@ -642,7 +643,7 @@ async function loadImage(url) {
                     doc.text(i.value, 81, positionY,{
                         align: "center"
                     } )
-                    positionY+=3.22
+                    positionY+=3.18
             })
         })
         
@@ -652,32 +653,32 @@ async function loadImage(url) {
     //Section del botiquin
     function evaluarBotiquin(){
         evaluar = true
-        let botY = 166.5
+        let botY = 163.8
         let salto = 0
         let contadorElementoBotiquin = 0
         //fechas inicia
         contenedoresBotiquin.forEach(f=>{
-            inputFecha = f.querySelector('input[type="date"]')
-            partesFecha = inputFecha.value.split("-")
-            vSeparado = new Date(partesFecha[0], partesFecha[1] - 1, partesFecha[2])
+            let inputFecha = f.querySelector('input[type="date"]')
+            let partesFecha = inputFecha.value.split("-")
+            let vSeparado = new Date(partesFecha[0], partesFecha[1] - 1, partesFecha[2])
             let fechaBotiquin = vSeparado.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })
             
             if(fechaBotiquin!="" && fechaBotiquin!="Invalid Date" || contadorElementoBotiquin==7 ||
-            contadorElementoBotiquin==12 || contadorElementoBotiquin==13){
-                if(salto==7){
+            contadorElementoBotiquin==12 || contadorElementoBotiquin==13 || contadorElementoBotiquin==16){
+                if(salto==9){
                     if(fechaBotiquin=="Invalid Date"){
                         typeof(fechaBotiquin)
                         fechaBotiquin=""
                     }
                     doc.text(fechaBotiquin, 76, botY, { align: 'center'})
-                    botY+=3.7
+                    botY+=6.7
                 }else{
                     if(fechaBotiquin=="Invalid Date"){
                         typeof(fechaBotiquin)
                         fechaBotiquin=""
                     }
                     doc.text(fechaBotiquin, 76, botY, { align: 'center'})
-                    botY+=3.45
+                    botY+=3.38
                 }
                 
             }else{
@@ -688,35 +689,35 @@ async function loadImage(url) {
             salto+=1
         })
 
-        botY = 166.5
+        botY = 163.8
         salto = 0
         contenedoresBotiquin.forEach(c=>{
             elemento = c.querySelectorAll("input[type='radio']")
             elemento.forEach(i=>{
                 if(i.checked){
-                    if(salto==1 || salto==7){
-                        doc.text(i.value, 103, botY, { align: 'center'})
-                        botY+=3.63
+                    if(salto==9){
+                        doc.text(i.value, 103.6, botY, { align: 'center'})
+                        botY+=6.7
                     }else{
-                        doc.text(i.value, 103, botY, { align: 'center'})
-                        botY+=3.43
+                        doc.text(i.value, 103.6, botY, { align: 'center'})
+                        botY+=3.38
                     }
                 }
             })
             salto+=1
         })
 
-        botY = 166.5
+        botY = 163.8
         salto = 0
         contenedoresBotiquin.forEach(c=>{
             elemento = c.querySelectorAll("select")
             elemento.forEach(i=>{
-                if(salto==1 || salto==7){
-                    doc.text(i.value, 121, botY, { align: 'center'})
-                    botY+=3.63
+                if(salto==9){
+                    doc.text(i.value, 122, botY, { align: 'center'})
+                    botY+=6.7
                 }else{
-                    doc.text(i.value, 121, botY, { align: 'center'})
-                    botY+=3.43
+                    doc.text(i.value, 122, botY, { align: 'center'})
+                    botY+=3.38
                 }
             })
             salto+=1
@@ -738,31 +739,30 @@ async function loadImage(url) {
         let eval1 = document.getElementById("ev-conductor1")
         let eval2 = document.getElementById("ev-conductor2")
 
-        doc.setFontSize(8)
+        doc.setFontSize(8.4)
         doc.setTextColor(0, 0, 225);
 
         if(!eval1.checked){
-            doc.text("X", 190.4, 237.5)
+            doc.text("X", 191.2, 247.3)
         }else{
-            doc.text("X", 170.5, 237.5)
+            doc.text("X", 171, 247.3)
         }
         
         if(!eval2.checked){
-            doc.text("X", 190.4, 240.8)
+            doc.text("X", 191.2, 250.2)
         }else{
-            doc.text("X", 170.5, 240.8)
+            doc.text("X", 171, 250.2)
         }
         return evaluar
     }
 
     /*datos del supervisor directamente al documento*/
-    
     doc.setFontSize(5)
-    doc.text("Roberto Carlos Luis Bailon", 44, 33.5)
-    doc.text("Roberto Carlos Luis Bailon", 169, 272, {
+    doc.text("Roberto Carlos Luis Bailon", 43, 32.7)
+    doc.text("Roberto Carlos Luis Bailon", 168, 281.2, {
         maxWidth: "32"
     })
-    doc.addImage("../recursos/firmas/RobertoLuisBailon.png", "PNG", 158, 258,  35, 6)
+    doc.addImage("../recursos/firmas/RobertoLuisBailon.png", "PNG", 157.8, 268,  35, 6)
 
     if(evaluarDatosGenerales() && evaluarNombre() && evaluarObservaciones() && evaluarTodoVehiculo() && evaluarLLantas() && evaluarAccesorios() && evaluarTapas() && evaluarEpp() && evaluarPma() && evaluarBotiquin() && evaluarConductor()){
         var blob = doc.output("blob");

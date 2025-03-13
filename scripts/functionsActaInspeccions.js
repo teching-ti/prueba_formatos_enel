@@ -493,6 +493,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
     let observaciones = document.getElementById("t-observaciones").value;
 
     if(observaciones!=""){
+      observaciones = observaciones.replace(/(\r\n|\n|\r)/gm, "  ")
       doc.setFontSize(8);
       doc.setTextColor(0, 0, 0);
       
@@ -523,37 +524,48 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
       eval = false
       alert("Completar la casilla de Recomendaciones")
     }
-    
+  }
+
+  function evaluarSupervisor(){
+    let firmaSupervisor = "../recursos/firmas/RobertoLuisBailon.png";
+    doc.addImage(firmaSupervisor, "PNG", 39, 230, 30, 10);
   }
 
   function evaluarJefeCuadrilla() {
-    //let jefeCuadrilla = document.getElementById("jefe-cuadrilla").value
     doc.setFontSize(7);
     let nombres = document.getElementById("nombres").value.toUpperCase();
     let apellidos = document.getElementById("apellidos").value.toUpperCase();
     let dni = document.getElementById("dni").value;
     let firma = document.getElementById("firma").value;
 
-    let firmaSupervisor = "../recursos/firmas/RobertoLuisBailon.png";
-    let firmaResponsable = "../recursos/firmas/LuisAdolfoParedesRicra.png";
-
     doc.text(apellidos, 95.1, 250);
     doc.text(nombres, 95.1, 254.6);
     doc.text(dni, 89.1, 258.8);
     doc.addImage(firma, "PNG", 88, 230, 30, 10);
-    //aquí también se colocará la firma del supervisor y responsable del proyecto
-    doc.addImage(firmaSupervisor, "PNG", 39, 230, 30, 10);
-    doc.addImage(firmaResponsable, "PNG", 148, 230, 30, 10);
+  }
+
+  function evaluarResponsable(){
+    let firmaResponsable = "../recursos/firmas/HiderNelsonCastellanosCardenas.png";
+    let nombreResponsable = "HIDER NELSON";
+    let apellidosResponsable = "CASTELLANOS CARDENAS";
+    let dniResponsable = "47200017";
+
+    doc.text(nombreResponsable, 142, 250);
+    doc.text(apellidosResponsable, 142, 254.6);
+    doc.text(dniResponsable, 136, 258.8);
+    doc.addImage(firmaResponsable, "PNG", 147, 230, 30, 10);
   }
 
   //ejecutar funciones en orden de creacion
   evaluarDatosGenerales()
   evaluarSituacionEncontrada()
-  evaluarDatosInspeccion();
+  evaluarDatosInspeccion()
   evaluarObservaciones()
   evaluarRecomendaciones()
+  evaluarSupervisor()
   evaluarJefeCuadrilla()
-  
+  evaluarResponsable()
+
   if(eval) {
     var blob = doc.output("blob");
     window.open(URL.createObjectURL(blob));
