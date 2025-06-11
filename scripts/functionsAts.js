@@ -328,7 +328,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
       doc.text(lugar, 59, 36.8);
       doc.text(fecha, 59, 41);
       
-      doc.text(responsable1, 143, 41);
+      doc.text(responsable1, 168, 41, {align: "center"}); // here
       //para que aparezca el nombre y la firma
 
       /*importante evaluar que posiblemente para la sección de encargado sea necesario integrar sus datos al json
@@ -369,6 +369,8 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
         return false;
       case "TECHING":
         doc.text("x", 36, 28);
+        doc.setFontSize(8); // here
+        doc.text("JA10143035", 40, 28); // here
         break;
       case "CONTRATISTA1":
         doc.text("x", 85.3, 28);
@@ -749,15 +751,17 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
     evaluarPersonas() &&
     evaluarObservaciones()
   ) {
-    /*var blob = doc.output("blob");
-    window.open(URL.createObjectURL(blob));*/
+    var blob = doc.output("blob");
+    window.open(URL.createObjectURL(blob));
+
+    /*
     dia = dia.replace(/\//g, "_")
     //console.log(dia)
-    const nombreDocumento = `ANALISIS_TRABAJO_SEGURO_${dia}.pdf`
-    doc.save(nombreDocumento)
+    //const nombreDocumento = `ANALISIS_TRABAJO_SEGURO_${dia}.pdf`
+    //doc.save(nombreDocumento)
 
     //endodear el resultado del pdf
-    /*var file_data = btoa(doc.output())
+    var file_data = btoa(doc.output())
     var form_data = new FormData()
 
     form_data.append("file", file_data)

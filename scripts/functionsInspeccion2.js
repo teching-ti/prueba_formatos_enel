@@ -250,7 +250,7 @@ async function loadImage(url) {
     var doc = new jsPDF();
     //imagen del documento vacía
     const image = await loadImage("../recursos/formatoInspeccionVehicular.jpg");
-    doc.addImage(image, "jpg", 0, 0, 210, 295);
+    doc.addImage(image, "JPG", 0, 0, 210, 295);// here
     doc.setFontSize(6)
 
     let evaluar = true
@@ -261,8 +261,7 @@ async function loadImage(url) {
         let tarjeta = document.getElementById("tarjeta-propiedad").value
         let empresa = document.getElementById("empresa").value
         let lentes = document.getElementById("usa-lentes") //es checkbox
-        let inicio = document.getElementById("inicio-km").value
-        let final = document.getElementById("final-km").value
+        let odometroInicial = document.getElementById("od-inicial").value; // here
         let soat = document.getElementById("numero-soat").value
         let eSoat = document.getElementById("empresa-soat").value
 
@@ -339,26 +338,16 @@ async function loadImage(url) {
             }else{
                 doc.text("x", 187.7, 21.3)
             }
-
-            if(inicio!=""){
+            // here start
+            if(odometroInicial!=""){
                 doc.setFontSize(4.5)
-                doc.text(inicio, 173.5, 24.6)
+                doc.text(odometroInicial, 162, 24.6)
             }else{
-                alert("Complete el campo de km de inicio")
+                alert("Complete el campo de Odómetro inicial")
                 evaluar = false
                 return
             }
-
-            //final deja de ser obligatorio y se coloca como oculto en el html
-            /*if(final!=""){*/
-                doc.setFontSize(4.5)
-                doc.text(final, 199, 24.5)
-            /*}else{
-                alert("Complete el campo de km final")
-                evaluar = false
-                return
-            }*/
-
+            // here end
             if(soat!=""){
                 doc.setFontSize(5)
                 doc.text(soat, 92, 27.3)

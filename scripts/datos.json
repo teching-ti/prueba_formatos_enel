@@ -73,12 +73,12 @@
             "botiquin": []
         },
         {
-            "name": "Jordy Alquett Acosta Fernandez",
-            "nombres": "Jordy Alquett",
+            "name": "Jordy Alouett Acosta Fernandez",
+            "nombres": "Jordy Alouett",
             "apellidos": "Acosta Fernandez",
             "dni": "47935322",
             "celular": "988 259 588",
-            "firma": "..\/recursos\/firmas\/JordyAlquettAcostaFernandez.png",
+            "firma": "..\/recursos\/firmas\/JordyAlouettAcostaFernandez.png",
             "cargo": "Operario de Balance",
             "vehiculo": "",
             "placa": "",
@@ -103,6 +103,18 @@
             "dni": "78198590",
             "celular": "999 999 999",
             "firma": "..\/recursos\/firmas\/JhonJuanLlancoIllanes.png",
+            "cargo": "Operario de Balance",
+            "vehiculo": "",
+            "placa": "",
+            "botiquin": []
+        },
+        {
+            "name": "Jhony Emilio Romero Casta\u00f1eda",
+            "nombres": "Jhony Emilio",
+            "apellidos": "Romero Casta\u00f1eda",
+            "dni": "44808760",
+            "celular": "999 999 999",
+            "firma": "..\/recursos\/firmas\/JhonyEmilioRomeroCasta\u00f1eda.png",
             "cargo": "Operario de Balance",
             "vehiculo": "",
             "placa": "",
@@ -137,10 +149,10 @@
                 },
                 {
                     "elemento": "Esparadrapo 2.5 cm x 5m",
-                    "fecha_vencimiento": "2025-01-31"
+                    "fecha_vencimiento": "2029-05-31"
                 },
                 {
-                    "elemento": "Venda elástica 4 x 5 yardas",
+                    "elemento": "Venda el\u00e1stica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-03-31"
                 },
                 {
@@ -164,7 +176,7 @@
                     "fecha_vencimiento": "2027-07-01"
                 },
                 {
-                    "elemento": "Agua estéril x 1 litro",
+                    "elemento": "Agua est\u00e9ril x 1 litro",
                     "fecha_vencimiento": "2026-11-19"
                 },
                 {
@@ -202,10 +214,10 @@
                 },
                 {
                     "elemento": "Esparadrapo 2.5 cm x 5m",
-                    "fecha_vencimiento": "2025-01-31"
+                    "fecha_vencimiento": "2029-05-31"
                 },
                 {
-                    "elemento": "Venda elástica 4 x 5 yardas",
+                    "elemento": "Venda el\u00e1stica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-08-31"
                 },
                 {
@@ -229,7 +241,7 @@
                     "fecha_vencimiento": "2027-07-01"
                 },
                 {
-                    "elemento": "Agua estéril x 1 litro",
+                    "elemento": "Agua est\u00e9ril x 1 litro",
                     "fecha_vencimiento": "2026-11-11"
                 },
                 {
@@ -241,7 +253,7 @@
         {
             "name": "Wilver Alonso Gomez Flores",
             "nombres": "Wilver Alonso",
-            "apellidos": "Gomez Flores ",
+            "apellidos": "Gomez Flores",
             "dni": "48285041",
             "celular": "999 999 999",
             "firma": "..\/recursos\/firmas\/WilverAlonsoGomezFlores.png",
@@ -270,7 +282,7 @@
                     "fecha_vencimiento": "2025-01-31"
                 },
                 {
-                    "elemento": "Venda elástica 4 x 5 yardas",
+                    "elemento": "Venda el\u00e1stica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-08-31"
                 },
                 {
@@ -294,7 +306,7 @@
                     "fecha_vencimiento": "2027-08-31"
                 },
                 {
-                    "elemento": "Agua estéril x 1 litro",
+                    "elemento": "Agua est\u00e9ril x 1 litro",
                     "fecha_vencimiento": "2026-11-30"
                 },
                 {
@@ -335,7 +347,7 @@
                     "fecha_vencimiento": "2025-01-31"
                 },
                 {
-                    "elemento": "Venda elástica 4 x 5 yardas",
+                    "elemento": "Venda el\u00e1stica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-08-31"
                 },
                 {
@@ -359,7 +371,7 @@
                     "fecha_vencimiento": "2025-04-01"
                 },
                 {
-                    "elemento": "Agua estéril x 1 litro",
+                    "elemento": "Agua est\u00e9ril x 1 litro",
                     "fecha_vencimiento": "2026-11-11"
                 },
                 {
@@ -402,7 +414,7 @@
                     "fecha_vencimiento": "2029-05-31"
                 },
                 {
-                    "elemento": "Venda elástica 4 x 5 yardas",
+                    "elemento": "Venda el\u00e1stica 4 x 5 yardas",
                     "fecha_vencimiento": "2028-08-31"
                 },
                 {
@@ -426,7 +438,7 @@
                     "fecha_vencimiento": "2027-02-20"
                 },
                 {
-                    "elemento": "Agua estéril x 1 litro",
+                    "elemento": "Agua est\u00e9ril x 1 litro",
                     "fecha_vencimiento": "2026-09-16"
                 },
                 {

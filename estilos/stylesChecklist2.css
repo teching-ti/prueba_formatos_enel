@@ -117,6 +117,7 @@ body{
 
 .label-sep{
     display: flex;
+    align-items: center; /*here*/
     flex-wrap: nowrap;
     gap: .8rem;
     font-size: .8rem;
