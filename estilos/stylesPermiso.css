@@ -57,6 +57,28 @@ body{
     flex: 1;
 }
 
+/*inicia elemento cuadrillas*/
+.contenedor-cuadrillas{
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    margin: 2rem 0;
+}
+
+.contenedor-cuadrillas label{
+    font-weight: bold;
+}
+
+.contenedor-cuadrillas label span{
+    font-weight: bold;
+    color: red;
+}
+
+.contenedor-cuadrillas input{
+    padding: .5em;
+}
+/*termina elemento cuadrillas*/
+
 .dg-contenedor{
     display: flex;
     gap: 1rem;

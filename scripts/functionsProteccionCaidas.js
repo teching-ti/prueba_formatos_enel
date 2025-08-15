@@ -1,10 +1,12 @@
 let fecha = document.getElementById("fecha")
-let fechaActual = new Date().toLocaleDateString()
-fecha.value = fechaActual
+let dia = new Date().toLocaleDateString()
+fecha.value = dia
+
+let codCuadrillaSubjetct = "";
 
 //obtener los datos del archivo
 //uso de una petición fetch
-fetch("../scripts/datos.json")
+fetch(`../scripts/datos.json?t=${new Date().getTime()}`)
   .then((response) => response.json())
   .then((data) => {
     //la data obtenida será nombrada como users
@@ -68,6 +70,23 @@ function autocompletarCamposSup(elementoSelect, elementoD, elementoF) {
     });
 }
 
+document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
+    let input = e.target;
+    
+    // Elimina todos los caracteres que no sean letras o números
+    let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+
+    // Agrupa cada dos caracteres y los une con guiones
+    let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
+
+    // Evita que se agregue guion al final si es innecesario
+    if (formatted.endsWith('-')) {
+        formatted = formatted.slice(0, -1);
+    }
+
+    input.value = formatted;
+});
+
 const jsPDF = window.jspdf.jsPDF;
 
 async function loadImage(url) {
@@ -103,6 +122,35 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
     doc.addImage(image, "JPG", 0, 0, 210, 297);
     doc.setFontSize(9)
     let eval = true
+
+    let evaluarCodigoCuadrillas = () =>{
+        let valCuadrillas = true;
+        let codCuadrillasInput = document.getElementById("cod-cuadrillas");
+        let valorOriginal = codCuadrillasInput.value;
+        
+        if(valorOriginal==""){
+            valCuadrillas=false;
+            alert("Favor de ingresar correctamente el código de las cuadrillas");
+            return;
+        }
+
+        let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
+        let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
+
+        let regexValido = /^[A-Z0-9\-]+$/;
+        if (!regexValido.test(valFormateadoCuadrillas)) {
+            alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
+            valCuadrillas=false;
+            return;
+        }
+
+        if(valCuadrillas){
+            codCuadrillaSubjetct = valFormateadoCuadrillas;
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     function evaluarDatosGenerales(){
         let actividad = document.getElementById("actividad").value
@@ -280,20 +328,27 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
     evaluarConclusion()
     evaluarInspector()
     evaluarResponsable()
-    if(eval){
-        /*var blob = doc.output("blob");
-        window.open(URL.createObjectURL(blob));*/
+    if(evaluarCodigoCuadrillas() && eval){
+        var blob = doc.output("blob");
+        window.open(URL.createObjectURL(blob));
 
-        fechaActual = fechaActual.replace(/\//g, "_")
-        const nombreDocumento = `SISTEMA_PROTECCION_CONTRA_CAIDAS_${fechaActual}.pdf`
-        doc.save(nombreDocumento)
+        // aqui se deberá colocar el código del documento
+        let subject = `SPCCD_${codCuadrillaSubjetct}`;
+
+        // Inicia funcionalidad de visualización
+        dia = dia.replace(/\//g, "_");
+        let doc_guardado = `${subject}-${dia}.pdf`
+        doc.save(doc_guardado)
+        // Termina funcionalidad de visualización
 
         //endodear el resultado del pdf
-        /*var file_data = btoa(doc.output())
+        var file_data = btoa(doc.output())
         var form_data = new FormData()
 
-        form_data.append("file", file_data)
-        form_data.append("nombre", "SISTEMA_PROTECCION_CONTRA_CAIDAS")
+        // aquí se deberán colocar los elementos a enviar como parte del formulario
+        form_data.append("file", file_data) // se envía el archivo empaquetado
+        form_data.append("subj", subject) // se envía el asunto
+        form_data.append("nombre", "SPCCD") // como nombre del documento se envía su código
         //alert(form_data)
         $.ajax({
             url: "../envios/enviar_alerta.php",
@@ -306,7 +361,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
             success: function(php_script_response){
                 alert("Archivo generado correctamente")
             }
-        })*/
+        })
     }
 
 })

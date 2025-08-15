@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lista de Inspección Diaria</title>
     <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <link rel="stylesheet" href="../estilos/stylesListIns.css" />
+    <link rel="stylesheet" href="../estilos/stylesListIns.css?v=14082025" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous" ></script>
   </head>
@@ -29,6 +32,12 @@
         <!--Inicia Cuerpo del Formulario-->
         <div class="form-body">
           <section class="datos-generales-documento" id="datos-generales-documento">
+            <!-- inicia elemento cuadrillas -->
+            <div class="contenedor-cuadrillas">
+              <label for="cod-cuadrillas"><span>* </span>Código de cuadrillas</label>
+              <input type="text" name="cod-cuadrillas" id="cod-cuadrillas" placeholder="C1-C2...C8">
+            </div>
+            <!-- termina elemento cuadrillas -->
             <div class="contenedor-empresa">
               <label for="empresa">Seleccionar Empresa</label>
               <select name="empresa" id="empresa" class="clase-empresa">
@@ -2282,6 +2291,6 @@
       </div>
       <div id="btnListaPersonal"><i class="fa-solid fa-address-book"></i></div>
     </main>
-    <script src="../scripts/functionsListaInspeccion.js"></script>
+    <script src="../scripts/functionsListaInspeccion.js?v=14082025"></script>
   </body>
 </html>

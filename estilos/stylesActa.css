@@ -71,6 +71,30 @@ body{
     gap: 1rem;
 }
 
+/*inicia elemento cuadrillas*/
+.contenedor-cuadrillas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: .4rem;
+}
+
+.contenedor-cuadrillas label{
+    font-weight: bold;
+}
+
+.contenedor-cuadrillas label span{
+    font-weight: bold;
+    color: red;
+}
+
+.contenedor-cuadrillas input{
+    padding: .5em;
+    outline: none;
+}
+/*termina elemento cuadrillas*/
+
 #fecha-h-inicio-final{
     display: flex; 
     flex-wrap: wrap;

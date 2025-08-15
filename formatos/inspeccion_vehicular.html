@@ -10,6 +10,9 @@
       href="../recursos/favicon-teching.png"
       type="image/x-icon"
     />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +20,7 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <link rel="stylesheet" href="../estilos/stylesChecklist2.css" />
+    <link rel="stylesheet" href="../estilos/stylesChecklist2.css?v=14082025" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -44,6 +47,12 @@
           <section class="datos-generales-documento" id="datos-generales-documento">
             <h1 class="title-datos-generales">Datos Generales</h1>
             <div class="dg-contenedor">
+            <!-- inicia elemento cuadrillas -->
+            <div class="contenedor-cuadrillas">
+              <label for="cod-cuadrillas"><span>* </span>Código de cuadrillas</label>
+              <input type="text" name="cod-cuadrillas" id="cod-cuadrillas" placeholder="C1-C2...C8">
+            </div>
+            <!-- termina elemento cuadrillas -->
               <select name="nombre-conductor" id="nombre-conductor">
                 <option>-Seleccionar Conductor-</option>
               </select>
@@ -1268,6 +1277,6 @@
       </section>
       <div id="btnGenerar"><i class="fa-solid fa-file-pdf fa-lg"></i></div>
     </main>
-    <script src="../scripts/functionsInspeccion2.js"></script>
+    <script src="../scripts/functionsInspeccion2.js?v=14082025"></script>
   </body>
 </html>

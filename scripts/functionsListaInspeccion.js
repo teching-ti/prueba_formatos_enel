@@ -6,10 +6,12 @@ let cargarFecha = () => {
   };
   cargarFecha();
   /*colocar fecha end*/
-  
+
+let codCuadrillaSubjetct = "";
+
   //obtener los datos del archivo
   //uso de una petición fetch
-  fetch("../scripts/datos.json")
+  fetch(`../scripts/datos.json?t=${new Date().getTime()}`)
     .then((response) => response.json())
     .then((data) => {
       //la data obtenida será nombrada como users
@@ -269,6 +271,23 @@ let cargarFecha = () => {
     articuloActual.scrollIntoView({ behavior: 'smooth' });
   })
 
+  document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
+    let input = e.target;
+    
+    // Elimina todos los caracteres que no sean letras o números
+    let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+
+    // Agrupa cada dos caracteres y los une con guiones
+    let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
+
+    // Evita que se agregue guion al final si es innecesario
+    if (formatted.endsWith('-')) {
+        formatted = formatted.slice(0, -1);
+    }
+
+    input.value = formatted;
+  });
+
   /*---- PARTE 2 DEL CÓDIGO ----*/
   /* cargar documento */
   //Constante que permitirá usar el objeto jspdf
@@ -337,6 +356,35 @@ let cargarFecha = () => {
       }
       return true;
     };
+
+    let evaluarCodigoCuadrillas = () =>{
+      let valCuadrillas = true;
+      let codCuadrillasInput = document.getElementById("cod-cuadrillas");
+      let valorOriginal = codCuadrillasInput.value;
+      
+      if(valorOriginal==""){
+        valCuadrillas=false;
+        alert("Favor de ingresar correctamente el código de las cuadrillas");
+        return;
+      }
+
+      let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
+      let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
+
+      let regexValido = /^[A-Z0-9\-]+$/;
+      if (!regexValido.test(valFormateadoCuadrillas)) {
+        alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
+        valCuadrillas=false;
+        return;
+      }
+
+      if(valCuadrillas){
+        codCuadrillaSubjetct = valFormateadoCuadrillas;
+        return true;
+      }else{
+        return false;
+      }
+    }
   
     //funcion para obtener y colocar datos de la parte superior e inferior con firma del responsable
     let evaluarDatosPrincipales = () => {
@@ -1069,35 +1117,42 @@ let cargarFecha = () => {
         positionY = 49.8;
       })
   
-    if (evaluarEmpresa() && evaluarDatosPrincipales() && evaluarNombreCargo()) {
+    if (evaluarEmpresa() && evaluarCodigoCuadrillas() && evaluarDatosPrincipales() && evaluarNombreCargo()) {
       var blob = doc.output("blob");
       window.open(URL.createObjectURL(blob));
+
+      // aqui se deberá colocar el código del documento
+      let subject = `CLD_${codCuadrillaSubjetct}`;
+
+      // Inicia funcionalidad de visualización
+      dia = dia.replace(/\//g, "_");
+      let doc_guardado = `${subject}-${dia}.pdf`
+      doc.save(doc_guardado)
+      // Termina funcionalidad de visualización
+
+      //endodear el resultado del pdf
+      var file_data = btoa(doc.output())
+      var form_data = new FormData()
   
-    //   dia = dia.replace(/\//g, "_")
-    //   //console.log(dia)
-    //   const nombreDocumento = `lista_inspeccion_${dia}.pdf` 
-    //   doc.save(nombreDocumento)
-    //   //endodear el resultado del pdf
-    //   var file_data = btoa(doc.output())
-    //   var form_data = new FormData()
-  
-    //   form_data.append("file", file_data)
-    //   form_data.append("nombre", "LISTA_DE_INSPECCION")
-    //   //alert(form_data)
-    //   $.ajax({
-    //       url: "../envios/enviar_alerta.php",
-    //       dataType: "text",
-    //       cache: false,
-    //       contentType: false,
-    //       processData: false,
-    //       data: form_data,
-    //       type:"post",
-    //       success: function(php_script_response){
-    //           alert("Archivo generado correctamente")
-    //       }
-    //   })
-    // } else {
-    //   alert("Complete los campos solicitados para generar el documento");
+      // aquí se deberán colocar los elementos a enviar como parte del formulario
+      form_data.append("file", file_data) // se envía el archivo empaquetado
+      form_data.append("subj", subject) // se envía el asunto
+      form_data.append("nombre", "CLD") // como nombre del documento se envía su código
+      //alert(form_data)
+      $.ajax({
+          url: "../envios/enviar_alerta.php",
+          dataType: "text",
+          cache: false,
+          contentType: false,
+          processData: false,
+          data: form_data,
+          type:"post",
+          success: function(php_script_response){
+              alert("Archivo generado correctamente")
+          }
+      })
+    } else {
+      alert("Complete los campos solicitados para generar el documento");
     }
     //final
   });

@@ -1,8 +1,10 @@
 //alert("Los elementos marcados de color rojo con un (*), son obligatorios")
 let fecha = document.getElementById("fecha")
-let fechaActual= new Date().toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })
-fecha.value = fechaActual
+let dia= new Date().toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit', year: 'numeric' })
+fecha.value = dia;
 //esta es la fecha en que se realiza la inspección
+
+let codCuadrillaSubjetct = "";
 
 function validarFechas(campoFecha){
 
@@ -40,7 +42,7 @@ fechaVencimiento.addEventListener("blur", function(){
 
 //obtener los datos del archivo
 //uso de una petición fetch
-fetch("../scripts/datos.json")
+fetch(`../scripts/datos.json?t=${new Date().getTime()}`)
   .then((response) => response.json())
   .then((data) => {
     //la data obtenida será nombrada como users
@@ -218,6 +220,22 @@ fetch("../scripts/datos.json")
         })
     })
 
+    document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
+        let input = e.target;
+        
+        // Elimina todos los caracteres que no sean letras o números
+        let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+
+        // Agrupa cada dos caracteres y los une con guiones
+        let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
+
+        // Evita que se agregue guion al final si es innecesario
+        if (formatted.endsWith('-')) {
+            formatted = formatted.slice(0, -1);
+        }
+
+        input.value = formatted;
+    });
 /*---- PARTE 2 DEL CÓDIGO ----*/
 /* cargar documento */
 //Constante que permitirá usar el objeto jspdf
@@ -254,6 +272,36 @@ async function loadImage(url) {
     doc.setFontSize(6)
 
     let evaluar = true
+
+    let evaluarCodigoCuadrillas = () =>{
+        let valCuadrillas = true;
+        let codCuadrillasInput = document.getElementById("cod-cuadrillas");
+        let valorOriginal = codCuadrillasInput.value;
+        
+        if(valorOriginal==""){
+            valCuadrillas=false;
+            alert("Favor de ingresar correctamente el código de las cuadrillas");
+            return;
+        }
+
+        let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
+        let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
+
+        let regexValido = /^[A-Z0-9\-]+$/;
+        if (!regexValido.test(valFormateadoCuadrillas)) {
+            alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
+            valCuadrillas=false;
+            return;
+        }
+
+        if(valCuadrillas){
+            codCuadrillaSubjetct = valFormateadoCuadrillas;
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     function evaluarDatosGenerales(){
         doc.setFontSize(5)
         let dia = fecha
@@ -753,19 +801,27 @@ async function loadImage(url) {
     })
     doc.addImage("../recursos/firmas/RobertoLuisBailon.png", "PNG", 157.8, 268,  35, 6)
 
-    if(evaluarDatosGenerales() && evaluarNombre() && evaluarObservaciones() && evaluarTodoVehiculo() && evaluarLLantas() && evaluarAccesorios() && evaluarTapas() && evaluarEpp() && evaluarPma() && evaluarBotiquin() && evaluarConductor()){
+    if(evaluarCodigoCuadrillas() && evaluarDatosGenerales() && evaluarNombre() && evaluarObservaciones() && evaluarTodoVehiculo() && evaluarLLantas() && evaluarAccesorios() && evaluarTapas() && evaluarEpp() && evaluarPma() && evaluarBotiquin() && evaluarConductor()){
         var blob = doc.output("blob");
         window.open(URL.createObjectURL(blob));
 
-        /*fechaActual = fechaActual.replace(/\//g, "_")
-        const nombreDocumento =`INSPECCION_VEHICULAR_${fechaActual}.pdf`
-        doc.save(nombreDocumento)
+        // aqui se deberá colocar el código del documento
+        let subject = `IVD_${codCuadrillaSubjetct}`;
+
+        // Inicia funcionalidad de visualización
+        dia = dia.replace(/\//g, "_");
+        let doc_guardado = `${subject}-${dia}.pdf`
+        doc.save(doc_guardado)
+        // Termina funcionalidad de visualización
+
         //endodear el resultado del pdf
         var file_data = btoa(doc.output())
         var form_data = new FormData()
-        form_data.append("file", file_data)
-        form_data.append("nombre", "INSPECCION_VEHICULAR")
-        //alert(form_data)
+        
+        // aquí se deberán colocar los elementos a enviar como parte del formulario
+        form_data.append("file", file_data) // se envía el archivo empaquetado
+        form_data.append("subj", subject) // se envía el asunto
+        form_data.append("nombre", "IVD") // como nombre del documento se envía su código
 
         $.ajax({
             url: "../envios/enviar_alerta.php",
@@ -778,7 +834,7 @@ async function loadImage(url) {
             success: function(php_script_response){
                 alert("Archivo generado correctamente")
             }
-        })*/
+        })
         }else{
             alert("Completar todos los campos")
         }

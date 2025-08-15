@@ -1,10 +1,12 @@
 let fecha = document.getElementById("fecha")
-let fechaActual = new Date().toLocaleDateString()
-fecha.value = fechaActual
+let dia = new Date().toLocaleDateString()
+fecha.value = dia
+
+let codCuadrillaSubjetct = "";
 
 //obtener los datos del archivo
 //uso de una petición fetch
-fetch("../scripts/datos.json")
+fetch(`../scripts/datos.json?t=${new Date().getTime()}`)
   .then((response) => response.json())
   .then((data) => {
     //la data obtenida será nombrada como users
@@ -186,7 +188,23 @@ fetch("../scripts/datos.json")
     contenedorPersonas.append(contenedorPersonal)
   }
 
-  
+    document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
+        let input = e.target;
+        
+        // Elimina todos los caracteres que no sean letras o números
+        let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+
+        // Agrupa cada dos caracteres y los une con guiones
+        let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
+
+        // Evita que se agregue guion al final si es innecesario
+        if (formatted.endsWith('-')) {
+            formatted = formatted.slice(0, -1);
+        }
+
+        input.value = formatted;
+    });
+
 /*---- PARTE 2 DEL CÓDIGO ----*/
 /* cargar documento */
 //Constante que permitirá usar el objeto jspdf
@@ -213,17 +231,46 @@ async function loadImage(url) {
 
   let btnGenerar = document.getElementById("btnGenerar")
 
-  btnGenerar.addEventListener("click", async function generarPDF(e) {
-    e.preventDefault()
-    //doc, objeto}
-    //dimensiones del documento pdf
-    var doc = new jsPDF();
-    //imagen del documento vacía
-    const image = await loadImage("../recursos/formatoPetar.jpg");
-    //colocar la imagen
-    //colocar imagen desde una posicion en especifico, con las dimensiones especificas
-    doc.addImage(image, "JPG", 0, 0, 210, 297);
-    doc.setFontSize(6.5) //es el tamaño por defecto
+    btnGenerar.addEventListener("click", async function generarPDF(e) {
+        e.preventDefault()
+        //doc, objeto}
+        //dimensiones del documento pdf
+        var doc = new jsPDF();
+        //imagen del documento vacía
+        const image = await loadImage("../recursos/formatoPetar.jpg");
+        //colocar la imagen
+        //colocar imagen desde una posicion en especifico, con las dimensiones especificas
+        doc.addImage(image, "JPG", 0, 0, 210, 297);
+        doc.setFontSize(6.5) //es el tamaño por defecto
+
+        let evaluarCodigoCuadrillas = () =>{
+            let valCuadrillas = true;
+            let codCuadrillasInput = document.getElementById("cod-cuadrillas");
+            let valorOriginal = codCuadrillasInput.value;
+            
+            if(valorOriginal==""){
+                valCuadrillas=false;
+                alert("Favor de ingresar correctamente el código de las cuadrillas");
+                return;
+            }
+
+            let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
+            let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
+
+            let regexValido = /^[A-Z0-9\-]+$/;
+            if (!regexValido.test(valFormateadoCuadrillas)) {
+                alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
+                valCuadrillas=false;
+                return;
+            }
+
+            if(valCuadrillas){
+                codCuadrillaSubjetct = valFormateadoCuadrillas;
+                return true;
+            }else{
+                return false;
+            }
+        }
 
     function evaluarDatosGenerales(){
         let evalDatosGenerales = true
@@ -680,19 +727,26 @@ async function loadImage(url) {
         }   
     }
     
-    if(evaluarDatosGenerales() && evaluarMantenimientoElectrico() && evaluarTrabajoAltura() && evaluarEspaciosConfinados() && evaluarDescripcionTarea() && evaluarPersonal() && evaluarEquiposProteccion() && evaluarHerramientas() && evaluarProcedimiento() && evaluarAutorizacionSupervision()){
-        /*var blob = doc.output("blob");
-        window.open(URL.createObjectURL(blob));*/
-        fechaActual = fechaActual.replace(/\//g, "_")
-        const nombreDocumento = `PETAR_${fechaActual}.pdf`
-        doc.save(nombreDocumento)
+    if(evaluarCodigoCuadrillas() && evaluarDatosGenerales() && evaluarMantenimientoElectrico() && evaluarTrabajoAltura() && evaluarEspaciosConfinados() && evaluarDescripcionTarea() && evaluarPersonal() && evaluarEquiposProteccion() && evaluarHerramientas() && evaluarProcedimiento() && evaluarAutorizacionSupervision()){
+        var blob = doc.output("blob");
+        window.open(URL.createObjectURL(blob));
+
+        let subject = `PETARD_${codCuadrillaSubjetct}`;
+
+        // Inicia funcionalidad de visualización
+        dia = dia.replace(/\//g, "_");
+        let doc_guardado = `${subject}-${dia}.pdf`
+        doc.save(doc_guardado)
+        // Termina funcionalidad de visualización
 
         //endodear el resultado del pdf
-        /*var file_data = btoa(doc.output())
+        var file_data = btoa(doc.output())
         var form_data = new FormData()
 
-        form_data.append("file", file_data)
-        form_data.append("nombre", "FORMATO_PETAR")
+        // aquí se deberán colocar los elementos a enviar como parte del formulario
+        form_data.append("file", file_data) // se envía el archivo empaquetado
+        form_data.append("subj", subject) // se envía el asunto
+        form_data.append("nombre", "PETARD") // como nombre del documento se envía su código
         //alert(form_data)
         $.ajax({
             url: "../envios/enviar_alerta.php",
@@ -705,7 +759,7 @@ async function loadImage(url) {
             success: function(php_script_response){
                 alert("Archivo generado correctamente")
             }
-        })*/
+        })
     }else{
         alert("Complete todos los campos")
     }

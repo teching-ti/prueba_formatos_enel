@@ -44,6 +44,28 @@ body{
     margin-top: 2em;
 }
 
+/*inicia elemento cuadrillas*/
+.contenedor-cuadrillas{
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    margin-bottom: 2rem;
+}
+
+.contenedor-cuadrillas label{
+    font-weight: bold;
+}
+
+.contenedor-cuadrillas label span{
+    font-weight: bold;
+    color: red;
+}
+
+.contenedor-cuadrillas input{
+    padding: .5em;
+}
+/*termina elemento cuadrillas*/
+
 .principal-form{
     display: block;
     padding: .5rem;

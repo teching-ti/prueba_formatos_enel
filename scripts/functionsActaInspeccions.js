@@ -1,13 +1,14 @@
 let fecha = document.getElementById("fecha");
-let fechaActual = new Date().toLocaleDateString();
-fecha.value = fechaActual;
+let dia = new Date().toLocaleDateString();
+fecha.value = dia;
 
+let codCuadrillaSubjetct = "";
 //mensaje de aviso
 alert("Buen día, por favor, seleccione correctamente los datos de inspección y marque la casilla correspondiente si desea añadir información adicional.")
 
 //obtener los datos del archivo
 //uso de una petición fetch
-fetch("../scripts/datos.json")
+fetch(`../scripts/datos.json?t=${new Date().getTime()}`)
   .then((response) => response.json())
   .then((data) => {
     //la data obtenida será nombrada como users
@@ -57,6 +58,23 @@ function autocompletarInformacion(elementoSelect, dato, dato1, dato2, dato3) {
   });
 }
 
+document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
+    let input = e.target;
+    
+    // Elimina todos los caracteres que no sean letras o números
+    let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+
+    // Agrupa cada dos caracteres y los une con guiones
+    let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
+
+    // Evita que se agregue guion al final si es innecesario
+    if (formatted.endsWith('-')) {
+        formatted = formatted.slice(0, -1);
+    }
+
+    input.value = formatted;
+});
+
 const jsPDF = window.jspdf.jsPDF;
 
 async function loadImage(url) {
@@ -91,6 +109,35 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
   doc.addImage(image, "JPG", 0, 0, 210, 297);
   doc.setFontSize(6.5);
   let eval = true;
+
+  let evaluarCodigoCuadrillas = () =>{
+    let valCuadrillas = true;
+    let codCuadrillasInput = document.getElementById("cod-cuadrillas");
+    let valorOriginal = codCuadrillasInput.value;
+    
+    if(valorOriginal==""){
+      valCuadrillas=false;
+      alert("Favor de ingresar correctamente el código de las cuadrillas");
+      return;
+    }
+
+    let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
+    let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
+
+    let regexValido = /^[A-Z0-9\-]+$/;
+    if (!regexValido.test(valFormateadoCuadrillas)) {
+      alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
+      valCuadrillas=false;
+      return;
+    }
+
+    if(valCuadrillas){
+      codCuadrillaSubjetct = valFormateadoCuadrillas;
+      return true;
+    }else{
+      return false;
+    }
+  }
 
   function evaluarDatosGenerales() {
     let subestacion = document.getElementById("subestacion").value;
@@ -566,32 +613,32 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
   evaluarJefeCuadrilla()
   evaluarResponsable()
 
-  if(eval) {
+  if(eval && evaluarCodigoCuadrillas()) {
     var blob = doc.output("blob");
     window.open(URL.createObjectURL(blob));
 
-    /*fechaActual = fechaActual.replace(/\//g, "_")
-        const nombreDocumento = `ACTA_DE_INSPECCION_${fechaActual}.pdf`
-        doc.save(nombreDocumento)
-        //endodear el resultado del pdf
-        var file_data = btoa(doc.output())
-        var form_data = new FormData()
+    dia = dia.replace(/\//g, "_")
+    const nombreDocumento = `ACTA_DE_INSPECCION_${dia}.pdf`
+    doc.save(nombreDocumento)
+    //endodear el resultado del pdf
+    var file_data = btoa(doc.output())
+    var form_data = new FormData()
 
-        form_data.append("file", file_data)
-        form_data.append("nombre", "ACTA_DE_INSPECCION")
-        //alert(form_data)
-        $.ajax({
-            url: "../envios/enviar_alerta.php",
-            dataType: "text",
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: form_data,
-            type:"post",
-            success: function(php_script_response){
-                alert("Archivo generado correctamente")
-            }
-        })*/
+    form_data.append("file", file_data)
+    form_data.append("nombre", "ACTA_DE_INSPECCION")
+    //alert(form_data)
+    $.ajax({
+        url: "../envios/enviar_alerta.php",
+        dataType: "text",
+        cache: false,
+        contentType: false,
+        processData: false,
+        data: form_data,
+        type:"post",
+        success: function(php_script_response){
+            alert("Archivo generado correctamente")
+        }
+    })
   } else {
     alert("Debe completar todos los datos solicitados");
   }

@@ -6,6 +6,8 @@ const inputFecha = document.getElementById("fecha");
 let dia = new Date().toLocaleDateString();
 inputFecha.value = dia;
 
+let codCuadrillaSubjetct = "";
+
 const btnAniadirInvolucrado = document.getElementById("btn-aniadir");
 const contenedorNombres = document.querySelector(".nombres")
 
@@ -192,6 +194,23 @@ function autocompletarCampos3(elementoSelect, elementoFirma){
     })
 }
 
+document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
+    let input = e.target;
+    
+    // Elimina todos los caracteres que no sean letras o números
+    let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+
+    // Agrupa cada dos caracteres y los une con guiones
+    let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
+
+    // Evita que se agregue guion al final si es innecesario
+    if (formatted.endsWith('-')) {
+        formatted = formatted.slice(0, -1);
+    }
+
+    input.value = formatted;
+});
+
 //Constante importante para poder usar el objeto jsPDF
 const {jsPDF} = window.jspdf
 const doc = new jsPDF()
@@ -212,6 +231,35 @@ btnGenerar.addEventListener("click", async (e)=>{
     const image = await loadImage("../recursos/formatoVerificacionAltura.jpg")
     doc.addImage(image, "PNG", 0, 0, 210, 297)
     doc.setFontSize(8)
+
+    let evaluarCodigoCuadrillas = () =>{
+        let valCuadrillas = true;
+        let codCuadrillasInput = document.getElementById("cod-cuadrillas");
+        let valorOriginal = codCuadrillasInput.value;
+        
+        if(valorOriginal==""){
+            valCuadrillas=false;
+            alert("Favor de ingresar correctamente el código de las cuadrillas");
+            return;
+        }
+
+        let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
+        let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
+
+        let regexValido = /^[A-Z0-9\-]+$/;
+        if (!regexValido.test(valFormateadoCuadrillas)) {
+            alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
+            valCuadrillas=false;
+            return;
+        }
+
+        if(valCuadrillas){
+            codCuadrillaSubjetct = valFormateadoCuadrillas;
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     // seccion de datos principales del formulario
     let evaluarDatosPrincipales = ()=>{
@@ -476,21 +524,28 @@ btnGenerar.addEventListener("click", async (e)=>{
         return validar;
     }
 
-    if(evaluarDatosPrincipales() && evaluarVerificacionPreliminar() && evaluarConsideracionGeneral() && evaluarActividades() && evaluarManipulacionCargas() && evaluarConsideraciones() && evaluarParticipantes() && evaluarFirmaJefeCuadrilla()){
+    if(evaluarCodigoCuadrillas() && evaluarDatosPrincipales() && evaluarVerificacionPreliminar() && evaluarConsideracionGeneral() && evaluarActividades() && evaluarManipulacionCargas() && evaluarConsideraciones() && evaluarParticipantes() && evaluarFirmaJefeCuadrilla()){
         //mostrar en una ventana externa
         //console.log("Generando Documento");
-        //doc.output("dataurlnewwindow", { filename: "nuevopdf.pdf" });
+        doc.output("dataurlnewwindow", { filename: "nuevopdf.pdf" });
 
-        dia = dia.replace(/\//g, "_")
-        const nombreDocumento =`VERIFICACION_PREVIA_AL_TRABAJO_EN_ALTURA_${dia}.pdf`;
-        doc.save(nombreDocumento);
+        // aqui se deberá colocar el código del documento
+        let subject = `VPTAD_${codCuadrillaSubjetct}`;
+
+        // Inicia funcionalidad de visualización
+        dia = dia.replace(/\//g, "_");
+        let doc_guardado = `${subject}-${dia}.pdf`
+        doc.save(doc_guardado)
+        // Termina funcionalidad de visualización
 
         //endodear el resultado del pdf
-        /*var file_data = btoa(doc.output());
+        var file_data = btoa(doc.output());
         var form_data = new FormData();
 
-        form_data.append("file", file_data);
-        form_data.append("nombre", "VERIFICACION_PREVIA_AL_TRABAJO_EN_ALTURA");
+        // aquí se deberán colocar los elementos a enviar como parte del formulario
+        form_data.append("file", file_data) // se envía el archivo empaquetado
+        form_data.append("subj", subject) // se envía el asunto
+        form_data.append("nombre", "VPTAD") // como nombre del documento se envía su código
 
         $.ajax({
             url: "../envios/enviar_alerta.php",
@@ -503,7 +558,7 @@ btnGenerar.addEventListener("click", async (e)=>{
             success: function(php_script_response){
                 alert("Archivo generado correctamente")
             }
-        })*/
+        })
     }else{
         console.log("No se pudo generar el documento");
     }

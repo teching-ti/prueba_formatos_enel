@@ -6,7 +6,10 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Acta de Inspeccion</title>
       <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon"/>
-
+      <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+      <meta http-equiv="Pragma" content="no-cache">
+      <meta http-equiv="Expires" content="0">
+      
       <!-- fonts -->
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +19,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
       <!-- Estilos -->
-      <link rel="stylesheet" href="../estilos/stylesActa.css" />
+      <link rel="stylesheet" href="../estilos/stylesActa.css?v=14082025" />
 
       <!-- Font Awesome -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -42,6 +45,12 @@
                <!--Inicia parte superior del Formulario-->
                <div class="form-sup">
                   <div class="form-sup1">
+                     <!-- inicia elemento cuadrillas -->
+                     <div class="contenedor-cuadrillas">
+                        <label for="cod-cuadrillas"><span>* </span>Código de cuadrillas</label>
+                        <input type="text" name="cod-cuadrillas" id="cod-cuadrillas" placeholder="C1-C2...C8">
+                     </div>
+                     <!-- termina elemento cuadrillas -->
                      <div class="form-sup-e">
                         <label>Subestación: <input type="text" id="subestacion"/></label>
                      </div>
@@ -273,6 +282,6 @@
          </section>
          
       </main>
-      <script src="../scripts/functionsActaInspeccions.js"></script>
+      <script src="../scripts/functionsActaInspeccions.js?v=14082025"></script>
   </body>
 </html>

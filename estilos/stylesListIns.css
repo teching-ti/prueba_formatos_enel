@@ -48,6 +48,28 @@ body{
     border-radius: .2rem;
 }
 
+/*inicia elemento cuadrillas*/
+.contenedor-cuadrillas{
+    display: flex;
+    align-items: center;
+    margin-bottom: .8rem;
+    gap: .4rem;
+}
+
+.contenedor-cuadrillas label{
+    font-weight: bold;
+}
+
+.contenedor-cuadrillas label span{
+    font-weight: bold;
+    color: red;
+}
+
+.contenedor-cuadrillas input{
+    padding: .5em;
+}
+/*termina elemento cuadrillas*/
+
 #datos-generales-documento div{
     /* display: flex;
     gap: .8rem; */

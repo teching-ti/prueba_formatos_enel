@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formato Verificación Previa al Trabajo en Altura</title>
     <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="../estilos/stylesVerificacion.css" />
+    <link rel="stylesheet" href="../estilos/stylesVerificacion.css?v=14082025" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -38,10 +41,17 @@
       <section class="form-container">
         <form class="principal-form" id="principal-form">
           <h3 class="title-datos-principales">Datos Principales</h3>
+          <!-- inicia elemento cuadrillas -->
+            <div class="contenedor-cuadrillas">
+                <label for="cod-cuadrillas"><span>* </span>Código de cuadrillas</label>
+                <input type="text" name="cod-cuadrillas" id="cod-cuadrillas" placeholder="C1-C2...C8">
+            </div>
           <div class="form-sup">
+            
+            <!-- termina elemento cuadrillas -->
             <div class="form-sup1">
               <div class="form-sup-e">
-                <label>Proyecto: <input type="text" id="proyecto" value="ENEL DISTRIBUCIÓN BALANCE Y CORRECIÓN CADENA" readonly/></label>
+                <label>Proyecto: <input type="text" id="proyecto" value="PLUZ DISTRIBUCIÓN" readonly/></label>
               </div>
               <div class="form-sup-e">
                 <label>Empresa Ejecutora: <input type="text" id="empresa" value="TECH INDUSTRIAS GLOBALES"/></label>
@@ -323,6 +333,6 @@
         </form>
       </section>
     </main>
-    <script src="../scripts/functionsVerificacionAltura.js"></script>
+    <script src="../scripts/functionsVerificacionAltura.js?v=14082025"></script>
   </body>
 </html>

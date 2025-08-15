@@ -1,3 +1,7 @@
+/*13-06-2025*/
+Se está trabajando con el formato ATS para las pruebas solicitadas en el ticket, se esta configurando el nombre del documento, validaciones y elementos que irán con el envío para identificar y realziar el guardado correspondiente para el proyecto.
+
+
 /*** 26/11/2024 => Se ha retirado el formato de Orden de Trabajo, ya que deberá de ser completo de forma manual por jhidalgo
 
 /* 6/11/2024 => Se ha avanzado hasta el posicionamiento de cantidades "select" de equipos de protección personal - continuar...
@@ -10,7 +14,6 @@ Anotaciones realizadas "Nuevo Formato y Actualizar Lista de Inspección".
 2. Crear la página web
 3. Agregar estilos css
 4. Agregar funcionalidades javascript.
-
 
 - Pendiente => funcitonsPostOp, agregar un select vacio a las opciones del persona. Aíun pendiente cargar el formato y rellenar el formato
 (Aún no se ha alineado con respecto al proeycto de produccion).

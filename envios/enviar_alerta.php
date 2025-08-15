@@ -10,6 +10,7 @@ require '../PHPMailer/SMTP.php';
 try {
     if(!empty($_POST["file"])){
         $data = base64_decode($_POST["file"]);
+        $asunto = $_POST["subj"];
         file_put_contents($_POST['nombre'].".pdf", $data);
     }else{
         echo "error";
@@ -17,29 +18,39 @@ try {
 
     $mail = new PHPMailer(true);
 
-        // Configuración del servidor SMTP
+        // Configuracion del servidor SMTP
         $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com';
+        $mail->Host       = 'host del servidor';//editable
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'correoemisor';
-        $mail->Password   = 'pass';
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
+        $mail->Username   = 'emisor@formatosdigitales.teching.com.pe';//editable
+        $mail->Password   = 'contasena';//editable
+        $mail->SMTPSecure = 'ssl';//editable
+        $mail->Port       = 465;//editable
 
-        // Configuración del correo electrónico
-        $mail->setFrom('correoemisor', 'Alerta - se ha generado un formato');
-        $mail->addAddress('correodestino', 'nombre');
-        $mail->Subject = 'Formato '. $_POST['nombre'];
+        // Configuracion del correo electronico
+        $mail->setFrom('emisor@formatosdigitales.teching.com.pe', 'Aut. Balance y correcion cadena');//editable
 
-        // Adjuntar el archivo PDF
-        $mail->addAttachment($_POST['nombre'].".pdf", $_POST['nombre']);
+        error_log("El nombre es".$_POST["nombre"]);
+
+        if($_POST["nombre"]=="ACTA_DE_INSPECCION"){
+            date_default_timezone_set('America/Lima');
+            $fecha_hora_actual = date('dmY_His');
+            $mail->addAddress('correo gmail a donde se envía la acta de inspeccion', 'Receptor');//editable
+            $mail->Subject = 'Formato Balance_'.$asunto;
+            $mail->addAttachment($_POST['nombre'].".pdf", $_POST['nombre']."_".$fecha_hora_actual);
+        }else{
+            $mail->addAddress('correo de a donde llega la automatizacion', 'Receptor');//editable
+            $mail->Subject = 'Formato Balance_'.$asunto;
+            $mail->addAttachment($_POST['nombre'].".pdf", $_POST['nombre'].".pdf");
+        }
 
         // Contenido del mensaje (opcional)
         $mail->Body = 'Se adjunta documento generado';
 
-        // Enviar el correo electrónico
+        // Enviar el correo electronico
         $mail->send();
+        error_log("Mensaje enviado");
 } catch (Exception $e) {
-    echo "Error al enviar el correo: {$mail->ErrorInfo}";
+    error_log("Error al enviar el correo: {$mail->ErrorInfo}");
 }
 ?>

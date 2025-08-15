@@ -6,6 +6,7 @@
   let dia = new Date().toLocaleDateString();
   inputFecha.value = dia;
 
+  let codCuadrillaSubjetct = "";
 /*colocar fecha end*/
 
 /*--- AÑADIR ACTIVIDADES START ---*/
@@ -92,7 +93,7 @@ let contenedorParticipante = document.getElementById("contenedor-inputs");
 //let users = [];
 //obtener los datos del archivo
 //uso de una petición fetch
-fetch("../scripts/datos.json")
+fetch(`../scripts/datos.json?t=${new Date().getTime()}`)
   .then((response) => response.json())
   .then((data) => {
     //la data obtenida será nombrada como users
@@ -112,13 +113,25 @@ fetch("../scripts/datos.json")
   })
   .catch((error) => console.error("Error al cargar los datos:", error));
 
-// Función para llenar el select con opciones de nombres de los técnicos
+// Función para llenar el select con opciones de nombres de los técnicos, supervisores y prevencionistas
 function llenarSelect(elementoSelect) {
   //una vez con la data 'users' obtenida se podrá acceder a cada uno de los elementos dentro de ella
   users.tecnico.forEach((tecnico) => {
     const option = document.createElement("option");
     option.value = tecnico.name;
     option.textContent = tecnico.name;
+    elementoSelect.appendChild(option);
+  });
+  users.supervisor.forEach((supervisor) => {
+    const option = document.createElement("option");
+    option.value = supervisor.name;
+    option.textContent = supervisor.name;
+    elementoSelect.appendChild(option);
+  });
+  users.prevencionista.forEach((prevencionista) => {
+    const option = document.createElement("option");
+    option.value = prevencionista.name;
+    option.textContent = prevencionista.name;
     elementoSelect.appendChild(option);
   });
 }
@@ -129,15 +142,32 @@ function llenarSelect(elementoSelect) {
 function autocompletarCampos(elementoSelect, datosParticipante) {
   elementoSelect.addEventListener("change", function () {
     const nombreSeleccionado = elementoSelect.value;
+
     const usuarioSeleccionado = users.tecnico.find(
       (tecnico) => tecnico.name === nombreSeleccionado
     );
-    //autocompletar los campos correspondientes
-    //datosParticipante.querySelector(".participante-dni"), //obviamente hace referencia al elemento html
-    datosParticipante.querySelector(".participante-dni").value =
-      usuarioSeleccionado.dni;
-    datosParticipante.querySelector(".participante-firma").value =
-      usuarioSeleccionado.firma;
+    // Buscar en la categoría "supervisor"
+    const supervisorSeleccionado = users.supervisor.find(
+        (supervisor) => supervisor.name === nombreSeleccionado
+    );
+    // Buscar en la categoría "prevencionista"
+    const prevencionistaSeleccionado = users.prevencionista.find(
+        (prevencionista) => prevencionista.name === nombreSeleccionado
+    );
+
+    // Verificar en qué categoría se encontró y completar la firma
+    if (usuarioSeleccionado) {
+      datosParticipante.querySelector(".participante-dni").value = usuarioSeleccionado.dni;
+      datosParticipante.querySelector(".participante-firma").value = usuarioSeleccionado.firma;
+    } else if (supervisorSeleccionado) {
+      datosParticipante.querySelector(".participante-dni").value = supervisorSeleccionado.dni;
+      datosParticipante.querySelector(".participante-firma").value = supervisorSeleccionado.firma;
+    } else if (prevencionistaSeleccionado) {
+      datosParticipante.querySelector(".participante-dni").value = prevencionistaSeleccionado.dni;
+      datosParticipante.querySelector(".participante-firma").value = prevencionistaSeleccionado.firma;
+    } else {
+      alert("Este espacio no puede permanecer vacío, seleccione al personal requerido")
+    }
   });
 }
 
@@ -145,12 +175,28 @@ function autocompletarCampos(elementoSelect, datosParticipante) {
 function autocompletarCamposResponsable(elementoSelect, datosSupervisor) {
   elementoSelect.addEventListener("change", function () {
       const nombreSeleccionado = elementoSelect.value;
-      const responsableSeleccionado = users.tecnico.find(
+      const usuarioSeleccionado = users.tecnico.find(
           (tecnico) => tecnico.name === nombreSeleccionado
       );
+      const supervisorSeleccionado = users.supervisor.find(
+          (supervisor) => supervisor.name === nombreSeleccionado
+      );
+      const prevencionistaSeleccionado = users.prevencionista.find(
+          (prevencionista) => prevencionista.name === nombreSeleccionado
+      );
+
+      // Verificar en qué categoría se encontró y completar la firma
+    if (usuarioSeleccionado) {
+      datosSupervisor.value = usuarioSeleccionado.firma;
+    } else if (supervisorSeleccionado) {
+      datosSupervisor.value = supervisorSeleccionado.firma;
+    } else if (prevencionistaSeleccionado) {
+      datosSupervisor.value = prevencionistaSeleccionado.firma;
+    } else {
+      alert("Este espacio no puede permanecer vacío, seleccione al personal requerido")
+    }
       //autocompletar los campos correspondientes
-      datosSupervisor.value =
-      responsableSeleccionado.firma;
+      
   });
 }
 
@@ -274,6 +320,23 @@ function funcionalidadesPersonal() {
 }
 /*--- AÑADIR PARTICIPANTE O PERSONAL END ---*/
 
+document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
+    let input = e.target;
+    
+    // Elimina todos los caracteres que no sean letras o números
+    let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+
+    // Agrupa cada dos caracteres y los une con guiones
+    let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
+
+    // Evita que se agregue guion al final si es innecesario
+    if (formatted.endsWith('-')) {
+        formatted = formatted.slice(0, -1);
+    }
+
+    input.value = formatted;
+});
+
 //Constante que permitirá usar el objeto jspdf
 const jsPDF = window.jspdf.jsPDF;
 
@@ -353,6 +416,35 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
       return false;
     }
   };
+
+  let evaluarCodigoCuadrillas = () =>{
+    let valCuadrillas = true;
+    let codCuadrillasInput = document.getElementById("cod-cuadrillas");
+    let valorOriginal = codCuadrillasInput.value;
+    
+    if(valorOriginal==""){
+      valCuadrillas=false;
+      alert("Favor de ingresar correctamente el código de las cuadrillas");
+      return;
+    }
+
+    let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
+    let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
+
+    let regexValido = /^[A-Z0-9\-]+$/;
+    if (!regexValido.test(valFormateadoCuadrillas)) {
+      alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
+      valCuadrillas=false;
+      return;
+    }
+
+    if(valCuadrillas){
+      codCuadrillaSubjetct = valFormateadoCuadrillas;
+      return true;
+    }else{
+      return false;
+    }
+  }
 
   let evaluarEmpresa = () => {
     /*Seleccionar empresa start*/
@@ -744,6 +836,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
   //validar que todas las funciones den true, sino, parecerá el alert y solo eso
   if (
     evaluarEmpresa() &&
+    evaluarCodigoCuadrillas() &&
     evaluarDatosPrincipales() &&
     reconocerActividades() &&
     evaluarCheckbox() &&
@@ -754,18 +847,23 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
     var blob = doc.output("blob");
     window.open(URL.createObjectURL(blob));
 
-    /*
-    dia = dia.replace(/\//g, "_")
-    //console.log(dia)
-    //const nombreDocumento = `ANALISIS_TRABAJO_SEGURO_${dia}.pdf`
-    //doc.save(nombreDocumento)
+    // aqui se deberá colocar el código del documento
+    let subject = `ATSD_${codCuadrillaSubjetct}`;
+
+    // Inicia funcionalidad de visualización
+    dia = dia.replace(/\//g, "_");
+    let doc_guardado = `${subject}-${dia}.pdf`
+    doc.save(doc_guardado)
+    // Termina funcionalidad de visualización
 
     //endodear el resultado del pdf
     var file_data = btoa(doc.output())
     var form_data = new FormData()
-
-    form_data.append("file", file_data)
-    form_data.append("nombre", "ANALISIS_DE_TRABAJO_SEGURO")
+    
+    // aquí se deberán colocar los elementos a enviar como parte del formulario
+    form_data.append("file", file_data) // se envía el archivo empaquetado
+    form_data.append("subj", subject) // se envía el asunto
+    form_data.append("nombre", "ATSD") // como nombre del documento se envía su código
     //alert(form_data)
     $.ajax({
         url: "../envios/enviar_alerta.php",
@@ -778,7 +876,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
         success: function(php_script_response){
             alert("Archivo generado correctamente")
         }
-    })*/
+    })
   } else {
     alert("Asegúrse de competar todos los campos para generar el documento");
   }

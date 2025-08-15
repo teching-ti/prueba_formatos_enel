@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Permiso de Alto Riesgo</title>
     <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <link rel="stylesheet" href="../estilos/stylesPermiso.css" />
+    <link rel="stylesheet" href="../estilos/stylesPermiso.css?v=14082025" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <script
   src="https://code.jquery.com/jquery-3.7.1.js"
@@ -33,6 +36,12 @@
         <div class="form-body">
           <section class="datos-generales-documento" id="datos-generales-documento">
             <h4>Datos Generales</h4>
+            <!-- inicia elemento cuadrillas -->
+            <div class="contenedor-cuadrillas">
+              <label for="cod-cuadrillas"><span>* </span>Código de cuadrillas</label>
+              <input type="text" name="cod-cuadrillas" id="cod-cuadrillas" placeholder="C1-C2...C8">
+            </div>
+            <!-- termina elemento cuadrillas -->
             <div class="dg-contenedor">
               <div class="dg">
                 <label for="fecha">Fecha: <input type="text" id="fecha" readonly /></label>
@@ -498,6 +507,6 @@
       </section>
       <div id="btnGenerar"><i class="fa-solid fa-file-pdf fa-lg"></i></div>
     </main>
-    <script src="../scripts/functionsPetar.js"></script>
+    <script src="../scripts/functionsPetar.js?v=14082025"></script>
   </body>
 </html>

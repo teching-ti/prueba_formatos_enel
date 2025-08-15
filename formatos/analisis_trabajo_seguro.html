@@ -10,6 +10,9 @@
       href="../recursos/favicon-teching.png"
       type="image/x-icon"
     />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +20,7 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <link rel="stylesheet" href="../estilos/stylesAts.css" />
+    <link rel="stylesheet" href="../estilos/stylesAts.css?v=14082025" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -60,9 +63,15 @@
 
           <!--Inicia Cuerpo del Formulario-->
           <div class="form-body">
+            <!-- inicia elemento cuadrillas -->
+            <div class="contenedor-cuadrillas">
+              <label for="cod-cuadrillas"><span>* </span>Código de cuadrillas</label>
+              <input type="text" name="cod-cuadrillas" id="cod-cuadrillas" placeholder="C1-C2...C8">
+            </div>
+            <!-- termina elemento cuadrillas -->
             <div class="section-body">
-              <label for="trabajo">1. Trabajo a Realizar: </label
-              ><select type="text" id="trabajo">
+              <label for="trabajo">1. Trabajo a Realizar: </label>
+              <select type="text" id="trabajo">
                 <option value="Balance y Corrección Cadena">1. Balance y Corrección Cadena</option>
                 <option value="Inspección AP y SP ">2. Inspección AP y SP </option>
                 <option value="Balance y Corrección Cadena / Inspección AP">3. Balance y Corrección Cadena / Inspección A</option>
@@ -225,6 +234,6 @@
         </form>
       </section>
     </main>
-    <script src="../scripts/functionsAts.js"></script>
+    <script src="../scripts/functionsAts.js?v=14082025"></script>
   </body>
 </html>

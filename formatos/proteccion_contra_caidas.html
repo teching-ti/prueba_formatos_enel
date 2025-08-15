@@ -10,6 +10,9 @@
       href="../recursos/favicon-teching.png"
       type="image/x-icon"
     />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +22,7 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <link rel="stylesheet" href="../estilos/stylesCaidas.css" />
+    <link rel="stylesheet" href="../estilos/stylesCaidas.css?v=14082025" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -45,6 +48,12 @@
       <section class="form-container">
         <form class="principal-form" id="principal-form">
           <h3 class="title-datos-principales">Datos Principales</h3>
+            <!-- inicia elemento cuadrillas -->
+            <div class="contenedor-cuadrillas">
+                <label for="cod-cuadrillas"><span>* </span>Código de cuadrillas</label>
+                <input type="text" name="cod-cuadrillas" id="cod-cuadrillas" placeholder="C1-C2...C8">
+            </div>
+            <!-- termina elemento cuadrillas -->
           <div class="form-sup">
             <div class="form-sup1">
               <div class="form-sup-e">
@@ -355,6 +364,6 @@
       </section>
     </main>
 
-    <script src="../scripts/functionsProteccionCaidas.js"></script>
+    <script src="../scripts/functionsProteccionCaidas.js?v=14082025"></script>
   </body>
 </html>

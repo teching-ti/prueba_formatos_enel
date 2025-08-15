@@ -1,6 +1,7 @@
 fecha = document.getElementById("fecha");
 dia = new Date().toLocaleDateString();
 fecha.value = dia;
+let codCuadrillaSubjetct = "";
 
 let contador = 2;
 let contador2 = 2;
@@ -61,7 +62,7 @@ btnAniadirAmp.addEventListener("click", function(e){
 
 let users = [];
 
-fetch("../scripts/datos.json")
+fetch(`../scripts/datos.json?t=${new Date().getTime()}`)
     .then((response) => response.json())
     .then((data)=>{
         users = data;
@@ -75,7 +76,19 @@ function llenarSelectPersonal(elemento){
         option.value = tecnico.name;
         option.textContent = tecnico.name;
         elemento.appendChild(option);
-    }); 
+    });
+    users.supervisor.forEach((supervisor) => {
+        const option = document.createElement("option");
+        option.value = supervisor.name;
+        option.textContent = supervisor.name;
+        elemento.appendChild(option);
+    });
+    users.prevencionista.forEach((prevencionista) => {
+        const option = document.createElement("option");
+        option.value = prevencionista.name;
+        option.textContent = prevencionista.name;
+        elemento.appendChild(option);
+    });
 }
 
 function autocomplearCampos(elementoSelect, datosParticipante){
@@ -84,15 +97,27 @@ function autocomplearCampos(elementoSelect, datosParticipante){
         const usuarioSeleccionado = users.tecnico.find(
             (tecnico)=>tecnico.name === nombreSeleccionado
         );
+        // Buscar en la categoría "supervisor"
+        const supervisorSeleccionado = users.supervisor.find(
+            (supervisor) => supervisor.name === nombreSeleccionado
+        );
+        // Buscar en la categoría "prevencionista"
+        const prevencionistaSeleccionado = users.prevencionista.find(
+            (prevencionista) => prevencionista.name === nombreSeleccionado
+        );
 
         if(usuarioSeleccionado){
             datosParticipante.querySelector(".dni").value = usuarioSeleccionado.dni;
             datosParticipante.querySelector(".firma").value = usuarioSeleccionado.firma;
-        }else{
-            datosParticipante.querySelector(".dni").value = "";
-            datosParticipante.querySelector(".firma").value = "";
+        }else if (supervisorSeleccionado) {
+            datosParticipante.querySelector(".dni").value = supervisorSeleccionado.dni;
+            datosParticipante.querySelector(".firma").value = supervisorSeleccionado.firma;
+        } else if (prevencionistaSeleccionado) {
+            datosParticipante.querySelector(".dni").value = prevencionistaSeleccionado.dni;
+            datosParticipante.querySelector(".firma").value = prevencionistaSeleccionado.firma;
+        } else {
+            alert("Este espacio no puede permanecer vacío, seleccione al personal requerido")
         }
-
     });
 }
 
@@ -168,6 +193,23 @@ btnAniadirP.addEventListener("click", function(e){
     }
 });
 
+document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
+    let input = e.target;
+    
+    // Elimina todos los caracteres que no sean letras o números
+    let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+
+    // Agrupa cada dos caracteres y los une con guiones
+    let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
+
+    // Evita que se agregue guion al final si es innecesario
+    if (formatted.endsWith('-')) {
+        formatted = formatted.slice(0, -1);
+    }
+
+    input.value = formatted;
+});
+
 const {jsPDF} = window.jspdf;
 const doc = new jsPDF;
 
@@ -191,6 +233,36 @@ btnGenerar.addEventListener("click", async (e)=>{
     doc.setFontSize(8);
 
     let validador = true;
+
+    let evaluarCodigoCuadrillas = () =>{
+        let valCuadrillas = true;
+        let codCuadrillasInput = document.getElementById("cod-cuadrillas");
+        let valorOriginal = codCuadrillasInput.value;
+        
+        if(valorOriginal==""){
+        valCuadrillas=false;
+        alert("Favor de ingresar correctamente el código de las cuadrillas");
+        return;
+        }
+
+        let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
+        let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
+
+        let regexValido = /^[A-Z0-9\-]+$/;
+        if (!regexValido.test(valFormateadoCuadrillas)) {
+        alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
+        valCuadrillas=false;
+        return;
+        }
+
+        if(valCuadrillas){
+            codCuadrillaSubjetct = valFormateadoCuadrillas;
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     let evaluarDatosPrincipales = function(){
         let lugar = document.getElementById("lugar").value;
         let datoFecha = document.getElementById("fecha").value;
@@ -289,20 +361,27 @@ btnGenerar.addEventListener("click", async (e)=>{
 
 
 
-    if(evaluarDatosPrincipales() && evaluarComportamiento() && evaluarAccionMejora() && evaluarParticipantes()){
+    if(evaluarDatosPrincipales() && evaluarCodigoCuadrillas() && evaluarComportamiento() && evaluarAccionMejora() && evaluarParticipantes()){
         //línea par mostrar el documento
         doc.output("dataurlnewwindow", { filename: "nuevopdf.pdf" });
 
-        /*fechaActual = dia.replace(/\//g, "_");
-        const nombreDocumento = `CHARLA_POST_OPERACIONAL_${fechaActual}.pdf`;
-        doc.save(nombreDocumento);
+        // aqui se deberá colocar el código del documento
+        let subject = `C5POSTD_${codCuadrillaSubjetct}`;
 
+        // Inicia funcionalidad de visualización
+        dia = dia.replace(/\//g, "_");
+        let doc_guardado = `${subject}-${dia}.pdf`
+        doc.save(doc_guardado)
+        // Termina funcionalidad de visualización
+        
         //endodear el resultado del pdf
         var file_data = btoa(doc.output())
         var form_data = new FormData()
 
-        form_data.append("file", file_data)
-        form_data.append("nombre", "CHARLA_POST_OPERACIONAL")
+        // aquí se deberán colocar los elementos a enviar como parte del formulario
+        form_data.append("file", file_data) // se envía el archivo empaquetado
+        form_data.append("subj", subject) // se envía el asunto
+        form_data.append("nombre", "C5POSTD") // como nombre del documento se envía su código
         //alert(form_data)
         $.ajax({
             url: "../envios/enviar_alerta.php",
@@ -315,7 +394,7 @@ btnGenerar.addEventListener("click", async (e)=>{
             success: function(php_script_response){
                 alert("Archivo generado correctamente")
             }
-        })*/
+        })
     }else{
         alert("No se pudo generar el documento");
     }
