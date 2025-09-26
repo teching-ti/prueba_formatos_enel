@@ -1,3 +1,6 @@
+/*260925*/
+Agregar la imagen del nuevo formato a la carpeta de recursos
+
 /*13-06-2025*/
 Se está trabajando con el formato ATS para las pruebas solicitadas en el ticket, se esta configurando el nombre del documento, validaciones y elementos que irán con el envío para identificar y realziar el guardado correspondiente para el proyecto.
 

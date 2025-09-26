@@ -1,0 +1,357 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main{
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-title{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 10px 0;
+}
+
+.logo-title img{
+    user-select: none;
+    pointer-events: none;
+}
+
+.logo-title div{
+    display: grid;
+    place-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.form-container{
+    display: grid;
+    place-items: center;
+    margin-top: 2em;
+}
+
+/*inicia elemento cuadrillas*/
+.contenedor-cuadrillas{
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    margin-bottom: 2rem;
+}
+
+.contenedor-cuadrillas label{
+    font-weight: bold;
+}
+
+.contenedor-cuadrillas label span{
+    font-weight: bold;
+    color: red;
+}
+
+.contenedor-cuadrillas input{
+    padding: .5em;
+}
+/*termina elemento cuadrillas*/
+
+.principal-form{
+    display: block;
+    padding: .5rem;
+    width: 100%;
+    border: solid 1px rgb(199, 189, 189);
+    border-radius: 8px;
+    background-color: whitesmoke ;
+}
+
+input{
+    border: solid 1px  rgb(199, 189, 189);
+    border-radius: 4px;
+    outline: none;
+    padding: .5em;
+}
+
+input:focus{
+    outline: 3px solid rgba(131, 170, 230, .8);
+}
+
+.form-sup{
+    margin: 1.4rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-sup div{
+    gap: .2rem;
+    display: flex;
+    width: 100%;
+    padding: 0 .4rem;
+}
+
+#titulo-trabajo, #instalacion-o-equipo, #lugar{
+    width: 100%;
+}
+
+.form-sup-label{
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    width: 100%;
+}
+
+/* Items peligro riesgo */
+#section-peligros-riesgos-medidas{
+    margin: 1.4rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.container-items-prm{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+#aniadir-item-prm{
+    width: fit-content;
+    padding: .4rem;
+    border: solid 1px #233d63;
+    border-radius: .2rem;
+    color: #233d63;
+    cursor: pointer;
+    transition: all ease-in-out .2s;
+}
+
+#aniadir-item-prm:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: translateY(.1rem);
+}
+
+.item-prm{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    border: solid 1px #b6b6b6;
+    border-radius: .8rem;
+    padding: .6rem;
+}
+
+.fragment-elemts{
+    display: flex;
+    gap: .8rem;
+}
+
+.container-element-prm{
+    display: flex;
+    align-items: center;
+    width: 31%;
+}
+
+.element-item-prm{
+    display:flex;
+    flex-direction: column;
+    gap: .2rem;
+    /* padding: .4rem; */
+    width: 100%;
+}
+
+.container-eliminar-item-prm{
+    display: flex;
+    align-items: center;
+}
+
+.btn-eliminar-item-prm{
+    box-sizing: border-box;
+    border: solid 1px rgb(221,109,109);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:.4rem;
+    border-radius: .4rem;
+    max-height: fit-content;
+    color: rgb(231, 74, 74);
+    text-decoration: none;
+}
+
+/*Riesgos identificados*/
+.section-riesgos-identificados{
+    display: flex;
+    flex-direction: column;
+    margin: 1.4rem 0;
+    gap: 1.2rem;
+}
+
+.container-riesgos-identificados{
+    display: flex;
+    flex-direction: row;
+    gap: 1.4rem;
+}
+
+.riesgos-identificados-column{
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+}
+
+.container-riesgos-identificados div label{
+    font-size: .9rem;
+}
+
+/* Aspectos ambientales significativos medidas para controlar el impacto */
+.section-aspectos-ambientales{
+    display: flex;
+    flex-direction: column;
+    margin: 1.4rem 0;
+    gap: 1.2rem;
+}
+
+.aspectos-ambientales-container{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    width: 100%;
+}
+
+#mcci{
+    width: 100%;
+    resize: none;
+    border: solid 1px rgb(199, 189, 189);
+    border-radius: .4rem;
+    outline: none;
+    padding: .5em;
+}
+
+#mcci:focus{
+    outline: 3px solid rgba(131, 170, 230, .8);
+}
+
+.general-participantes{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding: .8rem;
+}
+
+.contenedor-participante{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+}
+
+.participante{
+    border: solid 1px  rgb(199, 189, 189);
+    border-radius: 4px;
+    outline: none;
+    padding: .5em;
+}
+
+.participante:focus{
+    outline: 3px solid rgba(131, 170, 230, .8);
+}
+
+#aniadir-participante{
+    width: fit-content;
+    padding: .4rem;
+    border: solid 1px #233d63;
+    border-radius: .2rem;
+    color: #233d63;
+    cursor: pointer;
+    transition: all ease-in-out .2s;
+}
+
+#aniadir-participante:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transform: translateY(.1rem);
+}
+
+.contenedor-info-participante{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .8rem;
+    width: 100%;
+}
+
+.btn-eliminar-persona{
+    border: solid 1px rgb(221, 109, 109);
+    padding: .4rem;
+    border-radius: .4rem;
+    color: rgb(231, 74, 74);
+    cursor: pointer;
+}
+
+.firma{
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+#btn-generar{
+    cursor: pointer;
+    position: fixed;
+    width: 44px;
+    height: 44px;
+    padding: .4rem;
+    top: 90px;
+    right: 10px;
+    color: red;
+    border-radius: 100%;
+    border: solid 1px red;
+    transition: all ease-in-out .2s;
+    font-size: 1.4rem;
+}
+
+#btn-generar:hover{
+    transform: scale(1.4);
+}
+
+@media (max-width: 720px){
+
+    .main{
+        width: 98%;
+    }
+
+    .logo-title{
+        flex-direction: column;
+        justify-content: center;
+        place-items: center;
+    }
+
+    .logo-title div{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .contenedor-participante{   
+        flex-direction: column;
+    }
+
+    hr{
+        width: 100%;
+        color: rgb(199, 189, 189);
+        margin-bottom: .6rem;
+    }
+
+    .fragment-elemts{
+        flex-direction: column;
+    }
+
+    .container-element-prm{
+        width: 100%;
+    }
+}

@@ -237,7 +237,7 @@
             "firma": "..\/recursos\/firmas\/AngelAnibalApolinarioRojas.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "Z7N-057",
+            "placa": "Z7N057",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -302,7 +302,7 @@
             "firma": "..\/recursos\/firmas\/RodolfoAnatiloIzaguirreCordova.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "Z7N-052",
+            "placa": "Z7N052",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -367,7 +367,7 @@
             "firma": "..\/recursos\/firmas\/WilverAlonsoGomezFlores.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "Z7N-063",
+            "placa": "Z7N063",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -375,7 +375,7 @@
                 },
                 {
                     "elemento": "Jab\u00f3n antis\u00e9ptico",
-                    "fecha_vencimiento": "2024-03-09"
+                    "fecha_vencimiento": "2027-04-30"
                 },
                 {
                     "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
@@ -383,11 +383,11 @@
                 },
                 {
                     "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
-                    "fecha_vencimiento": "2027-02-28"
+                    "fecha_vencimiento": "2029-09-30"
                 },
                 {
                     "elemento": "Esparadrapo 2.5 cm x 5m",
-                    "fecha_vencimiento": "2025-01-31"
+                    "fecha_vencimiento": "2029-06-30"
                 },
                 {
                     "elemento": "Venda el\u00e1stica 4 x 5 yardas",
@@ -411,7 +411,7 @@
                 },
                 {
                     "elemento": "Apositos de Jelonet  10 x 10 cm",
-                    "fecha_vencimiento": "2027-08-31"
+                    "fecha_vencimiento": "2027-09-30"
                 },
                 {
                     "elemento": "Agua est\u00e9ril x 1 litro",
@@ -419,7 +419,7 @@
                 },
                 {
                     "elemento": "Agua oxigenada x 250 ml",
-                    "fecha_vencimiento": "2026-11-19"
+                    "fecha_vencimiento": "2026-02-28"
                 }
             ]
         },
@@ -432,7 +432,7 @@
             "firma": "..\/recursos\/firmas\/ChristianCarlosSoteloSaldana.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "Z7N-050",
+            "placa": "Z7N050",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -440,7 +440,7 @@
                 },
                 {
                     "elemento": "Jab\u00f3n antis\u00e9ptico",
-                    "fecha_vencimiento": "2024-02-29"
+                    "fecha_vencimiento": "2027-04-30"
                 },
                 {
                     "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
@@ -448,11 +448,11 @@
                 },
                 {
                     "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
-                    "fecha_vencimiento": "2027-02-28"
+                    "fecha_vencimiento": "2029-05-31"
                 },
                 {
                     "elemento": "Esparadrapo 2.5 cm x 5m",
-                    "fecha_vencimiento": "2025-01-31"
+                    "fecha_vencimiento": "2029-05-31"
                 },
                 {
                     "elemento": "Venda el\u00e1stica 4 x 5 yardas",
@@ -476,7 +476,7 @@
                 },
                 {
                     "elemento": "Apositos de Jelonet  10 x 10 cm",
-                    "fecha_vencimiento": "2025-04-01"
+                    "fecha_vencimiento": "2027-09-30"
                 },
                 {
                     "elemento": "Agua est\u00e9ril x 1 litro",
@@ -484,7 +484,7 @@
                 },
                 {
                     "elemento": "Agua oxigenada x 250 ml",
-                    "fecha_vencimiento": "2026-11-19"
+                    "fecha_vencimiento": "2026-02-28"
                 }
             ]
         },
@@ -497,7 +497,7 @@
             "firma": "..\/recursos\/firmas\/RicardoAlexanderRodriguezLopez.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "BXS-510",
+            "placa": "BXS510",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -562,7 +562,7 @@
             "firma": "..\/recursos\/firmas\/LuisAntonioAlayoSilva.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "BXS-510",
+            "placa": "Z7N050",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -627,7 +627,7 @@
             "firma": "..\/recursos\/firmas\/RicardoCesarJuarezArteaga.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "BXS-510",
+            "placa": "AWI015",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -692,7 +692,7 @@
             "firma": "..\/recursos\/firmas\/AlberthKeviAbsalonValleArellano.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "Z7K-681",
+            "placa": "Z7K681",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -757,7 +757,7 @@
             "firma": "..\/recursos\/firmas\/WalterEdgardSilvaAtaurima.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "CLI-507",
+            "placa": "CLI507",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -822,7 +822,7 @@
             "firma": "..\/recursos\/firmas\/CarlosHansAlvarezQuispe.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "BXS-510",
+            "placa": "BXS510",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -887,7 +887,137 @@
             "firma": "..\/recursos\/firmas\/JeanCarlosBazalarLeon.png",
             "cargo": "Chofer Ayudante de Balance",
             "vehiculo": "Auto",
-            "placa": "BXS-510",
+            "placa": "BXS510",
+            "botiquin": [
+                 {
+                    "elemento": "Alcohol de 70\u00b0 de 500 ml",
+                    "fecha_vencimiento": "2030-02-28"
+                },
+                {
+                    "elemento": "Jab\u00f3n antis\u00e9ptico",
+                    "fecha_vencimiento": "2026-06-25"
+                },
+                {
+                    "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
+                    "fecha_vencimiento": "2029-07-31"
+                },
+                {
+                    "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
+                    "fecha_vencimiento": "2027-07-31"
+                },
+                {
+                    "elemento": "Esparadrapo 2.5 cm x 5m",
+                    "fecha_vencimiento": "2029-05-31"
+                },
+                {
+                    "elemento": "Venda el\u00e1stica 4 x 5 yardas",
+                    "fecha_vencimiento": "2028-03-31"
+                },
+                {
+                    "elemento": "Bandas adhesivas (curitas)",
+                    "fecha_vencimiento": "2026-06-30"
+                },
+                {
+                    "elemento": "Guantes quir\u00fargicos esterilizados 7 1\/2 (pares)",
+                    "fecha_vencimiento": "2026-06-01"
+                },
+                {
+                    "elemento": "Algod\u00f3n x 50 gr",
+                    "fecha_vencimiento": "2030-03-31"
+                },
+                {
+                    "elemento": "Flamodil \u00f3 Hirudoid (golpes, hematomas)",
+                    "fecha_vencimiento": "2029-04-30"
+                },
+                {
+                    "elemento": "Apositos de Jelonet  10 x 10 cm",
+                    "fecha_vencimiento": "2029-08-01"
+                },
+                {
+                    "elemento": "Agua est\u00e9ril x 1 litro",
+                    "fecha_vencimiento": "2028-01-17"
+                },
+                {
+                    "elemento": "Agua oxigenada x 250 ml",
+                    "fecha_vencimiento": "2027-03-31"
+                }
+            ]
+        },
+        {
+            "name": "Roiser José Ticlla Castilla",
+            "nombres": "Roiser José",
+            "apellidos": "Ticlla Castilla",
+            "dni": "72682707",
+            "celular": "999 999 999",
+            "firma": "..\/recursos\/firmas\/RoiserJoseTicllaCastilla.png",
+            "cargo": "Chofer Ayudante de Balance",
+            "vehiculo": "Auto",
+            "placa": "BXS510",
+            "botiquin": [
+                {
+                    "elemento": "Alcohol de 70\u00b0 de 500 ml",
+                    "fecha_vencimiento": "2030-02-28"
+                },
+                {
+                    "elemento": "Jab\u00f3n antis\u00e9ptico",
+                    "fecha_vencimiento": "2026-06-25"
+                },
+                {
+                    "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
+                    "fecha_vencimiento": "2029-07-31"
+                },
+                {
+                    "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
+                    "fecha_vencimiento": "2027-07-31"
+                },
+                {
+                    "elemento": "Esparadrapo 2.5 cm x 5m",
+                    "fecha_vencimiento": "2029-05-31"
+                },
+                {
+                    "elemento": "Venda el\u00e1stica 4 x 5 yardas",
+                    "fecha_vencimiento": "2028-03-31"
+                },
+                {
+                    "elemento": "Bandas adhesivas (curitas)",
+                    "fecha_vencimiento": "2026-06-30"
+                },
+                {
+                    "elemento": "Guantes quir\u00fargicos esterilizados 7 1\/2 (pares)",
+                    "fecha_vencimiento": "2026-06-01"
+                },
+                {
+                    "elemento": "Algod\u00f3n x 50 gr",
+                    "fecha_vencimiento": "2030-03-31"
+                },
+                {
+                    "elemento": "Flamodil \u00f3 Hirudoid (golpes, hematomas)",
+                    "fecha_vencimiento": "2029-04-30"
+                },
+                {
+                    "elemento": "Apositos de Jelonet  10 x 10 cm",
+                    "fecha_vencimiento": "2029-08-01"
+                },
+                {
+                    "elemento": "Agua est\u00e9ril x 1 litro",
+                    "fecha_vencimiento": "2028-01-17"
+                },
+                {
+                    "elemento": "Agua oxigenada x 250 ml",
+                    "fecha_vencimiento": "2027-03-31"
+                }
+            ]
+        },
+        {
+            "name": "Rivelino Arnao Ochoa",
+            "nombres": "Rivelino",
+            "apellidos": "Arnao Ochoa",
+            "dni": "25762304",
+            "celular": "999 999 999",
+            "firma": "..\/recursos\/firmas\/RivelinoArnaoOchoa.png",
+            "cargo": "Chofer Ayudante de Balance",
+            "vehiculo": "Auto",
+            "placa": "Z7K681",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -1014,7 +1144,7 @@
             "firma": "..\/recursos\/firmas\/RobertoLuisBailon.png",
             "cargo": "Supervisor",
             "vehiculo": "Auto",
-            "placa": "Z7N-067",
+            "placa": "Z7N067",
             "botiquin": [
                 {
                     "elemento": "Alcohol de 70\u00b0 de 500 ml",
@@ -1131,7 +1261,73 @@
                 {
                     "elemento": "Agua oxigenada x 250 ml",
                     "fecha_vencimiento": "2026-11-19"
-                }]
+                }
+            ]
+        },
+        {
+            "name": "Anderson Ernesto Condor Montes",
+            "nombres": "Anderson Ernesto",
+            "apellidos": "Condor Montes",
+            "dni": "48413007",
+            "celular": "999 999 999",
+            "firma": "..\/recursos\/firmas\/AndersonErnestoCondorMontes.png",
+            "cargo": "Supervisor",
+            "vehiculo": "Auto",
+            "placa": "Z7N067",
+            "botiquin": [
+                {
+                    "elemento": "Alcohol de 70\u00b0 de 500 ml",
+                    "fecha_vencimiento": "2026-06-30"
+                },
+                {
+                    "elemento": "Jab\u00f3n antis\u00e9ptico",
+                    "fecha_vencimiento": "2027-04-30"
+                },
+                {
+                    "elemento": "Gasas esterilizadas fraccionadas de 10cm x 10cm",
+                    "fecha_vencimiento": "2027-02-20"
+                },
+                {
+                    "elemento": "Ap\u00f3sito Esterilizado 10cm x 10cm",
+                    "fecha_vencimiento": "2027-02-20"
+                },
+                {
+                    "elemento": "Esparadrapo 2.5 cm x 5m",
+                    "fecha_vencimiento": "2029-05-31"
+                },
+                {
+                    "elemento": "Venda el\u00e1stica 4 x 5 yardas",
+                    "fecha_vencimiento": "2028-08-31"
+                },
+                {
+                    "elemento": "Bandas adhesivas (curitas)",
+                    "fecha_vencimiento": "2026-06-30"
+                },
+                {
+                    "elemento": "Guantes quir\u00fargicos esterilizados 7 1\/2 (pares)",
+                    "fecha_vencimiento": "2027-04-30"
+                },
+                {
+                    "elemento": "Algod\u00f3n x 50 gr",
+                    "fecha_vencimiento": "2027-02-20"
+                },
+                {
+                    "elemento": "Flamodil \u00f3 Hirudoid (golpes, hematomas)",
+                    "fecha_vencimiento": "2028-07-31"
+                },
+                {
+                    "elemento": "Apositos de Jelonet  10 x 10 cm",
+                    "fecha_vencimiento": "2027-02-20"
+                },
+                {
+                    "elemento": "Agua est\u00e9ril x 1 litro",
+                    "fecha_vencimiento": "2026-09-16"
+                },
+                {
+                    "elemento": "Agua oxigenada x 250 ml",
+                    "fecha_vencimiento": "2026-11-19"
+                }
+            ]
         }
     ],
     "prevencionista": [

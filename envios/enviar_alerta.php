@@ -20,26 +20,21 @@ try {
 
         // Configuracion del servidor SMTP
         $mail->isSMTP();
-        $mail->Host       = 'host del servidor';//editable
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'emisor@formatosdigitales.teching.com.pe';//editable
-        $mail->Password   = 'contasena';//editable
-        $mail->SMTPSecure = 'ssl';//editable
-        $mail->Port       = 465;//editable
+
 
         // Configuracion del correo electronico
-        $mail->setFrom('emisor@formatosdigitales.teching.com.pe', 'Aut. Balance y correcion cadena');//editable
+        $mail->setFrom('emisor@formatosdigitales.teching.com.pe', 'Aut. Balance y correcion cadena');
 
         error_log("El nombre es".$_POST["nombre"]);
 
         if($_POST["nombre"]=="ACTA_DE_INSPECCION"){
             date_default_timezone_set('America/Lima');
             $fecha_hora_actual = date('dmY_His');
-            $mail->addAddress('correo gmail a donde se envía la acta de inspeccion', 'Receptor');//editable
+            $mail->addAddress('jvp9830@gmail.com', 'Receptor');
             $mail->Subject = 'Formato Balance_'.$asunto;
             $mail->addAttachment($_POST['nombre'].".pdf", $_POST['nombre']."_".$fecha_hora_actual);
         }else{
-            $mail->addAddress('correo de a donde llega la automatizacion', 'Receptor');//editable
+            $mail->addAddress('jvalladares@teching.com.pe', 'Receptor');
             $mail->Subject = 'Formato Balance_'.$asunto;
             $mail->addAttachment($_POST['nombre'].".pdf", $_POST['nombre'].".pdf");
         }

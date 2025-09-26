@@ -5,6 +5,7 @@ fecha.value = dia;
 //esta es la fecha en que se realiza la inspección
 
 let codCuadrillaSubjetct = "";
+let codPlaca = "";
 
 function validarFechas(campoFecha){
 
@@ -343,6 +344,7 @@ async function loadImage(url) {
 
             if(placa!=""){
                 doc.text(placa, 43, 27.3)
+                codPlaca = placa;
             }else{
                 alert("Complete el campo de la placa del vehículo")
                 evaluar = false
@@ -806,7 +808,7 @@ async function loadImage(url) {
         window.open(URL.createObjectURL(blob));
 
         // aqui se deberá colocar el código del documento
-        let subject = `IVD_${codCuadrillaSubjetct}`;
+        let subject = `IVD-${codPlaca}-${codCuadrillaSubjetct}`;
 
         // Inicia funcionalidad de visualización
         dia = dia.replace(/\//g, "_");

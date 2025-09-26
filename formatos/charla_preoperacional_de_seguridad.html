@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Charla Post Operacional</title>
+        <link rel="icon" href="../recursos/favicon-teching.png" type="image/x-icon"/>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="Expires" content="0">
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <link rel="stylesheet" href="../estilos/stylesPreOpSeguridad.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <main class="main">
+            <figure class="logo-title">
+                <a href="../"><img src="../recursos/logo_teching.png" alt="teching_logo" /></a>
+                <div><span>Charla Pre Operacional de Seguridad</span></div>
+            </figure>
+            <section class="form-container">
+                <div class="principal-form" id="principal-form">
+
+                    <div class="form-sup">
+                        <h3>Ingresar la información solicitada</h3>
+
+                        <!-- inicia elemento cuadrillas -->
+                        <div class="contenedor-cuadrillas">
+                            <label for="cod-cuadrillas"><span>* </span>Código de cuadrillas</label>
+                            <input type="text" name="cod-cuadrillas" id="cod-cuadrillas" placeholder="C1-C2...C8">
+                        </div>
+                        <!-- termina elemento cuadrillas -->
+                        <div>
+                            <label for="titulo-trabajo" class="form-sup-label">1. Título del Trabajo: <input type="text" id="titulo-trabajo"></label>
+                        </div>
+                        <div>
+                            <label for="instalacion-o-equipo" class="form-sup-label">2. Instalación o Equipo: <input type="text" id="instalacion-o-equipo"></label>
+                        </div>
+                        <div>
+                            <label for="lugar" class="form-sup-label">3. Lugar: <input type="text" id="lugar"></label>
+                        </div>
+                        <div>
+                            <label for="fecha">4. Fecha: </label><input type="text" id="fecha" readonly />
+                        </div>
+                        <div>
+                            <label for="hora">5. Hora: <input type="time" id="hora"></label>
+                        </div>
+                    </div>
+                    
+                    <hr>
+                    
+                    <div class="section-peligros-riesgos-medidas" id="section-peligros-riesgos-medidas">
+                        <h3>Peligros, Riesgos y Medidas de Control</h3>
+                        <div class="container-items-prm" id="container-items-prm">
+                            
+                        </div>
+                        <button id="aniadir-item-prm" class="aniadir-item-prm"> Agregar Item <i class="fa-solid fa-circle-plus"></i></button>
+                    </div>
+
+                    <hr>
+
+                    <div class="section-riesgos-identificados" id="section-riesgos-identificados">
+                        <h3>Riesgos Identificados</h3>
+                        <div class="container-riesgos-identificados" id="container-riesgos-identificados">
+                            <div class="riesgos-identificados-column">
+                                <div>
+                                    <input type="checkbox" id="riesgo1" name="riesgo1" class="riesgos-checkbox">
+                                    <label for="riesgo1">Caída de personas al mismo nivel</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo2" name="riesgo2" class="riesgos-checkbox">
+                                    <label for="riesgo2">Caída de personas a distinto nivel</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo3" name="riesgo3" class="riesgos-checkbox">
+                                    <label for="riesgo3">Caída de Objetos</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo4" name="riesgo4" class="riesgos-checkbox">
+                                    <label for="riesgo4">Contacto térmico</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo5" name="riesgo5" class="riesgos-checkbox">
+                                    <label for="riesgo5">Vibraciones</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo6" name="riesgo6" class="riesgos-checkbox">
+                                    <label for="riesgo6">Desprend, desplomes y derrumbe</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo7" name="riesgo7" class="riesgos-checkbox">
+                                    <label for="riesgo7">Choque y golpes</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo8" name="riesgo8" class="riesgos-checkbox">
+                                    <label for="riesgo8">Riesgo de explosión</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo9" name="riesgo9" class="riesgos-checkbox">
+                                    <label for="riesgo9">Radiación inotizante</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo10" name="riesgo10" class="riesgos-checkbox">
+                                    <label for="riesgo10">Agentes biológicos</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo11" name="riesgo11" class="riesgos-checkbox">
+                                    <label for="riesgo11">Atrapamiento</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo12" name="riesgo12" class="riesgos-checkbox">
+                                    <label for="riesgo12">Cortes</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo13" name="riesgo13" class="riesgos-checkbox">
+                                    <label for="riesgo13">Proyecciones</label>
+                                </div>
+                            </div>
+                            <div class="riesgos-identificados-column">
+                                <div>
+                                    <input type="checkbox" id="riesgo14" name="riesgo14" class="riesgos-checkbox">
+                                    <label for="riesgo14">Radiación no ionizante</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo15" name="riesgo15" class="riesgos-checkbox">
+                                    <label for="riesgo15">Tráfico (fuera del centro de trabajo)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo16" name="riesgo16" class="riesgos-checkbox">
+                                    <label for="riesgo16">Contacto eléctrico</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo17" name="riesgo17" class="riesgos-checkbox">
+                                    <label for="riesgo17">Maq. autom. y vehíc.(en centro de trabajo)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo18" name="riesgo18" class="riesgos-checkbox">
+                                    <label for="riesgo18">Ruido</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo19" name="riesgo19" class="riesgos-checkbox">
+                                    <label for="riesgo19">Espacio confinado</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo20" name="riesgo20" class="riesgos-checkbox">
+                                    <label for="riesgo20">Iluminación</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo21" name="riesgo21" class="riesgos-checkbox">
+                                    <label for="riesgo21">Carga física y sobreesfuerzo</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo22" name="riesgo22" class="riesgos-checkbox">
+                                    <label for="riesgo22">Agresión de seres vivos</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo23" name="riesgo23" class="riesgos-checkbox">
+                                    <label for="riesgo23">Sobrecarga térmica</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo24" name="riesgo24" class="riesgos-checkbox">
+                                    <label for="riesgo24">Agentes químicos</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="riesgo25" name="riesgo25" class="riesgos-checkbox">
+                                    <label for="riesgo25">otros</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="section-aspectos-ambientales">
+                        <h4>Aspectos Ambientales Significativos</h4>
+                        <div class="aspectos-ambientales-container">
+                            <div>
+                                <input type="checkbox" id="aai-1" name="aai-1" class="checkbox-aspecto-ambiental">
+                                <label for="aai-1">Residuos peligrosos (Derrame de aceite, Particulas de Asbesto)</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="aai-2" name="aai-2" class="checkbox-aspecto-ambiental">
+                                <label for="aai-2">Poda de árboles</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="aai-3" name="aai-3" class="checkbox-aspecto-ambiental">
+                                <label for="aai-3">Desmontes varios y residuos en genral</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="aai-4" name="aai-4" class="checkbox-aspecto-ambiental">
+                                <label for="aai-4">Ruido excesivo</label>
+                            </div>
+                        </div>
+                        <h4>Medidas para controlar el impacto</h4>
+                        <div class="aspectos-ambientales-container">
+                            <textarea name="mcci" id="mcci"></textarea>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="general-participantes" id="general-participantes">
+                        <h3>Participantes</h3>
+                        <button id="aniadir-participante" class="aniadir-participante">Agregar <i class="fa-solid fa-user-plus"></i></button>
+                    </div>
+
+                    <button id="btn-generar"><i class="fa-solid fa-file-pdf"></i></button>
+                </div>
+            </section>
+        </main>
+        <script src="../scripts/functionsCharlaSeguridad.js"></script>
+  </body>
+</html>
