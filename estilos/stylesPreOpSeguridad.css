@@ -86,6 +86,17 @@ input:focus{
     outline: 3px solid rgba(131, 170, 230, .8);
 }
 
+#supervisor-responsable{
+    border: solid 1px  rgb(199, 189, 189);
+    border-radius: 4px;
+    outline: none;
+    padding: .5em;
+}
+
+#supervisor-responsable:focus{
+    outline: 3px solid rgba(131, 170, 230, .8);
+}
+
 .form-sup{
     margin: 1.4rem 0;
     display: flex;

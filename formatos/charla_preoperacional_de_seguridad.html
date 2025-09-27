@@ -39,19 +39,28 @@
                         </div>
                         <!-- termina elemento cuadrillas -->
                         <div>
-                            <label for="titulo-trabajo" class="form-sup-label">1. Título del Trabajo: <input type="text" id="titulo-trabajo"></label>
+                            <label for="supervisor-responsable" class="form-sup-label">1. Supervisor y/o responsable de trabajo: 
+                                <select name="supervisor-responsable" id="supervisor-responsable">
+                                    <option value="">- Seleccionar- </option>
+                                    <option value="Roberto Carlos Luis Bailon">Roberto Carlos Luis Bailon</option>
+                                    <option value="Anderson Ernesto Condor Montes">Anderson Ernesto Condor Montes</option>
+                                </select>
+                            </label>
                         </div>
                         <div>
-                            <label for="instalacion-o-equipo" class="form-sup-label">2. Instalación o Equipo: <input type="text" id="instalacion-o-equipo"></label>
+                            <label for="titulo-trabajo" class="form-sup-label">2. Título del Trabajo: <input type="text" id="titulo-trabajo"></label>
                         </div>
                         <div>
-                            <label for="lugar" class="form-sup-label">3. Lugar: <input type="text" id="lugar"></label>
+                            <label for="instalacion-o-equipo" class="form-sup-label">3. Instalación o Equipo: <input type="text" id="instalacion-o-equipo"></label>
                         </div>
                         <div>
-                            <label for="fecha">4. Fecha: </label><input type="text" id="fecha" readonly />
+                            <label for="lugar" class="form-sup-label">4. Lugar: <input type="text" id="lugar"></label>
                         </div>
                         <div>
-                            <label for="hora">5. Hora: <input type="time" id="hora"></label>
+                            <label for="fecha">5. Fecha: </label><input type="text" id="fecha" readonly />
+                        </div>
+                        <div>
+                            <label for="hora">6. Hora: <input type="time" id="hora"></label>
                         </div>
                     </div>
                     
@@ -210,6 +219,10 @@
                     <div class="general-participantes" id="general-participantes">
                         <h3>Participantes</h3>
                         <button id="aniadir-participante" class="aniadir-participante">Agregar <i class="fa-solid fa-user-plus"></i></button>
+                    </div>
+
+                    <div class="section-responsable-cuadrilla">
+
                     </div>
 
                     <button id="btn-generar"><i class="fa-solid fa-file-pdf"></i></button>

@@ -5,6 +5,7 @@ fecha.value = dia;
 const contenedorItemsPrm = document.getElementById("container-items-prm");
 const btnAniadirItemPrm = document.getElementById("aniadir-item-prm");
 
+let codCuadrillaSubjetct = "";
 
 let contadorGlobalItemsPrm = 0;
 btnAniadirItemPrm.addEventListener("click", ()=>{
@@ -231,6 +232,23 @@ btnAniadirP.addEventListener("click", function(e){
     }
 });
 
+document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
+    let input = e.target;
+    
+    // Elimina todos los caracteres que no sean letras o números
+    let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+
+    // Agrupa cada dos caracteres y los une con guiones
+    let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
+
+    // Evita que se agregue guion al final si es innecesario
+    if (formatted.endsWith('-')) {
+        formatted = formatted.slice(0, -1);
+    }
+
+    input.value = formatted;
+});
+
 const {jsPDF} = window.jspdf;
 const doc = new jsPDF;
 
@@ -253,9 +271,38 @@ btnGenerar.addEventListener("click", async (e)=>{
     doc.addImage(image, "PNG", 0, 0, 210, 297);
     doc.setFontSize(8);
 
+    let evaluarCodigoCuadrillas = () =>{
+        let valCuadrillas = true;
+        let codCuadrillasInput = document.getElementById("cod-cuadrillas");
+        let valorOriginal = codCuadrillasInput.value;
+        
+        if(valorOriginal==""){
+            valCuadrillas=false;
+            alert("Favor de ingresar correctamente el código de las cuadrillas");
+            return;
+        }
+
+        let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
+        let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
+
+        let regexValido = /^[A-Z0-9\-]+$/;
+            if (!regexValido.test(valFormateadoCuadrillas)) {
+            alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
+            valCuadrillas=false;
+            return;
+        }
+
+        if(valCuadrillas){
+            codCuadrillaSubjetct = valFormateadoCuadrillas;
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     function evaluarDatosGenerales(){
-        const nombreEmpresa = "TECHING /${Nro Contrato}";
-        const supervisor = "Roberto Carlos Luis Bailon";
+        const nombreEmpresa = "TECHING /JA10143035";
+        const supervisor = document.getElementById("supervisor-responsable");
         const inspectorPluz = "Andree Quinto";
 
         let tituloTrabajo = document.getElementById("titulo-trabajo");
@@ -265,8 +312,17 @@ btnGenerar.addEventListener("click", async (e)=>{
         let hora = document.getElementById("hora");
 
         doc.text(nombreEmpresa, 40, 32.4);
-        doc.text(supervisor, 73, 37);
+        
         doc.text(inspectorPluz, 50, 42);
+
+        if(supervisor.value!=""){
+            doc.text(supervisor.value, 73, 37);
+        }else{
+            alert("Por favor, complete el campo de Supervisor y/o responsable de trabajo");
+            supervisor.focus();
+            return false;
+        }
+        
 
         if(tituloTrabajo.value!=""){
             doc.text(tituloTrabajo.value, 44, 47);
@@ -449,25 +505,70 @@ btnGenerar.addEventListener("click", async (e)=>{
                 positionImage+=3.8;
             })
 
+            // jefe cuadrilla
+            let jefeIndex = -1;
+            console.log(cargos);
+            cargos.forEach((e, i)=>{
+                if(jefeIndex === -1 && e.value.trim().toLowerCase() === "jefe cuadrilla de balance"){
+                    jefeIndex = i;
+                }
+            });
+
+            if(jefeIndex !== -1){
+                const nombreJefe = participantes[jefeIndex].value;
+                const firmaJefe = firmas[jefeIndex].value; 
+                doc.text(nombreJefe, 47, 282, {align: "center"});
+                doc.addImage(firmaJefe, "PNG", 32, 268, 30, 10); 
+            }
+
 
         }
-
-        
 
         if(validador){
             return true;
         }else{
             return false;
         }
-
     }
 
 
 
 
 
-    if(evaluarDatosGenerales() && evaluarPrmc() && evaluarCheckboxes() && evaluarAspectosAmbientales() && evaluarParticipantes()){
-        doc.output("dataurlnewwindow", { filename: "nuevopdf.pdf" });
+    if(evaluarCodigoCuadrillas() && evaluarDatosGenerales() && evaluarPrmc() && evaluarCheckboxes() && evaluarAspectosAmbientales() && evaluarParticipantes()){
+        var blob = doc.output("blob");
+        window.open(URL.createObjectURL(blob));
+
+        // aqui se deberá colocar el código del documento
+        let subject = `ATSD_${codCuadrillaSubjetct}`;
+
+        // Inicia funcionalidad de visualización
+        dia = dia.replace(/\//g, "_");
+        let doc_guardado = `${subject}-${dia}.pdf`
+        doc.save(doc_guardado)
+        // Termina funcionalidad de visualización
+
+        //endodear el resultado del pdf
+        var file_data = btoa(doc.output())
+        var form_data = new FormData()
+        
+        // aquí se deberán colocar los elementos a enviar como parte del formulario
+        form_data.append("file", file_data) // se envía el archivo empaquetado
+        form_data.append("subj", subject) // se envía el asunto
+        form_data.append("nombre", "ATSD") // como nombre del documento se envía su código
+        //alert(form_data)
+        $.ajax({
+            url: "../envios/enviar_alerta.php",
+            dataType: "text",
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type:"post",
+            success: function(php_script_response){
+                alert("Archivo generado correctamente")
+            }
+        })
     }
 
 });
