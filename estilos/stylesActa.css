@@ -154,16 +154,15 @@ body{
     font-weight: bold;
 }
 
-.contenedor-jefe-cuadrilla{
+.contenedor-supervisor, .contenedor-jefe-cuadrilla{
     margin: 1.5rem 0 1rem 1.2rem;
-
 }
 
-.contenedor-jefe-cuadrilla label{
+.contenedor-supervisor, .contenedor-jefe-cuadrilla label{
     font-weight: bold;
 }
 
-#jefe-cuadrilla{
+#jefe-cuadrilla, #supervisor{
     height: 35px;
     padding: .5rem;
     width: fit-content;
@@ -196,6 +195,10 @@ body{
 
 #btnGenerar:hover{
     transform: scale(1.4);
+}
+
+#supervisor-nombres, #supervisor-apellidos, #supervisor-firma, #supervisor-dni{
+    display: none;
 }
 
 #nombres, #apellidos, #firma, #dni{

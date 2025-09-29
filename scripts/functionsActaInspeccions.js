@@ -2,7 +2,6 @@ let fecha = document.getElementById("fecha");
 let dia = new Date().toLocaleDateString();
 fecha.value = dia;
 
-let codCuadrillaSubjetct = "";
 //mensaje de aviso
 alert("Buen día, por favor, seleccione correctamente los datos de inspección y marque la casilla correspondiente si desea añadir información adicional.")
 
@@ -21,10 +20,19 @@ fetch(`../scripts/datos.json?t=${new Date().getTime()}`)
       document.getElementById("firma"),
       document.getElementById("dni")
     );
+
+    llenarSelectSupervisor(document.getElementById("supervisor"));
+    autocompletarInformacion(
+      document.getElementById("supervisor"),
+      document.getElementById("supervisor-nombres"),
+      document.getElementById("supervisor-apellidos"),
+      document.getElementById("supervisor-firma"),
+      document.getElementById("supervisor-dni")
+    );
   })
   .catch((error) => console.error("Error al cargar los datos:", error));
 
-//funcion para seleccionar entre los responsables de cuadrilla y el supervisor
+//funcion para seleccionar entre los responsables de cuadrilla
 function llenarSelect(elemento) {
   //obtiene los datos de los técnicos responsables de cuadrilla
   //y el autocompletado solo funciona para los responsables de cuadrilla
@@ -40,6 +48,19 @@ function llenarSelect(elemento) {
   });
 }
 
+//función para seleccionar entre los supervisores
+function llenarSelectSupervisor(elemento){
+  users.supervisor.forEach((supervisor) => {
+    const option = document.createElement("option");
+    option.value = supervisor.name;
+
+      if (supervisor.cargo == "Supervisor"){
+        option.textContent = supervisor.name;
+        elemento.appendChild(option);
+      }
+  })
+}
+
 function autocompletarInformacion(elementoSelect, dato, dato1, dato2, dato3) {
   elementoSelect.addEventListener("change", function () {
     const nombreSeleccionado = elementoSelect.value;
@@ -48,32 +69,24 @@ function autocompletarInformacion(elementoSelect, dato, dato1, dato2, dato3) {
         (tecnico) => tecnico.name === nombreSeleccionado
       );
 
+      const supervisorSeleccionado = users.supervisor.find(
+        (supervisor) => supervisor.name === nombreSeleccionado
+      );
+
       if (usuarioSeleccionado) {
         dato.value = usuarioSeleccionado.nombres;
         dato1.value = usuarioSeleccionado.apellidos;
         dato2.value = usuarioSeleccionado.firma;
         dato3.value = usuarioSeleccionado.dni;
+      }else if(supervisorSeleccionado){
+        dato.value = supervisorSeleccionado.nombres;
+        dato1.value = supervisorSeleccionado.apellidos;
+        dato2.value = supervisorSeleccionado.firma;
+        dato3.value = supervisorSeleccionado.dni;
       }
     }
   });
 }
-
-document.getElementById("cod-cuadrillas").addEventListener("input", function(e) {
-    let input = e.target;
-    
-    // Elimina todos los caracteres que no sean letras o números
-    let rawValue = input.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
-
-    // Agrupa cada dos caracteres y los une con guiones
-    let formatted = rawValue.match(/.{1,2}/g)?.join('-') || '';
-
-    // Evita que se agregue guion al final si es innecesario
-    if (formatted.endsWith('-')) {
-        formatted = formatted.slice(0, -1);
-    }
-
-    input.value = formatted;
-});
 
 const jsPDF = window.jspdf.jsPDF;
 
@@ -103,41 +116,12 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
   //dimensiones del documento pdf
   var doc = new jsPDF();
   //imagen del documento vacía
-  const image = await loadImage("../recursos/formatoActaInspeccion.jpg");
+  const image = await loadImage("../recursos/formatoActaInspeccion.jpg?v=29092025");
   //colocar la imagen
   //colocar imagen desde una posicion en especifico, con las dimensiones especificas
   doc.addImage(image, "JPG", 0, 0, 210, 297);
   doc.setFontSize(6.5);
   let eval = true;
-
-  let evaluarCodigoCuadrillas = () =>{
-    let valCuadrillas = true;
-    let codCuadrillasInput = document.getElementById("cod-cuadrillas");
-    let valorOriginal = codCuadrillasInput.value;
-    
-    if(valorOriginal==""){
-      valCuadrillas=false;
-      alert("Favor de ingresar correctamente el código de las cuadrillas");
-      return;
-    }
-
-    let valorSinEspacios = valorOriginal.replace(/\s+/g, '');
-    let valFormateadoCuadrillas = valorSinEspacios.toUpperCase();
-
-    let regexValido = /^[A-Z0-9\-]+$/;
-    if (!regexValido.test(valFormateadoCuadrillas)) {
-      alert("El código solo debe contener letras, números y guiones (ej: C1-C2-C3)");
-      valCuadrillas=false;
-      return;
-    }
-
-    if(valCuadrillas){
-      codCuadrillaSubjetct = valFormateadoCuadrillas;
-      return true;
-    }else{
-      return false;
-    }
-  }
 
   function evaluarDatosGenerales() {
     let subestacion = document.getElementById("subestacion").value;
@@ -574,8 +558,15 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
   }
 
   function evaluarSupervisor(){
-    let firmaSupervisor = "../recursos/firmas/RobertoLuisBailon.png";
-    doc.addImage(firmaSupervisor, "PNG", 39, 230, 30, 10);
+    let nombres = document.getElementById("supervisor-nombres").value.toUpperCase();
+    let apellidos = document.getElementById("supervisor-apellidos").value.toUpperCase();
+    let dni = document.getElementById("supervisor-dni").value;
+    let firma = document.getElementById("supervisor-firma").value;
+
+    doc.text(apellidos, 42, 250);
+    doc.text(nombres, 42, 254.6);
+    doc.text(dni, 36, 258.8);
+    doc.addImage(firma, "PNG", 39, 230, 30, 10);
   }
 
   function evaluarJefeCuadrilla() {
@@ -592,10 +583,10 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
   }
 
   function evaluarResponsable(){
-    let firmaResponsable = "../recursos/firmas/HiderNelsonCastellanosCardenas.png";
-    let nombreResponsable = "HIDER NELSON";
-    let apellidosResponsable = "CASTELLANOS CARDENAS";
-    let dniResponsable = "47200017";
+    let firmaResponsable = "../recursos/firmas/OscarArmandoChuquispumaPena.png";
+    let nombreResponsable = "OSCAR ARMANDO";
+    let apellidosResponsable = "CHUQUISPUMA PEÑA";
+    let dniResponsable = "72809515";
 
     doc.text(nombreResponsable, 142, 250);
     doc.text(apellidosResponsable, 142, 254.6);
@@ -616,16 +607,17 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
   if(eval && evaluarCodigoCuadrillas()) {
     var blob = doc.output("blob");
     window.open(URL.createObjectURL(blob));
-
+    const subj = 'ACT-INS';
     dia = dia.replace(/\//g, "_")
     const nombreDocumento = `ACTA_DE_INSPECCION_${dia}.pdf`
     doc.save(nombreDocumento)
     //endodear el resultado del pdf
-    var file_data = btoa(doc.output())
+    /*var file_data = btoa(doc.output())
     var form_data = new FormData()
 
     form_data.append("file", file_data)
     form_data.append("nombre", "ACTA_DE_INSPECCION")
+    form_data.append("subj", subj)
     //alert(form_data)
     $.ajax({
         url: "../envios/enviar_alerta.php",
@@ -638,7 +630,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
         success: function(php_script_response){
             alert("Archivo generado correctamente")
         }
-    })
+    })*/
   } else {
     alert("Debe completar todos los datos solicitados");
   }

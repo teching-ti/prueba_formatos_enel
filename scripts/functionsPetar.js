@@ -740,7 +740,7 @@ async function loadImage(url) {
         // Termina funcionalidad de visualización
 
         //endodear el resultado del pdf
-        var file_data = btoa(doc.output())
+        /*var file_data = btoa(doc.output())
         var form_data = new FormData()
 
         // aquí se deberán colocar los elementos a enviar como parte del formulario
@@ -759,7 +759,7 @@ async function loadImage(url) {
             success: function(php_script_response){
                 alert("Archivo generado correctamente")
             }
-        })
+        })*/
     }else{
         alert("Complete todos los campos")
     }

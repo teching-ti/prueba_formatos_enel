@@ -278,7 +278,7 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
         // Termina funcionalidad de visualización
 
         //endodear el resultado del pdf
-        var file_data = btoa(doc.output())
+        /*var file_data = btoa(doc.output())
         var form_data = new FormData()
 
         // aquí se deberán colocar los elementos a enviar como parte del formulario
@@ -297,6 +297,6 @@ btnGenerar.addEventListener("click", async function generarPDF(e) {
             success: function(php_script_response){
                 alert("Archivo generado correctamente")
             }
-        })
+        })*/
     }
 })

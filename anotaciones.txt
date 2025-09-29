@@ -1,3 +1,9 @@
+/*29092025*/
+TRabajando en a actualziación de 3 formatos para que la firma del supervisor sea seleccionable
+- Acta de inspección (acta_inspeccion.html, stylesActa.css, functionsActaInspeccion.js, formatoActaInspeccion.jpg)
+
+
+
 /*260925*/
 Agregar la imagen del nuevo formato a la carpeta de recursosm se cargó el nuevo formato en reemplazo del ats
 

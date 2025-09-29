@@ -19,7 +19,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
       <!-- Estilos -->
-      <link rel="stylesheet" href="../estilos/stylesActa.css?v=14082025" />
+      <link rel="stylesheet" href="../estilos/stylesActa.css?v=2909202502" />
 
       <!-- Font Awesome -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
@@ -45,12 +45,6 @@
                <!--Inicia parte superior del Formulario-->
                <div class="form-sup">
                   <div class="form-sup1">
-                     <!-- inicia elemento cuadrillas -->
-                     <div class="contenedor-cuadrillas">
-                        <label for="cod-cuadrillas"><span>* </span>Código de cuadrillas</label>
-                        <input type="text" name="cod-cuadrillas" id="cod-cuadrillas" placeholder="C1-C2...C8">
-                     </div>
-                     <!-- termina elemento cuadrillas -->
                      <div class="form-sup-e">
                         <label>Subestación: <input type="text" id="subestacion"/></label>
                      </div>
@@ -264,8 +258,20 @@
                      <label>Recomendaciones<textarea name="t-recomendaciones" id="t-recomendaciones" cols="30" rows="10"></textarea></label>
                   </div>
 
+                  <div class="contenedor-supervisor">
+                     <label>Supervisor: <select name="supervisor" id="supervisor">
+                        <option value="--seleccionar--">-- seleccionar --</option>
+                     </select></label>
+                     <div>
+                        <input type="text" id="supervisor-nombres">
+                        <input type="text" id="supervisor-apellidos">
+                        <input type="text" id="supervisor-firma">
+                        <input type="text" id="supervisor-dni">
+                     </div>
+                  </div>
+
                   <div class="contenedor-jefe-cuadrilla">
-                     <label>Jefe de Cuadrilla: <select name="jefe cuadrilla" id="jefe-cuadrilla">
+                     <label>Jefe de Cuadrilla: <select name="jefe-cuadrilla" id="jefe-cuadrilla">
                         <option value="--seleccionar--">-- seleccionar --</option>
                      </select></label>
                      <div>
@@ -282,6 +288,6 @@
          </section>
          
       </main>
-      <script src="../scripts/functionsActaInspeccions.js?v=14082025"></script>
+      <script src="../scripts/functionsActaInspeccions.js?v=290920252"></script>
   </body>
 </html>
